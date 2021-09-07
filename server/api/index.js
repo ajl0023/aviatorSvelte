@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 
 // or with callback
-console.log(234234234234234234234234234234234243423423424234234);
+
 app.listen(process.env.PORT || 5001);
 
 app.use((req, res, next) => {
@@ -13,3 +13,6 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, "./build"), {}));
+app.get("/", (req, res) => {
+  console.log("hello");
+});
