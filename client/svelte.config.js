@@ -7,8 +7,8 @@ export default {
 		target: '#svelte',
 		adapter: adapter({
 			// default options are shown
-			pages: '../server/build',
-			assets: '../server/build',
+			pages: '../server/api/build',
+			assets: '../server/api/build',
 			fallback: null
 		})
 	},
