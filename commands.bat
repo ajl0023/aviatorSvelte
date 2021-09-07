@@ -1,1 +1,1 @@
-cd client && npm run build && cd .. && git add . && git commit -m "changing folder structure for vercel" && git push origin main
+ git add . && git commit -m "editing vercel.json" && git push origin main
