@@ -1,1 +1,1 @@
- git add . && git commit -m "editing vercel.json" && git push origin main
+ git add . && git commit -m "movied /api to root" && git push origin main
