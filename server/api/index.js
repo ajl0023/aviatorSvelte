@@ -13,6 +13,6 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, "./build"), {}));
-app.get("/", (req, res) => {
-  console.log("hello");
+app.get("/test", (req, res) => {
+  res.json("testing");
 });
