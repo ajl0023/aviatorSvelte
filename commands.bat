@@ -1,1 +1,1 @@
-cd client && npm run build && cd .. && git add . && git commit -m "converted to fully static rendering" && git push origin main
+cd client && npm run build && cd .. && git add . && git commit -m "server rendered not displaying correctly" && git push origin main
