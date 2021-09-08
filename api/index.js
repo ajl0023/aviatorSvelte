@@ -5,18 +5,17 @@ const serverless = require("serverless-http");
 
 // or with callback
 
-app.listen(process.env.PORT || 5001);
-
-app.use((req, res, next) => {
-  res.append("Cache-Control", "123123123123");
-
-  next();
+const router = express.Router();
+router.get("/", (req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.write("<h1>Hello from Express.js!</h1>");
+  res.end();
 });
+router.get("/another", (req, res) => res.json({ route: req.originalUrl }));
+router.post("/", (req, res) => res.json({ postBody: req.body }));
 
-app.use(express.static(path.join(__dirname, "./build"), {}));
-app.get("/test", (req, res) => {
-  res.json("testing");
-});
+app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
 
 module.exports = app;
 module.exports.handler = serverless(app);
