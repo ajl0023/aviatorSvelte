@@ -1,5 +1,5 @@
 ﻿<script>
-  import CarouselLeft from "../CarouselPage/CarouselLeft/CarouselLeft.svelte";
+  import CarouselLeft from "../CarouselLeft/CarouselLeft.svelte";
   import Credits from "../Credits/Credits.svelte";
   import GalleryPreview from "../GalleryPreview/GalleryPreview.svelte";
   import ImagePage from "../ImagePage/ImagePage.svelte";

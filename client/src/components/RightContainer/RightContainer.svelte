@@ -1,6 +1,6 @@
 ﻿<script>
   import CarouselFull from "../CarouselFull/CarouselFull.svelte";
-  import CarouselRight from "../CarouselPage/CarouselRight/CarouselRight.svelte";
+  import CarouselRight from "../CarouselRight/CarouselRight.svelte";
   import Credits from "../Credits/Credits.svelte";
   import Gallery from "../Gallery/Gallery.svelte";
   import ImagePage from "../ImagePage/ImagePage.svelte";
