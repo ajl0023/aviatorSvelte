@@ -1,2 +1,3 @@
+/_app/*
 cache-control: max-age=2592000
 
