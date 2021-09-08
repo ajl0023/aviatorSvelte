@@ -56,7 +56,7 @@ const d = decodeURIComponent;
 const empty = () => ({});
 
 const manifest = {
-	assets: [{"file":"logo.inline.svg","size":37724,"type":"image/svg+xml"}],
+	assets: [{"file":"logo.inline.svg","size":37724,"type":"image/svg+xml"},{"file":"_headers.txt","size":0,"type":"text/plain"}],
 	layout: ".svelte-kit/build/components/layout.svelte",
 	error: ".svelte-kit/build/components/error.svelte",
 	routes: [
