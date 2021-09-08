@@ -7,8 +7,8 @@ export default {
 		target: '#svelte',
 		adapter: adapter({
 			// default options are shown
-			pages: '../netlify-express-master/build',
-			assets: '../netlify-express-master/build',
+			pages: './build',
+			assets: './build',
 			fallback: null
 		})
 	},

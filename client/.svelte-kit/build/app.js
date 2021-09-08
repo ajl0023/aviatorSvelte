@@ -4,7 +4,7 @@ import { set_paths, assets } from './runtime/paths.js';
 import { set_prerendering } from './runtime/env.js';
 import * as user_hooks from "./hooks.js";
 
-const template = ({ head, body }) => "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<link rel=\"icon\" href=\"/favicon.png\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body>\n\t\t<div id=\"svelte\">" + body + "</div>\n\t</body>\n</html>\n";
+const template = ({ head, body }) => "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\t<meta charset=\"utf-8\" />\n\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t" + head + "\n</head>\n\n<body>\n\t<div id=\"svelte\">" + body + "</div>\n</body>\n\n</html>";
 
 let options = null;
 
@@ -56,7 +56,7 @@ const d = decodeURIComponent;
 const empty = () => ({});
 
 const manifest = {
-	assets: [{"file":"favicon.png","size":1571,"type":"image/png"}],
+	assets: [],
 	layout: ".svelte-kit/build/components/layout.svelte",
 	error: ".svelte-kit/build/components/error.svelte",
 	routes: [

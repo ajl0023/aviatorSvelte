@@ -1488,7 +1488,7 @@ var user_hooks = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module"
 });
-const template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body>\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
+const template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n\n<head>\n	<meta charset="utf-8" />\n\n	<meta name="viewport" content="width=device-width, initial-scale=1" />\n	' + head + '\n</head>\n\n<body>\n	<div id="svelte">' + body + "</div>\n</body>\n\n</html>";
 let options = null;
 const default_settings = { paths: { "base": "", "assets": "" } };
 function init(settings = default_settings) {
@@ -1530,7 +1530,7 @@ function init(settings = default_settings) {
 }
 const empty = () => ({});
 const manifest = {
-  assets: [{ "file": "favicon.png", "size": 1571, "type": "image/png" }],
+  assets: [],
   layout: ".svelte-kit/build/components/layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
