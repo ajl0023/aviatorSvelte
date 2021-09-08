@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "close navbar modal" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "disabled drag on carousel" && git push origin main

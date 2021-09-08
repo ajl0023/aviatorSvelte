@@ -5,7 +5,9 @@
 	import CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';
 	import { images } from '../image';
 
-	var glide = new Glide('div.glide.right');
+	var glide = new Glide('div.glide.right', {
+		dragThreshold: false
+	});
 	let page;
 	currentPage.subscribe((value) => {
 		page = value;

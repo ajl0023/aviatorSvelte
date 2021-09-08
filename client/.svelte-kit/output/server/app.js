@@ -17,7 +17,7 @@ var __privateSet = (obj, member, value, setter) => {
   return value;
 };
 var _map;
-import Glide from "@glidejs/glide";
+import Glide$1 from "@glidejs/glide";
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -1499,9 +1499,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-9f0e9cce.js",
+      file: assets + "/_app/start-7d26fc87.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-9f0e9cce.js", assets + "/_app/chunks/vendor-eb750415.js"]
+      js: [assets + "/_app/start-7d26fc87.js", assets + "/_app/chunks/vendor-3ff37565.js"]
     },
     fetched: void 0,
     floc: false,
@@ -1560,7 +1560,7 @@ const module_lookup = {
     return index;
   })
 };
-const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-378e5ffc.js", "css": [], "js": ["layout.svelte-378e5ffc.js", "chunks/vendor-eb750415.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-b474aef1.js", "css": [], "js": ["error.svelte-b474aef1.js", "chunks/vendor-eb750415.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-981ba7c1.js", "css": ["assets/pages/index.svelte-e2f72abf.css"], "js": ["pages/index.svelte-981ba7c1.js", "chunks/vendor-eb750415.js"], "styles": [] } };
+const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-e385b2f8.js", "css": [], "js": ["layout.svelte-e385b2f8.js", "chunks/vendor-3ff37565.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-1deca33d.js", "css": [], "js": ["error.svelte-1deca33d.js", "chunks/vendor-3ff37565.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-b22f7d88.js", "css": ["assets/pages/index.svelte-e2f72abf.css"], "js": ["pages/index.svelte-b22f7d88.js", "chunks/vendor-3ff37565.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -1828,6 +1828,1193 @@ const pagePositionsStore = () => {
 const pagePositions = pagePositionsStore();
 var Arrow_svelte_svelte_type_style_lang = ".arrow.svelte-1d2wgtf{fill:white;transform:rotate(180deg)}.rotate.svelte-1d2wgtf{transform:rotate(0deg)}";
 var Card_svelte_svelte_type_style_lang = 'h5.svelte-7eqozu.svelte-7eqozu{font-family:Orator}.font-white.svelte-7eqozu.svelte-7eqozu{color:white}.card-content.svelte-7eqozu.svelte-7eqozu{background-color:transparent}.play-button-container.svelte-7eqozu.svelte-7eqozu{position:absolute;width:25%;top:50%;left:50%;transform:translate(-50%, -50%);height:auto;z-index:5;object-fit:cover}.content.svelte-7eqozu.svelte-7eqozu{max-height:20rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}.card-container.svelte-7eqozu.svelte-7eqozu{display:flex;flex-direction:column;background-color:transparent}.card-container.svelte-7eqozu:nth-child(4) .show-more.svelte-7eqozu{display:none !important}.blur.svelte-7eqozu.svelte-7eqozu{left:0;right:0;z-index:0;position:relative}.blur.svelte-7eqozu.svelte-7eqozu::before{pointer-events:none;position:absolute;content:"";height:100%;display:block;left:0;right:0;top:0;z-index:2;backdrop-filter:blur(5px)}.show-more.svelte-7eqozu.svelte-7eqozu{display:block;max-height:100%}';
+/*!
+ * Glide.js v3.4.1
+ * (c) 2013-2019 Jędrzej Chałubek <jedrzej.chalubek@gmail.com> (http://jedrzejchalubek.com/)
+ * Released under the MIT License.
+ */
+var defaults = {
+  type: "slider",
+  startAt: 0,
+  perView: 1,
+  focusAt: 0,
+  gap: 10,
+  autoplay: false,
+  hoverpause: true,
+  keyboard: true,
+  bound: false,
+  swipeThreshold: 80,
+  dragThreshold: 120,
+  perTouch: false,
+  touchRatio: 0.5,
+  touchAngle: 45,
+  animationDuration: 400,
+  rewind: true,
+  rewindDuration: 800,
+  animationTimingFunc: "cubic-bezier(.165, .840, .440, 1)",
+  throttle: 10,
+  direction: "ltr",
+  peek: 0,
+  breakpoints: {},
+  classes: {
+    direction: {
+      ltr: "glide--ltr",
+      rtl: "glide--rtl"
+    },
+    slider: "glide--slider",
+    carousel: "glide--carousel",
+    swipeable: "glide--swipeable",
+    dragging: "glide--dragging",
+    cloneSlide: "glide__slide--clone",
+    activeNav: "glide__bullet--active",
+    activeSlide: "glide__slide--active",
+    disabledArrow: "glide__arrow--disabled"
+  }
+};
+function warn(msg) {
+  console.error("[Glide warn]: " + msg);
+}
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+  return typeof obj;
+} : function(obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+var classCallCheck = function(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+var createClass = function() {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor)
+        descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  return function(Constructor, protoProps, staticProps) {
+    if (protoProps)
+      defineProperties(Constructor.prototype, protoProps);
+    if (staticProps)
+      defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+var _extends = Object.assign || function(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+  return target;
+};
+var get = function get2(object, property, receiver) {
+  if (object === null)
+    object = Function.prototype;
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+  if (desc === void 0) {
+    var parent = Object.getPrototypeOf(object);
+    if (parent === null) {
+      return void 0;
+    } else {
+      return get2(parent, property, receiver);
+    }
+  } else if ("value" in desc) {
+    return desc.value;
+  } else {
+    var getter = desc.get;
+    if (getter === void 0) {
+      return void 0;
+    }
+    return getter.call(receiver);
+  }
+};
+var inherits = function(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass)
+    Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+var possibleConstructorReturn = function(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+function toInt(value) {
+  return parseInt(value);
+}
+function isString(value) {
+  return typeof value === "string";
+}
+function isObject(value) {
+  var type = typeof value === "undefined" ? "undefined" : _typeof(value);
+  return type === "function" || type === "object" && !!value;
+}
+function isNumber(value) {
+  return typeof value === "number";
+}
+function isFunction(value) {
+  return typeof value === "function";
+}
+function isUndefined(value) {
+  return typeof value === "undefined";
+}
+function isArray(value) {
+  return value.constructor === Array;
+}
+function mount(glide, extensions, events) {
+  var components = {};
+  for (var name in extensions) {
+    if (isFunction(extensions[name])) {
+      components[name] = extensions[name](glide, components, events);
+    } else {
+      warn("Extension must be a function");
+    }
+  }
+  for (var _name in components) {
+    if (isFunction(components[_name].mount)) {
+      components[_name].mount();
+    }
+  }
+  return components;
+}
+function define(obj, prop, definition) {
+  Object.defineProperty(obj, prop, definition);
+}
+function mergeOptions(defaults2, settings) {
+  var options2 = _extends({}, defaults2, settings);
+  if (settings.hasOwnProperty("classes")) {
+    options2.classes = _extends({}, defaults2.classes, settings.classes);
+    if (settings.classes.hasOwnProperty("direction")) {
+      options2.classes.direction = _extends({}, defaults2.classes.direction, settings.classes.direction);
+    }
+  }
+  if (settings.hasOwnProperty("breakpoints")) {
+    options2.breakpoints = _extends({}, defaults2.breakpoints, settings.breakpoints);
+  }
+  return options2;
+}
+var EventsBus = function() {
+  function EventsBus2() {
+    var events = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+    classCallCheck(this, EventsBus2);
+    this.events = events;
+    this.hop = events.hasOwnProperty;
+  }
+  createClass(EventsBus2, [{
+    key: "on",
+    value: function on(event, handler) {
+      if (isArray(event)) {
+        for (var i = 0; i < event.length; i++) {
+          this.on(event[i], handler);
+        }
+      }
+      if (!this.hop.call(this.events, event)) {
+        this.events[event] = [];
+      }
+      var index2 = this.events[event].push(handler) - 1;
+      return {
+        remove: function remove() {
+          delete this.events[event][index2];
+        }
+      };
+    }
+  }, {
+    key: "emit",
+    value: function emit(event, context) {
+      if (isArray(event)) {
+        for (var i = 0; i < event.length; i++) {
+          this.emit(event[i], context);
+        }
+      }
+      if (!this.hop.call(this.events, event)) {
+        return;
+      }
+      this.events[event].forEach(function(item) {
+        item(context || {});
+      });
+    }
+  }]);
+  return EventsBus2;
+}();
+var Glide = function() {
+  function Glide2(selector) {
+    var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    classCallCheck(this, Glide2);
+    this._c = {};
+    this._t = [];
+    this._e = new EventsBus();
+    this.disabled = false;
+    this.selector = selector;
+    this.settings = mergeOptions(defaults, options2);
+    this.index = this.settings.startAt;
+  }
+  createClass(Glide2, [{
+    key: "mount",
+    value: function mount$$1() {
+      var extensions = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+      this._e.emit("mount.before");
+      if (isObject(extensions)) {
+        this._c = mount(this, extensions, this._e);
+      } else {
+        warn("You need to provide a object on `mount()`");
+      }
+      this._e.emit("mount.after");
+      return this;
+    }
+  }, {
+    key: "mutate",
+    value: function mutate() {
+      var transformers = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : [];
+      if (isArray(transformers)) {
+        this._t = transformers;
+      } else {
+        warn("You need to provide a array on `mutate()`");
+      }
+      return this;
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      var settings = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+      this.settings = mergeOptions(this.settings, settings);
+      if (settings.hasOwnProperty("startAt")) {
+        this.index = settings.startAt;
+      }
+      this._e.emit("update");
+      return this;
+    }
+  }, {
+    key: "go",
+    value: function go(pattern) {
+      this._c.Run.make(pattern);
+      return this;
+    }
+  }, {
+    key: "move",
+    value: function move(distance) {
+      this._c.Transition.disable();
+      this._c.Move.make(distance);
+      return this;
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      this._e.emit("destroy");
+      return this;
+    }
+  }, {
+    key: "play",
+    value: function play() {
+      var interval = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : false;
+      if (interval) {
+        this.settings.autoplay = interval;
+      }
+      this._e.emit("play");
+      return this;
+    }
+  }, {
+    key: "pause",
+    value: function pause() {
+      this._e.emit("pause");
+      return this;
+    }
+  }, {
+    key: "disable",
+    value: function disable() {
+      this.disabled = true;
+      return this;
+    }
+  }, {
+    key: "enable",
+    value: function enable() {
+      this.disabled = false;
+      return this;
+    }
+  }, {
+    key: "on",
+    value: function on(event, handler) {
+      this._e.on(event, handler);
+      return this;
+    }
+  }, {
+    key: "isType",
+    value: function isType(name) {
+      return this.settings.type === name;
+    }
+  }, {
+    key: "settings",
+    get: function get$$1() {
+      return this._o;
+    },
+    set: function set$$1(o) {
+      if (isObject(o)) {
+        this._o = o;
+      } else {
+        warn("Options must be an `object` instance.");
+      }
+    }
+  }, {
+    key: "index",
+    get: function get$$1() {
+      return this._i;
+    },
+    set: function set$$1(i) {
+      this._i = toInt(i);
+    }
+  }, {
+    key: "type",
+    get: function get$$1() {
+      return this.settings.type;
+    }
+  }, {
+    key: "disabled",
+    get: function get$$1() {
+      return this._d;
+    },
+    set: function set$$1(status) {
+      this._d = !!status;
+    }
+  }]);
+  return Glide2;
+}();
+function Run(Glide2, Components, Events) {
+  var Run2 = {
+    mount: function mount2() {
+      this._o = false;
+    },
+    make: function make(move) {
+      var _this = this;
+      if (!Glide2.disabled) {
+        Glide2.disable();
+        this.move = move;
+        Events.emit("run.before", this.move);
+        this.calculate();
+        Events.emit("run", this.move);
+        Components.Transition.after(function() {
+          if (_this.isStart()) {
+            Events.emit("run.start", _this.move);
+          }
+          if (_this.isEnd()) {
+            Events.emit("run.end", _this.move);
+          }
+          if (_this.isOffset("<") || _this.isOffset(">")) {
+            _this._o = false;
+            Events.emit("run.offset", _this.move);
+          }
+          Events.emit("run.after", _this.move);
+          Glide2.enable();
+        });
+      }
+    },
+    calculate: function calculate() {
+      var move = this.move, length = this.length;
+      var steps = move.steps, direction = move.direction;
+      var countableSteps = isNumber(toInt(steps)) && toInt(steps) !== 0;
+      switch (direction) {
+        case ">":
+          if (steps === ">") {
+            Glide2.index = length;
+          } else if (this.isEnd()) {
+            if (!(Glide2.isType("slider") && !Glide2.settings.rewind)) {
+              this._o = true;
+              Glide2.index = 0;
+            }
+          } else if (countableSteps) {
+            Glide2.index += Math.min(length - Glide2.index, -toInt(steps));
+          } else {
+            Glide2.index++;
+          }
+          break;
+        case "<":
+          if (steps === "<") {
+            Glide2.index = 0;
+          } else if (this.isStart()) {
+            if (!(Glide2.isType("slider") && !Glide2.settings.rewind)) {
+              this._o = true;
+              Glide2.index = length;
+            }
+          } else if (countableSteps) {
+            Glide2.index -= Math.min(Glide2.index, toInt(steps));
+          } else {
+            Glide2.index--;
+          }
+          break;
+        case "=":
+          Glide2.index = steps;
+          break;
+        default:
+          warn("Invalid direction pattern [" + direction + steps + "] has been used");
+          break;
+      }
+    },
+    isStart: function isStart() {
+      return Glide2.index === 0;
+    },
+    isEnd: function isEnd() {
+      return Glide2.index === this.length;
+    },
+    isOffset: function isOffset(direction) {
+      return this._o && this.move.direction === direction;
+    }
+  };
+  define(Run2, "move", {
+    get: function get3() {
+      return this._m;
+    },
+    set: function set(value) {
+      var step = value.substr(1);
+      this._m = {
+        direction: value.substr(0, 1),
+        steps: step ? toInt(step) ? toInt(step) : step : 0
+      };
+    }
+  });
+  define(Run2, "length", {
+    get: function get3() {
+      var settings = Glide2.settings;
+      var length = Components.Html.slides.length;
+      if (Glide2.isType("slider") && settings.focusAt !== "center" && settings.bound) {
+        return length - 1 - (toInt(settings.perView) - 1) + toInt(settings.focusAt);
+      }
+      return length - 1;
+    }
+  });
+  define(Run2, "offset", {
+    get: function get3() {
+      return this._o;
+    }
+  });
+  return Run2;
+}
+function now() {
+  return new Date().getTime();
+}
+function throttle(func, wait, options2) {
+  var timeout = void 0, context = void 0, args = void 0, result = void 0;
+  var previous = 0;
+  if (!options2)
+    options2 = {};
+  var later = function later2() {
+    previous = options2.leading === false ? 0 : now();
+    timeout = null;
+    result = func.apply(context, args);
+    if (!timeout)
+      context = args = null;
+  };
+  var throttled = function throttled2() {
+    var at = now();
+    if (!previous && options2.leading === false)
+      previous = at;
+    var remaining = wait - (at - previous);
+    context = this;
+    args = arguments;
+    if (remaining <= 0 || remaining > wait) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      previous = at;
+      result = func.apply(context, args);
+      if (!timeout)
+        context = args = null;
+    } else if (!timeout && options2.trailing !== false) {
+      timeout = setTimeout(later, remaining);
+    }
+    return result;
+  };
+  throttled.cancel = function() {
+    clearTimeout(timeout);
+    previous = 0;
+    timeout = context = args = null;
+  };
+  return throttled;
+}
+var MARGIN_TYPE = {
+  ltr: ["marginLeft", "marginRight"],
+  rtl: ["marginRight", "marginLeft"]
+};
+function Gaps(Glide2, Components, Events) {
+  var Gaps2 = {
+    apply: function apply(slides) {
+      for (var i = 0, len = slides.length; i < len; i++) {
+        var style = slides[i].style;
+        var direction = Components.Direction.value;
+        if (i !== 0) {
+          style[MARGIN_TYPE[direction][0]] = this.value / 2 + "px";
+        } else {
+          style[MARGIN_TYPE[direction][0]] = "";
+        }
+        if (i !== slides.length - 1) {
+          style[MARGIN_TYPE[direction][1]] = this.value / 2 + "px";
+        } else {
+          style[MARGIN_TYPE[direction][1]] = "";
+        }
+      }
+    },
+    remove: function remove(slides) {
+      for (var i = 0, len = slides.length; i < len; i++) {
+        var style = slides[i].style;
+        style.marginLeft = "";
+        style.marginRight = "";
+      }
+    }
+  };
+  define(Gaps2, "value", {
+    get: function get3() {
+      return toInt(Glide2.settings.gap);
+    }
+  });
+  define(Gaps2, "grow", {
+    get: function get3() {
+      return Gaps2.value * (Components.Sizes.length - 1);
+    }
+  });
+  define(Gaps2, "reductor", {
+    get: function get3() {
+      var perView = Glide2.settings.perView;
+      return Gaps2.value * (perView - 1) / perView;
+    }
+  });
+  Events.on(["build.after", "update"], throttle(function() {
+    Gaps2.apply(Components.Html.wrapper.children);
+  }, 30));
+  Events.on("destroy", function() {
+    Gaps2.remove(Components.Html.wrapper.children);
+  });
+  return Gaps2;
+}
+function siblings(node) {
+  if (node && node.parentNode) {
+    var n = node.parentNode.firstChild;
+    var matched = [];
+    for (; n; n = n.nextSibling) {
+      if (n.nodeType === 1 && n !== node) {
+        matched.push(n);
+      }
+    }
+    return matched;
+  }
+  return [];
+}
+function exist(node) {
+  if (node && node instanceof window.HTMLElement) {
+    return true;
+  }
+  return false;
+}
+var TRACK_SELECTOR = '[data-glide-el="track"]';
+function Html(Glide2, Components) {
+  var Html2 = {
+    mount: function mount2() {
+      this.root = Glide2.selector;
+      this.track = this.root.querySelector(TRACK_SELECTOR);
+      this.slides = Array.prototype.slice.call(this.wrapper.children).filter(function(slide) {
+        return !slide.classList.contains(Glide2.settings.classes.cloneSlide);
+      });
+    }
+  };
+  define(Html2, "root", {
+    get: function get3() {
+      return Html2._r;
+    },
+    set: function set(r) {
+      if (isString(r)) {
+        r = document.querySelector(r);
+      }
+      if (exist(r)) {
+        Html2._r = r;
+      } else {
+        warn("Root element must be a existing Html node");
+      }
+    }
+  });
+  define(Html2, "track", {
+    get: function get3() {
+      return Html2._t;
+    },
+    set: function set(t) {
+      if (exist(t)) {
+        Html2._t = t;
+      } else {
+        warn("Could not find track element. Please use " + TRACK_SELECTOR + " attribute.");
+      }
+    }
+  });
+  define(Html2, "wrapper", {
+    get: function get3() {
+      return Html2.track.children[0];
+    }
+  });
+  return Html2;
+}
+function Peek(Glide2, Components, Events) {
+  var Peek2 = {
+    mount: function mount2() {
+      this.value = Glide2.settings.peek;
+    }
+  };
+  define(Peek2, "value", {
+    get: function get3() {
+      return Peek2._v;
+    },
+    set: function set(value) {
+      if (isObject(value)) {
+        value.before = toInt(value.before);
+        value.after = toInt(value.after);
+      } else {
+        value = toInt(value);
+      }
+      Peek2._v = value;
+    }
+  });
+  define(Peek2, "reductor", {
+    get: function get3() {
+      var value = Peek2.value;
+      var perView = Glide2.settings.perView;
+      if (isObject(value)) {
+        return value.before / perView + value.after / perView;
+      }
+      return value * 2 / perView;
+    }
+  });
+  Events.on(["resize", "update"], function() {
+    Peek2.mount();
+  });
+  return Peek2;
+}
+function Move(Glide2, Components, Events) {
+  var Move2 = {
+    mount: function mount2() {
+      this._o = 0;
+    },
+    make: function make() {
+      var _this = this;
+      var offset = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 0;
+      this.offset = offset;
+      Events.emit("move", {
+        movement: this.value
+      });
+      Components.Transition.after(function() {
+        Events.emit("move.after", {
+          movement: _this.value
+        });
+      });
+    }
+  };
+  define(Move2, "offset", {
+    get: function get3() {
+      return Move2._o;
+    },
+    set: function set(value) {
+      Move2._o = !isUndefined(value) ? toInt(value) : 0;
+    }
+  });
+  define(Move2, "translate", {
+    get: function get3() {
+      return Components.Sizes.slideWidth * Glide2.index;
+    }
+  });
+  define(Move2, "value", {
+    get: function get3() {
+      var offset = this.offset;
+      var translate = this.translate;
+      if (Components.Direction.is("rtl")) {
+        return translate + offset;
+      }
+      return translate - offset;
+    }
+  });
+  Events.on(["build.before", "run"], function() {
+    Move2.make();
+  });
+  return Move2;
+}
+function Sizes(Glide2, Components, Events) {
+  var Sizes2 = {
+    setupSlides: function setupSlides() {
+      var width = this.slideWidth + "px";
+      var slides = Components.Html.slides;
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.width = width;
+      }
+    },
+    setupWrapper: function setupWrapper(dimention) {
+      Components.Html.wrapper.style.width = this.wrapperSize + "px";
+    },
+    remove: function remove() {
+      var slides = Components.Html.slides;
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.width = "";
+      }
+      Components.Html.wrapper.style.width = "";
+    }
+  };
+  define(Sizes2, "length", {
+    get: function get3() {
+      return Components.Html.slides.length;
+    }
+  });
+  define(Sizes2, "width", {
+    get: function get3() {
+      return Components.Html.root.offsetWidth;
+    }
+  });
+  define(Sizes2, "wrapperSize", {
+    get: function get3() {
+      return Sizes2.slideWidth * Sizes2.length + Components.Gaps.grow + Components.Clones.grow;
+    }
+  });
+  define(Sizes2, "slideWidth", {
+    get: function get3() {
+      return Sizes2.width / Glide2.settings.perView - Components.Peek.reductor - Components.Gaps.reductor;
+    }
+  });
+  Events.on(["build.before", "resize", "update"], function() {
+    Sizes2.setupSlides();
+    Sizes2.setupWrapper();
+  });
+  Events.on("destroy", function() {
+    Sizes2.remove();
+  });
+  return Sizes2;
+}
+function Build(Glide2, Components, Events) {
+  var Build2 = {
+    mount: function mount2() {
+      Events.emit("build.before");
+      this.typeClass();
+      this.activeClass();
+      Events.emit("build.after");
+    },
+    typeClass: function typeClass() {
+      Components.Html.root.classList.add(Glide2.settings.classes[Glide2.settings.type]);
+    },
+    activeClass: function activeClass() {
+      var classes = Glide2.settings.classes;
+      var slide = Components.Html.slides[Glide2.index];
+      if (slide) {
+        slide.classList.add(classes.activeSlide);
+        siblings(slide).forEach(function(sibling) {
+          sibling.classList.remove(classes.activeSlide);
+        });
+      }
+    },
+    removeClasses: function removeClasses() {
+      var classes = Glide2.settings.classes;
+      Components.Html.root.classList.remove(classes[Glide2.settings.type]);
+      Components.Html.slides.forEach(function(sibling) {
+        sibling.classList.remove(classes.activeSlide);
+      });
+    }
+  };
+  Events.on(["destroy", "update"], function() {
+    Build2.removeClasses();
+  });
+  Events.on(["resize", "update"], function() {
+    Build2.mount();
+  });
+  Events.on("move.after", function() {
+    Build2.activeClass();
+  });
+  return Build2;
+}
+function Clones(Glide2, Components, Events) {
+  var Clones2 = {
+    mount: function mount2() {
+      this.items = [];
+      if (Glide2.isType("carousel")) {
+        this.items = this.collect();
+      }
+    },
+    collect: function collect() {
+      var items = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : [];
+      var slides = Components.Html.slides;
+      var _Glide$settings = Glide2.settings, perView = _Glide$settings.perView, classes = _Glide$settings.classes;
+      var peekIncrementer = +!!Glide2.settings.peek;
+      var part = perView + peekIncrementer;
+      var start = slides.slice(0, part);
+      var end = slides.slice(-part);
+      for (var r = 0; r < Math.max(1, Math.floor(perView / slides.length)); r++) {
+        for (var i = 0; i < start.length; i++) {
+          var clone = start[i].cloneNode(true);
+          clone.classList.add(classes.cloneSlide);
+          items.push(clone);
+        }
+        for (var _i = 0; _i < end.length; _i++) {
+          var _clone = end[_i].cloneNode(true);
+          _clone.classList.add(classes.cloneSlide);
+          items.unshift(_clone);
+        }
+      }
+      return items;
+    },
+    append: function append() {
+      var items = this.items;
+      var _Components$Html = Components.Html, wrapper = _Components$Html.wrapper, slides = _Components$Html.slides;
+      var half = Math.floor(items.length / 2);
+      var prepend = items.slice(0, half).reverse();
+      var append2 = items.slice(half, items.length);
+      var width = Components.Sizes.slideWidth + "px";
+      for (var i = 0; i < append2.length; i++) {
+        wrapper.appendChild(append2[i]);
+      }
+      for (var _i2 = 0; _i2 < prepend.length; _i2++) {
+        wrapper.insertBefore(prepend[_i2], slides[0]);
+      }
+      for (var _i3 = 0; _i3 < items.length; _i3++) {
+        items[_i3].style.width = width;
+      }
+    },
+    remove: function remove() {
+      var items = this.items;
+      for (var i = 0; i < items.length; i++) {
+        Components.Html.wrapper.removeChild(items[i]);
+      }
+    }
+  };
+  define(Clones2, "grow", {
+    get: function get3() {
+      return (Components.Sizes.slideWidth + Components.Gaps.value) * Clones2.items.length;
+    }
+  });
+  Events.on("update", function() {
+    Clones2.remove();
+    Clones2.mount();
+    Clones2.append();
+  });
+  Events.on("build.before", function() {
+    if (Glide2.isType("carousel")) {
+      Clones2.append();
+    }
+  });
+  Events.on("destroy", function() {
+    Clones2.remove();
+  });
+  return Clones2;
+}
+var EventsBinder = function() {
+  function EventsBinder2() {
+    var listeners = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+    classCallCheck(this, EventsBinder2);
+    this.listeners = listeners;
+  }
+  createClass(EventsBinder2, [{
+    key: "on",
+    value: function on(events, el, closure) {
+      var capture = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : false;
+      if (isString(events)) {
+        events = [events];
+      }
+      for (var i = 0; i < events.length; i++) {
+        this.listeners[events[i]] = closure;
+        el.addEventListener(events[i], this.listeners[events[i]], capture);
+      }
+    }
+  }, {
+    key: "off",
+    value: function off(events, el) {
+      var capture = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : false;
+      if (isString(events)) {
+        events = [events];
+      }
+      for (var i = 0; i < events.length; i++) {
+        el.removeEventListener(events[i], this.listeners[events[i]], capture);
+      }
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      delete this.listeners;
+    }
+  }]);
+  return EventsBinder2;
+}();
+function Resize(Glide2, Components, Events) {
+  var Binder = new EventsBinder();
+  var Resize2 = {
+    mount: function mount2() {
+      this.bind();
+    },
+    bind: function bind() {
+      Binder.on("resize", window, throttle(function() {
+        Events.emit("resize");
+      }, Glide2.settings.throttle));
+    },
+    unbind: function unbind() {
+      Binder.off("resize", window);
+    }
+  };
+  Events.on("destroy", function() {
+    Resize2.unbind();
+    Binder.destroy();
+  });
+  return Resize2;
+}
+var VALID_DIRECTIONS = ["ltr", "rtl"];
+var FLIPED_MOVEMENTS = {
+  ">": "<",
+  "<": ">",
+  "=": "="
+};
+function Direction(Glide2, Components, Events) {
+  var Direction2 = {
+    mount: function mount2() {
+      this.value = Glide2.settings.direction;
+    },
+    resolve: function resolve2(pattern) {
+      var token = pattern.slice(0, 1);
+      if (this.is("rtl")) {
+        return pattern.split(token).join(FLIPED_MOVEMENTS[token]);
+      }
+      return pattern;
+    },
+    is: function is(direction) {
+      return this.value === direction;
+    },
+    addClass: function addClass() {
+      Components.Html.root.classList.add(Glide2.settings.classes.direction[this.value]);
+    },
+    removeClass: function removeClass() {
+      Components.Html.root.classList.remove(Glide2.settings.classes.direction[this.value]);
+    }
+  };
+  define(Direction2, "value", {
+    get: function get3() {
+      return Direction2._v;
+    },
+    set: function set(value) {
+      if (VALID_DIRECTIONS.indexOf(value) > -1) {
+        Direction2._v = value;
+      } else {
+        warn("Direction value must be `ltr` or `rtl`");
+      }
+    }
+  });
+  Events.on(["destroy", "update"], function() {
+    Direction2.removeClass();
+  });
+  Events.on("update", function() {
+    Direction2.mount();
+  });
+  Events.on(["build.before", "update"], function() {
+    Direction2.addClass();
+  });
+  return Direction2;
+}
+function Rtl(Glide2, Components) {
+  return {
+    modify: function modify(translate) {
+      if (Components.Direction.is("rtl")) {
+        return -translate;
+      }
+      return translate;
+    }
+  };
+}
+function Gap(Glide2, Components) {
+  return {
+    modify: function modify(translate) {
+      return translate + Components.Gaps.value * Glide2.index;
+    }
+  };
+}
+function Grow(Glide2, Components) {
+  return {
+    modify: function modify(translate) {
+      return translate + Components.Clones.grow / 2;
+    }
+  };
+}
+function Peeking(Glide2, Components) {
+  return {
+    modify: function modify(translate) {
+      if (Glide2.settings.focusAt >= 0) {
+        var peek = Components.Peek.value;
+        if (isObject(peek)) {
+          return translate - peek.before;
+        }
+        return translate - peek;
+      }
+      return translate;
+    }
+  };
+}
+function Focusing(Glide2, Components) {
+  return {
+    modify: function modify(translate) {
+      var gap = Components.Gaps.value;
+      var width = Components.Sizes.width;
+      var focusAt = Glide2.settings.focusAt;
+      var slideWidth = Components.Sizes.slideWidth;
+      if (focusAt === "center") {
+        return translate - (width / 2 - slideWidth / 2);
+      }
+      return translate - slideWidth * focusAt - gap * focusAt;
+    }
+  };
+}
+function mutator(Glide2, Components, Events) {
+  var TRANSFORMERS = [Gap, Grow, Peeking, Focusing].concat(Glide2._t, [Rtl]);
+  return {
+    mutate: function mutate(translate) {
+      for (var i = 0; i < TRANSFORMERS.length; i++) {
+        var transformer = TRANSFORMERS[i];
+        if (isFunction(transformer) && isFunction(transformer().modify)) {
+          translate = transformer(Glide2, Components, Events).modify(translate);
+        } else {
+          warn("Transformer should be a function that returns an object with `modify()` method");
+        }
+      }
+      return translate;
+    }
+  };
+}
+function Translate(Glide2, Components, Events) {
+  var Translate2 = {
+    set: function set(value) {
+      var transform = mutator(Glide2, Components).mutate(value);
+      Components.Html.wrapper.style.transform = "translate3d(" + -1 * transform + "px, 0px, 0px)";
+    },
+    remove: function remove() {
+      Components.Html.wrapper.style.transform = "";
+    }
+  };
+  Events.on("move", function(context) {
+    var gap = Components.Gaps.value;
+    var length = Components.Sizes.length;
+    var width = Components.Sizes.slideWidth;
+    if (Glide2.isType("carousel") && Components.Run.isOffset("<")) {
+      Components.Transition.after(function() {
+        Events.emit("translate.jump");
+        Translate2.set(width * (length - 1));
+      });
+      return Translate2.set(-width - gap * length);
+    }
+    if (Glide2.isType("carousel") && Components.Run.isOffset(">")) {
+      Components.Transition.after(function() {
+        Events.emit("translate.jump");
+        Translate2.set(0);
+      });
+      return Translate2.set(width * length + gap * length);
+    }
+    return Translate2.set(context.movement);
+  });
+  Events.on("destroy", function() {
+    Translate2.remove();
+  });
+  return Translate2;
+}
+function Transition(Glide2, Components, Events) {
+  var disabled = false;
+  var Transition2 = {
+    compose: function compose(property) {
+      var settings = Glide2.settings;
+      if (!disabled) {
+        return property + " " + this.duration + "ms " + settings.animationTimingFunc;
+      }
+      return property + " 0ms " + settings.animationTimingFunc;
+    },
+    set: function set() {
+      var property = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "transform";
+      Components.Html.wrapper.style.transition = this.compose(property);
+    },
+    remove: function remove() {
+      Components.Html.wrapper.style.transition = "";
+    },
+    after: function after(callback) {
+      setTimeout(function() {
+        callback();
+      }, this.duration);
+    },
+    enable: function enable() {
+      disabled = false;
+      this.set();
+    },
+    disable: function disable() {
+      disabled = true;
+      this.set();
+    }
+  };
+  define(Transition2, "duration", {
+    get: function get3() {
+      var settings = Glide2.settings;
+      if (Glide2.isType("slider") && Components.Run.offset) {
+        return settings.rewindDuration;
+      }
+      return settings.animationDuration;
+    }
+  });
+  Events.on("move", function() {
+    Transition2.set();
+  });
+  Events.on(["build.before", "resize", "translate.jump"], function() {
+    Transition2.disable();
+  });
+  Events.on("run", function() {
+    Transition2.enable();
+  });
+  Events.on("destroy", function() {
+    Transition2.remove();
+  });
+  return Transition2;
+}
+var supportsPassive = false;
+try {
+  var opts = Object.defineProperty({}, "passive", {
+    get: function get3() {
+      supportsPassive = true;
+    }
+  });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {
+}
+var COMPONENTS = {
+  Html,
+  Translate,
+  Transition,
+  Direction,
+  Peek,
+  Sizes,
+  Gaps,
+  Move,
+  Clones,
+  Resize,
+  Build,
+  Run
+};
+(function(_Core) {
+  inherits(Glide$$1, _Core);
+  function Glide$$1() {
+    classCallCheck(this, Glide$$1);
+    return possibleConstructorReturn(this, (Glide$$1.__proto__ || Object.getPrototypeOf(Glide$$1)).apply(this, arguments));
+  }
+  createClass(Glide$$1, [{
+    key: "mount",
+    value: function mount2() {
+      var extensions = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+      return get(Glide$$1.prototype.__proto__ || Object.getPrototypeOf(Glide$$1.prototype), "mount", this).call(this, _extends({}, COMPONENTS, extensions));
+    }
+  }]);
+  return Glide$$1;
+})(Glide);
 var CardCarousel_svelte_svelte_type_style_lang = "h5.svelte-1jwo5hq.svelte-1jwo5hq{font-family:Orator}.font-white.svelte-1jwo5hq.svelte-1jwo5hq{color:white}.card-content.svelte-1jwo5hq.svelte-1jwo5hq{background-color:transparent}.content.svelte-1jwo5hq.svelte-1jwo5hq{max-height:20rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}.card-container.svelte-1jwo5hq.svelte-1jwo5hq{display:flex;flex-direction:column;background-color:transparent}.carousel-container.svelte-1jwo5hq img.svelte-1jwo5hq{object-position:right;object-fit:cover}.carousel-container.svelte-1jwo5hq .glide-image-container.svelte-1jwo5hq{display:flex;position:relative;justify-content:center}.page-arrow-container.svelte-1jwo5hq.svelte-1jwo5hq{width:30px;border-radius:50%;position:absolute;border:none;overflow:hidden;height:30px;bottom:0}.page-arrow-container.svelte-1jwo5hq img.svelte-1jwo5hq{width:100%}.arrow-left.svelte-1jwo5hq.svelte-1jwo5hq{right:40px}.arrow-right.svelte-1jwo5hq.svelte-1jwo5hq{transform:rotate(180deg);right:0}";
 var CardCredits_svelte_svelte_type_style_lang = '.credits-title.svelte-v6rl5h.svelte-v6rl5h{font-family:Orator;font-size:1.5em}.mobile-container.svelte-v6rl5h.svelte-v6rl5h{width:100%;padding:20px;text-align:center}.mobile-container.svelte-v6rl5h .mobile-header-container.svelte-v6rl5h{font-size:1.6em;margin-bottom:1rem}.mobile-container.svelte-v6rl5h .mobile-credits-container.svelte-v6rl5h{margin-bottom:2rem}.mobile-container.svelte-v6rl5h .mobile-credits-container.svelte-v6rl5h:not(:last-child)::after{content:"";display:block;width:50px;height:1px;padding:20px;margin:auto;border-bottom:1px solid white}h5.svelte-v6rl5h.svelte-v6rl5h{font-size:1em;margin-bottom:20px;color:white}@media(max-width: 1040px){h5.svelte-v6rl5h.svelte-v6rl5h{margin-bottom:10px;font-size:0.7em}}p.svelte-v6rl5h.svelte-v6rl5h{color:white;font-family:"Roboto", sans-serif;font-size:0.8em}';
 var CardGallery_svelte_svelte_type_style_lang = "@keyframes svelte-12kvj8m-example{0%{opacity:0}100%{width:100%}}.bu-title.svelte-12kvj8m.svelte-12kvj8m{font-family:Orator;color:white}.gallery-container.svelte-12kvj8m.svelte-12kvj8m{display:grid;grid-template-columns:repeat(3, minmax(20px, 1fr));grid-gap:25px;padding:15px}.gallery-container.svelte-12kvj8m img.svelte-12kvj8m{border-radius:4px;animation-fill-mode:forwards}";
@@ -2002,10 +3189,10 @@ const images = [
 var CarouselLeft_svelte_svelte_type_style_lang = ".content.svelte-1y6d8ye.svelte-1y6d8ye{max-width:40%}.page-arrow-container.svelte-1y6d8ye.svelte-1y6d8ye{width:50px;height:50px;position:absolute;left:-60px;bottom:0;top:50%;border:none;background:none}.page-arrow-container.svelte-1y6d8ye .page-arrow.svelte-1y6d8ye{object-fit:cover;width:100%}.flex-container.svelte-1y6d8ye.svelte-1y6d8ye{display:flex;height:100%;justify-content:center;align-items:flex-end;flex-direction:column}.carousel-container.svelte-1y6d8ye.svelte-1y6d8ye{width:50%;display:flex;position:relative}.carousel-image.svelte-1y6d8ye.svelte-1y6d8ye{width:100%;height:100%;object-fit:contain}";
 const css$a = {
   code: ".content.svelte-1y6d8ye.svelte-1y6d8ye{max-width:40%}.page-arrow-container.svelte-1y6d8ye.svelte-1y6d8ye{width:50px;height:50px;position:absolute;left:-60px;bottom:0;top:50%;border:none;background:none}.page-arrow-container.svelte-1y6d8ye .page-arrow.svelte-1y6d8ye{object-fit:cover;width:100%}.flex-container.svelte-1y6d8ye.svelte-1y6d8ye{display:flex;height:100%;justify-content:center;align-items:flex-end;flex-direction:column}.carousel-container.svelte-1y6d8ye.svelte-1y6d8ye{width:50%;display:flex;position:relative}.carousel-image.svelte-1y6d8ye.svelte-1y6d8ye{width:100%;height:100%;object-fit:contain}",
-  map: `{"version":3,"file":"CarouselLeft.svelte","sources":["CarouselLeft.svelte"],"sourcesContent":["\uFEFF<script>\\r\\n\\timport Glide from '@glidejs/glide';\\r\\n\\timport { afterUpdate, onMount } from 'svelte';\\r\\n\\timport { currentPage } from '../../stores';\\r\\n\\timport CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';\\r\\n\\timport { images } from '../image';\\r\\n\\r\\n\\tvar glide = new Glide('div.glide');\\r\\n\\tlet page;\\r\\n\\tconst setPage = currentPage.subscribe((value) => {\\r\\n\\t\\tpage = value;\\r\\n\\t});\\r\\n\\r\\n\\tonMount(() => {\\r\\n\\t\\tglide.mount();\\r\\n\\t});\\r\\n\\tafterUpdate(() => {\\r\\n\\t\\tif (glide) {\\r\\n\\t\\t\\tglide.go(\`=\${page}\`);\\r\\n\\t\\t}\\r\\n\\t});\\r\\n<\/script>\\r\\n\\r\\n<div class=\\"page\\">\\r\\n\\t<div class=\\"flex-container\\">\\r\\n\\t\\t<div class=\\"content\\">\\r\\n\\t\\t\\t<img\\r\\n\\t\\t\\t\\tsrc={'https://res.cloudinary.com/dt4xntymn/image/upload/v1630813204/titleimages/Renders_Page_Text_Left_wd8jcv.png'}\\r\\n\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t/>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div class=\\"carousel-container\\">\\r\\n\\t\\t\\t<div data-glide-dir={\`\${page}\`} class=\\"glide \\">\\r\\n\\t\\t\\t\\t<div class=\\"glide__track\\" data-glide-el=\\"track\\">\\r\\n\\t\\t\\t\\t\\t<ul class=\\"glide__slides\\">\\r\\n\\t\\t\\t\\t\\t\\t{#each images.slice(0, 17) as img, i}\\r\\n\\t\\t\\t\\t\\t\\t\\t<li class=\\"glide__slide\\">\\r\\n\\t\\t\\t\\t\\t\\t\\t\\t<img class=\\"carousel-image\\" src={img} alt=\\"\\" />\\r\\n\\t\\t\\t\\t\\t\\t\\t</li>\\r\\n\\t\\t\\t\\t\\t\\t{/each}\\r\\n\\t\\t\\t\\t\\t</ul>\\r\\n\\t\\t\\t\\t</div>\\r\\n\\t\\t\\t</div>\\r\\n\\t\\t\\t<button\\r\\n\\t\\t\\t\\ton:click={() => {\\r\\n\\t\\t\\t\\t\\tcurrentPage.update((n) => n - 1);\\r\\n\\t\\t\\t\\t}}\\r\\n\\t\\t\\t\\tclass=\\"page-arrow-container\\"\\r\\n\\t\\t\\t>\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tclass=\\"page-arrow\\"\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/>\\r\\n\\t\\t\\t</button>\\r\\n\\t\\t</div>\\r\\n\\t\\t<CarouselThumbs page=\\"left\\" />\\r\\n\\t\\t<p style=\\"color: red; font-size:9000px\\" />\\r\\n\\t</div>\\r\\n</div>\\r\\n\\r\\n<style lang=\\"scss\\">.content {\\n  max-width: 40%;\\n}\\n\\n.page-arrow-container {\\n  width: 50px;\\n  height: 50px;\\n  position: absolute;\\n  left: -60px;\\n  bottom: 0;\\n  top: 50%;\\n  border: none;\\n  background: none;\\n}\\n.page-arrow-container .page-arrow {\\n  object-fit: cover;\\n  width: 100%;\\n}\\n\\n.flex-container {\\n  display: flex;\\n  height: 100%;\\n  justify-content: center;\\n  align-items: flex-end;\\n  flex-direction: column;\\n}\\n\\n.carousel-container {\\n  width: 50%;\\n  display: flex;\\n  position: relative;\\n}\\n\\n.carousel-image {\\n  width: 100%;\\n  height: 100%;\\n  object-fit: contain;\\n}</style>\\r\\n"],"names":[],"mappings":"AA6DmB,QAAQ,8BAAC,CAAC,AAC3B,SAAS,CAAE,GAAG,AAChB,CAAC,AAED,qBAAqB,8BAAC,CAAC,AACrB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,KAAK,CACX,MAAM,CAAE,CAAC,CACT,GAAG,CAAE,GAAG,CACR,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,AAClB,CAAC,AACD,oCAAqB,CAAC,WAAW,eAAC,CAAC,AACjC,UAAU,CAAE,KAAK,CACjB,KAAK,CAAE,IAAI,AACb,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,QAAQ,CACrB,cAAc,CAAE,MAAM,AACxB,CAAC,AAED,mBAAmB,8BAAC,CAAC,AACnB,KAAK,CAAE,GAAG,CACV,OAAO,CAAE,IAAI,CACb,QAAQ,CAAE,QAAQ,AACpB,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,OAAO,AACrB,CAAC"}`
+  map: `{"version":3,"file":"CarouselLeft.svelte","sources":["CarouselLeft.svelte"],"sourcesContent":["\uFEFF<script>\\r\\n\\timport Glide from '@glidejs/glide';\\r\\n\\timport { afterUpdate, onMount } from 'svelte';\\r\\n\\timport { currentPage } from '../../stores';\\r\\n\\timport CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';\\r\\n\\timport { images } from '../image';\\r\\n\\r\\n\\tvar glide = new Glide('div.glide', {\\r\\n\\t\\tdragThreshold: false\\r\\n\\t});\\r\\n\\tlet page;\\r\\n\\tconst setPage = currentPage.subscribe((value) => {\\r\\n\\t\\tpage = value;\\r\\n\\t});\\r\\n\\r\\n\\tonMount(() => {\\r\\n\\t\\tglide.mount();\\r\\n\\t});\\r\\n\\tafterUpdate(() => {\\r\\n\\t\\tif (glide) {\\r\\n\\t\\t\\tglide.go(\`=\${page}\`);\\r\\n\\t\\t}\\r\\n\\t});\\r\\n<\/script>\\r\\n\\r\\n<div class=\\"page\\">\\r\\n\\t<div class=\\"flex-container\\">\\r\\n\\t\\t<div class=\\"content\\">\\r\\n\\t\\t\\t<img\\r\\n\\t\\t\\t\\tsrc={'https://res.cloudinary.com/dt4xntymn/image/upload/v1630813204/titleimages/Renders_Page_Text_Left_wd8jcv.png'}\\r\\n\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t/>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div class=\\"carousel-container\\">\\r\\n\\t\\t\\t<div data-glide-dir={\`\${page}\`} class=\\"glide \\">\\r\\n\\t\\t\\t\\t<div class=\\"glide__track\\" data-glide-el=\\"track\\">\\r\\n\\t\\t\\t\\t\\t<ul class=\\"glide__slides\\">\\r\\n\\t\\t\\t\\t\\t\\t{#each images.slice(0, 17) as img, i}\\r\\n\\t\\t\\t\\t\\t\\t\\t<li class=\\"glide__slide\\">\\r\\n\\t\\t\\t\\t\\t\\t\\t\\t<img class=\\"carousel-image\\" src={img} alt=\\"\\" />\\r\\n\\t\\t\\t\\t\\t\\t\\t</li>\\r\\n\\t\\t\\t\\t\\t\\t{/each}\\r\\n\\t\\t\\t\\t\\t</ul>\\r\\n\\t\\t\\t\\t</div>\\r\\n\\t\\t\\t</div>\\r\\n\\t\\t\\t<button\\r\\n\\t\\t\\t\\ton:click={() => {\\r\\n\\t\\t\\t\\t\\tcurrentPage.update((n) => n - 1);\\r\\n\\t\\t\\t\\t}}\\r\\n\\t\\t\\t\\tclass=\\"page-arrow-container\\"\\r\\n\\t\\t\\t>\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tclass=\\"page-arrow\\"\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/>\\r\\n\\t\\t\\t</button>\\r\\n\\t\\t</div>\\r\\n\\t\\t<CarouselThumbs page=\\"left\\" />\\r\\n\\t\\t<p style=\\"color: red; font-size:9000px\\" />\\r\\n\\t</div>\\r\\n</div>\\r\\n\\r\\n<style lang=\\"scss\\">.content {\\n  max-width: 40%;\\n}\\n\\n.page-arrow-container {\\n  width: 50px;\\n  height: 50px;\\n  position: absolute;\\n  left: -60px;\\n  bottom: 0;\\n  top: 50%;\\n  border: none;\\n  background: none;\\n}\\n.page-arrow-container .page-arrow {\\n  object-fit: cover;\\n  width: 100%;\\n}\\n\\n.flex-container {\\n  display: flex;\\n  height: 100%;\\n  justify-content: center;\\n  align-items: flex-end;\\n  flex-direction: column;\\n}\\n\\n.carousel-container {\\n  width: 50%;\\n  display: flex;\\n  position: relative;\\n}\\n\\n.carousel-image {\\n  width: 100%;\\n  height: 100%;\\n  object-fit: contain;\\n}</style>\\r\\n"],"names":[],"mappings":"AA+DmB,QAAQ,8BAAC,CAAC,AAC3B,SAAS,CAAE,GAAG,AAChB,CAAC,AAED,qBAAqB,8BAAC,CAAC,AACrB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,KAAK,CACX,MAAM,CAAE,CAAC,CACT,GAAG,CAAE,GAAG,CACR,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,AAClB,CAAC,AACD,oCAAqB,CAAC,WAAW,eAAC,CAAC,AACjC,UAAU,CAAE,KAAK,CACjB,KAAK,CAAE,IAAI,AACb,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,QAAQ,CACrB,cAAc,CAAE,MAAM,AACxB,CAAC,AAED,mBAAmB,8BAAC,CAAC,AACnB,KAAK,CAAE,GAAG,CACV,OAAO,CAAE,IAAI,CACb,QAAQ,CAAE,QAAQ,AACpB,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,OAAO,AACrB,CAAC"}`
 };
 const CarouselLeft = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  new Glide("div.glide");
+  new Glide$1("div.glide", { dragThreshold: false });
   let page;
   currentPage.subscribe((value) => {
     page = value;
@@ -2175,10 +3362,10 @@ const CarouselFull = create_ssr_component(($$result, $$props, $$bindings, slots)
 var CarouselRight_svelte_svelte_type_style_lang = ".content.svelte-1v0ikbc.svelte-1v0ikbc{max-width:40%}.page-arrow-container.svelte-1v0ikbc.svelte-1v0ikbc{width:50px;height:50px;position:absolute;right:-60px;bottom:0;top:50%;border:none;background:none;transform:rotate(180deg)}.page-arrow-container.svelte-1v0ikbc .page-arrow.svelte-1v0ikbc{object-fit:cover;width:100%}.flex-container.svelte-1v0ikbc.svelte-1v0ikbc{display:flex;height:100%;justify-content:center;align-items:flex-start;flex-direction:column}.carousel-container.svelte-1v0ikbc.svelte-1v0ikbc{width:50%;display:flex;position:relative}.carousel-image.svelte-1v0ikbc.svelte-1v0ikbc{width:100%;height:100%;object-fit:contain}";
 const css$3 = {
   code: ".content.svelte-1v0ikbc.svelte-1v0ikbc{max-width:40%}.page-arrow-container.svelte-1v0ikbc.svelte-1v0ikbc{width:50px;height:50px;position:absolute;right:-60px;bottom:0;top:50%;border:none;background:none;transform:rotate(180deg)}.page-arrow-container.svelte-1v0ikbc .page-arrow.svelte-1v0ikbc{object-fit:cover;width:100%}.flex-container.svelte-1v0ikbc.svelte-1v0ikbc{display:flex;height:100%;justify-content:center;align-items:flex-start;flex-direction:column}.carousel-container.svelte-1v0ikbc.svelte-1v0ikbc{width:50%;display:flex;position:relative}.carousel-image.svelte-1v0ikbc.svelte-1v0ikbc{width:100%;height:100%;object-fit:contain}",
-  map: `{"version":3,"file":"CarouselRight.svelte","sources":["CarouselRight.svelte"],"sourcesContent":["\uFEFF<script>\\r\\n\\timport Glide from '@glidejs/glide';\\r\\n\\timport { afterUpdate, beforeUpdate, onMount } from 'svelte';\\r\\n\\timport { currentPage } from '../../stores';\\r\\n\\timport CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';\\r\\n\\timport { images } from '../image';\\r\\n\\r\\n\\tvar glide = new Glide('div.glide.right');\\r\\n\\tlet page;\\r\\n\\tcurrentPage.subscribe((value) => {\\r\\n\\t\\tpage = value;\\r\\n\\t});\\r\\n\\r\\n\\tonMount(() => {\\r\\n\\t\\tglide.mount();\\r\\n\\t});\\r\\n\\tbeforeUpdate(() => {});\\r\\n\\tafterUpdate(() => {\\r\\n\\t\\tglide.go(\`=\${page}\`);\\r\\n\\t});\\r\\n<\/script>\\r\\n\\r\\n<div class=\\"page\\">\\r\\n\\t<div class=\\"flex-container\\">\\r\\n\\t\\t<div class=\\"content\\">\\r\\n\\t\\t\\t<img\\r\\n\\t\\t\\t\\tsrc={'https://res.cloudinary.com/dt4xntymn/image/upload/v1630813204/titleimages/Renders_Page_Text_Right_odwpiy.png'}\\r\\n\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t/>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div class=\\"carousel-container\\">\\r\\n\\t\\t\\t<div data-glide-dir={\`\${page}\`} class=\\"glide right\\">\\r\\n\\t\\t\\t\\t<div class=\\"glide__track\\" data-glide-el=\\"track\\">\\r\\n\\t\\t\\t\\t\\t<ul class=\\"glide__slides\\">\\r\\n\\t\\t\\t\\t\\t\\t{#each images.slice(17, 33) as img, i}\\r\\n\\t\\t\\t\\t\\t\\t\\t<li class=\\"glide__slide\\">\\r\\n\\t\\t\\t\\t\\t\\t\\t\\t<img class=\\"carousel-image\\" src={img} alt=\\"\\" />\\r\\n\\t\\t\\t\\t\\t\\t\\t</li>\\r\\n\\t\\t\\t\\t\\t\\t{/each}\\r\\n\\t\\t\\t\\t\\t</ul>\\r\\n\\t\\t\\t\\t</div>\\r\\n\\t\\t\\t</div>\\r\\n\\t\\t\\t<button\\r\\n\\t\\t\\t\\ton:click={() => {\\r\\n\\t\\t\\t\\t\\tcurrentPage.update((n) => n + 1);\\r\\n\\t\\t\\t\\t}}\\r\\n\\t\\t\\t\\tclass=\\"page-arrow-container\\"\\r\\n\\t\\t\\t>\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tclass=\\"page-arrow\\"\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/>\\r\\n\\t\\t\\t</button>\\r\\n\\t\\t</div>\\r\\n\\t\\t<CarouselThumbs page=\\"right\\" />\\r\\n\\t</div>\\r\\n</div>\\r\\n\\r\\n<style lang=\\"scss\\">.content {\\n  max-width: 40%;\\n}\\n\\n.page-arrow-container {\\n  width: 50px;\\n  height: 50px;\\n  position: absolute;\\n  right: -60px;\\n  bottom: 0;\\n  top: 50%;\\n  border: none;\\n  background: none;\\n  transform: rotate(180deg);\\n}\\n.page-arrow-container .page-arrow {\\n  object-fit: cover;\\n  width: 100%;\\n}\\n\\n.flex-container {\\n  display: flex;\\n  height: 100%;\\n  justify-content: center;\\n  align-items: flex-start;\\n  flex-direction: column;\\n}\\n\\n.carousel-container {\\n  width: 50%;\\n  display: flex;\\n  position: relative;\\n}\\n\\n.carousel-image {\\n  width: 100%;\\n  height: 100%;\\n  object-fit: contain;\\n}</style>\\r\\n"],"names":[],"mappings":"AA2DmB,QAAQ,8BAAC,CAAC,AAC3B,SAAS,CAAE,GAAG,AAChB,CAAC,AAED,qBAAqB,8BAAC,CAAC,AACrB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,CAAC,CACT,GAAG,CAAE,GAAG,CACR,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,CAChB,SAAS,CAAE,OAAO,MAAM,CAAC,AAC3B,CAAC,AACD,oCAAqB,CAAC,WAAW,eAAC,CAAC,AACjC,UAAU,CAAE,KAAK,CACjB,KAAK,CAAE,IAAI,AACb,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,UAAU,CACvB,cAAc,CAAE,MAAM,AACxB,CAAC,AAED,mBAAmB,8BAAC,CAAC,AACnB,KAAK,CAAE,GAAG,CACV,OAAO,CAAE,IAAI,CACb,QAAQ,CAAE,QAAQ,AACpB,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,OAAO,AACrB,CAAC"}`
+  map: `{"version":3,"file":"CarouselRight.svelte","sources":["CarouselRight.svelte"],"sourcesContent":["\uFEFF<script>\\r\\n\\timport Glide from '@glidejs/glide';\\r\\n\\timport { afterUpdate, beforeUpdate, onMount } from 'svelte';\\r\\n\\timport { currentPage } from '../../stores';\\r\\n\\timport CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';\\r\\n\\timport { images } from '../image';\\r\\n\\r\\n\\tvar glide = new Glide('div.glide.right', {\\r\\n\\t\\tdragThreshold: false\\r\\n\\t});\\r\\n\\tlet page;\\r\\n\\tcurrentPage.subscribe((value) => {\\r\\n\\t\\tpage = value;\\r\\n\\t});\\r\\n\\r\\n\\tonMount(() => {\\r\\n\\t\\tglide.mount();\\r\\n\\t});\\r\\n\\tbeforeUpdate(() => {});\\r\\n\\tafterUpdate(() => {\\r\\n\\t\\tglide.go(\`=\${page}\`);\\r\\n\\t});\\r\\n<\/script>\\r\\n\\r\\n<div class=\\"page\\">\\r\\n\\t<div class=\\"flex-container\\">\\r\\n\\t\\t<div class=\\"content\\">\\r\\n\\t\\t\\t<img\\r\\n\\t\\t\\t\\tsrc={'https://res.cloudinary.com/dt4xntymn/image/upload/v1630813204/titleimages/Renders_Page_Text_Right_odwpiy.png'}\\r\\n\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t/>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div class=\\"carousel-container\\">\\r\\n\\t\\t\\t<div data-glide-dir={\`\${page}\`} class=\\"glide right\\">\\r\\n\\t\\t\\t\\t<div class=\\"glide__track\\" data-glide-el=\\"track\\">\\r\\n\\t\\t\\t\\t\\t<ul class=\\"glide__slides\\">\\r\\n\\t\\t\\t\\t\\t\\t{#each images.slice(17, 33) as img, i}\\r\\n\\t\\t\\t\\t\\t\\t\\t<li class=\\"glide__slide\\">\\r\\n\\t\\t\\t\\t\\t\\t\\t\\t<img class=\\"carousel-image\\" src={img} alt=\\"\\" />\\r\\n\\t\\t\\t\\t\\t\\t\\t</li>\\r\\n\\t\\t\\t\\t\\t\\t{/each}\\r\\n\\t\\t\\t\\t\\t</ul>\\r\\n\\t\\t\\t\\t</div>\\r\\n\\t\\t\\t</div>\\r\\n\\t\\t\\t<button\\r\\n\\t\\t\\t\\ton:click={() => {\\r\\n\\t\\t\\t\\t\\tcurrentPage.update((n) => n + 1);\\r\\n\\t\\t\\t\\t}}\\r\\n\\t\\t\\t\\tclass=\\"page-arrow-container\\"\\r\\n\\t\\t\\t>\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tclass=\\"page-arrow\\"\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/>\\r\\n\\t\\t\\t</button>\\r\\n\\t\\t</div>\\r\\n\\t\\t<CarouselThumbs page=\\"right\\" />\\r\\n\\t</div>\\r\\n</div>\\r\\n\\r\\n<style lang=\\"scss\\">.content {\\n  max-width: 40%;\\n}\\n\\n.page-arrow-container {\\n  width: 50px;\\n  height: 50px;\\n  position: absolute;\\n  right: -60px;\\n  bottom: 0;\\n  top: 50%;\\n  border: none;\\n  background: none;\\n  transform: rotate(180deg);\\n}\\n.page-arrow-container .page-arrow {\\n  object-fit: cover;\\n  width: 100%;\\n}\\n\\n.flex-container {\\n  display: flex;\\n  height: 100%;\\n  justify-content: center;\\n  align-items: flex-start;\\n  flex-direction: column;\\n}\\n\\n.carousel-container {\\n  width: 50%;\\n  display: flex;\\n  position: relative;\\n}\\n\\n.carousel-image {\\n  width: 100%;\\n  height: 100%;\\n  object-fit: contain;\\n}</style>\\r\\n"],"names":[],"mappings":"AA6DmB,QAAQ,8BAAC,CAAC,AAC3B,SAAS,CAAE,GAAG,AAChB,CAAC,AAED,qBAAqB,8BAAC,CAAC,AACrB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,CAAC,CACT,GAAG,CAAE,GAAG,CACR,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,CAChB,SAAS,CAAE,OAAO,MAAM,CAAC,AAC3B,CAAC,AACD,oCAAqB,CAAC,WAAW,eAAC,CAAC,AACjC,UAAU,CAAE,KAAK,CACjB,KAAK,CAAE,IAAI,AACb,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,UAAU,CACvB,cAAc,CAAE,MAAM,AACxB,CAAC,AAED,mBAAmB,8BAAC,CAAC,AACnB,KAAK,CAAE,GAAG,CACV,OAAO,CAAE,IAAI,CACb,QAAQ,CAAE,QAAQ,AACpB,CAAC,AAED,eAAe,8BAAC,CAAC,AACf,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,OAAO,AACrB,CAAC"}`
 };
 const CarouselRight = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  new Glide("div.glide.right");
+  new Glide$1("div.glide.right", { dragThreshold: false });
   let page;
   currentPage.subscribe((value) => {
     page = value;
