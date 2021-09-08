@@ -16,7 +16,7 @@
 	<Gallery />
 	<ImagePage index={3} />
 
-	<TextPage index={4} bgColor="#a4632e" />
+	<TextPage index={4} />
 	<CarouselFull />
 	<CarouselRight {carouselPage} page="right" />
 	<ImagePage index={1} />

@@ -26,7 +26,7 @@
   <ImagePage name="malibu" index={0} />
   <TextPage name="discover" bgColor="#a4632e" index={1} />
   <CarouselLeft name="renders" {carouselPage} page="left" />
-  <TextPage name="floorplans" index={3} />
+  <TextPage name="floorplans" bgColor="#a4632e" index={3} />
   <ImagePage name="equestrian" index={2} />
   <TextPage name="video render" bgColor="#a4632e" index={5} />
   <GalleryPreview name="behind the scenes" />
