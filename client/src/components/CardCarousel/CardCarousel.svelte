@@ -27,6 +27,7 @@
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630888753/floorPlansResized/SITE_PLAN__33340_Mullholland_Hwy_20200810_mt2t3r.jpg'
 	];
 	onMount(() => {
+		const glide = new Glide(carousel);
 		glide.mount();
 	});
 </script>
