@@ -1,1 +1,1 @@
- git add . && git commit -m "movied /api to root" && git push origin main
+ git add . && git commit -m "netlify deploy" && git push origin main

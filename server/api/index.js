@@ -16,3 +16,4 @@ app.use(express.static(path.join(__dirname, "./build"), {}));
 app.get("/test", (req, res) => {
   res.json("testing");
 });
+module.exports.handler = serverless(app);

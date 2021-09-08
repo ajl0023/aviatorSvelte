@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const serverless = require("serverless-http");
 
 // or with callback
 
@@ -16,3 +17,4 @@ app.use(express.static(path.join(__dirname, "./build"), {}));
 app.get("/test", (req, res) => {
   res.json("testing");
 });
+module.exports.handler = serverless(app);
