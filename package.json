@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/ajl0023/Maliview-1-sveltekit/issues"
   },
-  "homepage": "https://github.com/ajl0023/Maliview-1-sveltekit#readme"
+  "homepage": "https://github.com/ajl0023/Maliview-1-sveltekit#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "netlify-lambda": "^2.0.14",
+    "nodemon": "^2.0.12",
+    "serverless-http": "^2.7.0"
+  }
 }
