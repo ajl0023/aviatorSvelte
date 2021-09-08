@@ -1,1 +1,1 @@
- git add . && git commit -m "netlify deploy" && git push origin main
+ git add . && git commit -m "netlify config" && git push origin main

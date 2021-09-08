@@ -1,0 +1,20 @@
+{
+  "name": "template1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "netlify-lambda build express",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajl0023/Maliview-1-sveltekit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajl0023/Maliview-1-sveltekit/issues"
+  },
+  "homepage": "https://github.com/ajl0023/Maliview-1-sveltekit#readme"
+}
