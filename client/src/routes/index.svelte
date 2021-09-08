@@ -6,8 +6,13 @@
 	import ScrollContainer from '../components/ScrollContainer/ScrollContainer.svelte';
 	import { browser } from '$app/env';
 	import '../global.scss';
-	import '../bulma.prefixed.css';
 
+	import { lazyLoadInstance } from '../lazy.js';
+
+	import '../bulma.prefixed.css';
+	if (browser) {
+		lazyLoadInstance();
+	}
 	let windowThreshHold = false;
 	function handleResponsiveResize() {
 		if (window.innerWidth <= 650) {

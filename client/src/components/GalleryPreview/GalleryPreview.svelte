@@ -1,29 +1,28 @@
 ﻿<script>
-  import { highResBts } from "../../pageContent";
-  import { galleryImg } from "../../stores";
+	import { highResBts } from '../../pageContent';
+	import { galleryImg } from '../../stores';
 
+	let index;
 
-  let index;
-
-  galleryImg.subscribe((val) => {
-    index = val;
-  });
+	galleryImg.subscribe((val) => {
+		index = val;
+	});
 </script>
 
 <div class="page">
-  <div class="image-container">
-    <img src={highResBts[index]} alt="" />
-  </div>
+	<div class="image-container">
+		<img class="lazy" data-src={highResBts[index]} alt="" />
+	</div>
 </div>
 
 <style lang="scss">
-  .image-container {
-    height: 100%;
-    padding-right: 5px;
-    img {
-      height: 100%;
-      object-fit: cover;
-      width: 100%;
-    }
-  }
+	.image-container {
+		height: 100%;
+		padding-right: 5px;
+		img {
+			height: 100%;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
 </style>

@@ -37,7 +37,7 @@
 					<ul class="glide__slides">
 						{#each images.slice(0, 17) as img, i}
 							<li class="glide__slide">
-								<img class="carousel-image" src={img} alt="" />
+								<img class="carousel-image lazy" data-src={img} alt="" />
 							</li>
 						{/each}
 					</ul>
@@ -66,13 +66,16 @@
 		max-width: 40%;
 	}
 	.page-arrow-container {
-		width: 50px;
-		height: 50px;
+		width: 20px;
+		height: 20px;
 		position: absolute;
 		left: -60px;
 		bottom: 0;
 		top: 50%;
+		border-radius: 50%;
+		background-color: white;
 		border: none;
+		overflow: hidden;
 		background: none;
 		.page-arrow {
 			object-fit: cover;

@@ -1,9 +1,12 @@
 ﻿<script>
-	import Glide, { Swipe } from '@glidejs/glide/dist/glide.modular.esm';
-	import { onMount } from 'svelte';
+	import Glide from '@glidejs/glide';
+	import { lazyLoadInstance } from '../../lazy.js';
+	import { afterUpdate, onMount } from 'svelte';
 	import { navToLink, textPages } from '../../pageContent';
 
 	let carousel;
+	let lazyImage;
+	let firstImage;
 	export let index;
 	export let page;
 	const images = [
@@ -27,20 +30,41 @@
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630888753/floorPlansResized/SITE_PLAN__33340_Mullholland_Hwy_20200810_mt2t3r.jpg'
 	];
 	onMount(() => {
+		const firstChild = lazyImage.firstElementChild.getElementsByTagName('img')[0];
+
 		const glide = new Glide(carousel);
+
 		glide.mount();
+
+		var intersectionObserver = new IntersectionObserver(function (entries) {
+			// If intersectionRatio is 0, the target is out of view
+			// and we do not need to do anything.
+
+			if (entries[0].intersectionRatio <= 0) return;
+			firstChild.src = page.title === 'renders' ? images[0] : floorplans[0];
+			intersectionObserver.disconnect();
+		});
+		// start observing
+
+		intersectionObserver.observe(lazyImage);
 	});
+	afterUpdate(() => {});
 </script>
 
-<div id={navToLink[index + 1]} class="bu-card card-container">
-	<div bind:this={carousel} class="carousel-container">
-		<div class="glide">
+<div bind:this={lazyImage} id={navToLink[index + 1]} class="bu-card card-container">
+	<div class="carousel-container">
+		<div bind:this={carousel} class="glide">
 			<div class="glide__track" data-glide-el="track">
 				<ul class="glide__slides">
 					{#each page.title === 'renders' ? images : floorplans as img, i}
 						<li class="glide__slide">
 							<div class="glide-image-container">
-								<img class="carousel-image" src={img} alt="" />
+								<img
+									loading={i !== 0 && 'lazy'}
+									class="carousel-image lazy"
+									src={i !== 0 && img}
+									alt=""
+								/>
 							</div>
 						</li>
 					{/each}
@@ -142,5 +166,8 @@
 	.arrow-right {
 		transform: rotate(180deg);
 		right: 0;
+	}
+	.carousel-image {
+		object-fit: cover;
 	}
 </style>
