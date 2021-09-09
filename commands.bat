@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "adding headers.txt" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "treeshake bulma" && git push origin main
