@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "changed text content" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "lazy loading fixes" && git push origin main
