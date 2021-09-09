@@ -5,7 +5,6 @@
 	import { browser } from '$app/env';
 	import '../global.scss';
 
-
 	import '../bulma.prefixed.css';
 	import ScrollContainer from '../components/ScrollContainer/ScrollContainer.svelte';
 	import CardContainer from '../components/CardContainer/CardContainer.svelte';
@@ -34,12 +33,11 @@
 </script>
 
 <div>
-	<Navbar />
-	{#if !windowThreshHold}
-		<ScrollContainer />
-	{:else}
-		<CardContainer />
-	{/if}
+	<!-- <Navbar /> -->
+
+	<ScrollContainer />
+
+	<!-- <CardContainer /> -->
 
 	<Modal />
 </div>
