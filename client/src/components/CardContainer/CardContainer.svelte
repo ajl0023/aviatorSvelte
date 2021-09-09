@@ -60,8 +60,8 @@
 			{:else}
 				<CardCarousel page={card} index={i} />
 			{/if}
-		{/each}
-		<CardCredits /> -->
+		{/each} -->
+		<CardCredits />
 	</div>
 </div>
 

@@ -74,7 +74,7 @@
 					</figure>
 				</div>
 			{/if}
-			<img l class="main-image" src={images[index] && images[index].url} alt="" />
+			<img class="main-image" src={images[index] && images[index].url} alt="" />
 		</figure>
 	</div>
 	<div class="card-content bu-card-content">

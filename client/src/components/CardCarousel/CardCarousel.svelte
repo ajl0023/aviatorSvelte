@@ -3,10 +3,11 @@
 	import { lazyLoadInstance } from '../../lazy.js';
 	import { afterUpdate, onMount } from 'svelte';
 	import { navToLink, textPages } from '../../pageContent';
-
+	import Arrow from '../Card/Arrow.svelte';
 	let carousel;
 	let lazyImage;
 	let firstImage;
+	let showMore = false;
 	export let index;
 	export let page;
 	const images = [
@@ -101,12 +102,26 @@
 				</h5>
 			{/if}
 		</div>
-		<div class="content bu-is-clipped content font-white">
+		<div class="content bu-is-clipped content font-white {showMore ? 'show-more' : ''}">
 			{#if textPages[index]}
 				{#each textPages[index].paragraphs as p}
 					<p>{p}</p>
 				{/each}
 			{/if}
+		</div>
+		<br />
+		<div
+			on:click={() => {
+				showMore = !showMore;
+			}}
+			class="bu-level bu-is-mobile"
+		>
+			<div class="bu-level-left">
+				<p class="bu-level-left bu-level-item">Read More</p>
+				<span class="bu-level-left bu-level-item bu-icon bu-is-small">
+					<Arrow {showMore} />
+				</span>
+			</div>
 		</div>
 	</div>
 </div>
@@ -169,5 +184,9 @@
 	}
 	.carousel-image {
 		object-fit: cover;
+	}
+	.show-more {
+		display: block;
+		max-height: 100%;
 	}
 </style>
