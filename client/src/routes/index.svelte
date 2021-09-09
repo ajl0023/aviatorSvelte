@@ -5,44 +5,18 @@
 	import { browser } from '$app/env';
 	import '../global.scss';
 
-	import { lazyLoadInstance } from '../lazy.js';
+
 
 	import '../bulma.prefixed.css';
-	if (browser) {
-		lazyLoadInstance();
-	}
+	import ScrollContainer from '../components/ScrollContainer/ScrollContainer.svelte';
+	import CardContainer from '../components/CardContainer/CardContainer.svelte';
 
 	let windowThreshHold = false;
-	let CardContainer;
-	let ScrollContainer;
+
 	function handleResponsiveResize() {
 		if (window.innerWidth <= 650) {
-			if (!CardContainer) {
-				import('../components/CardContainer/CardContainer.svelte')
-					.then((module) => {
-						return module.default;
-					})
-					.then((comp) => {
-						CardContainer = comp;
-					});
-			}
 			windowThreshHold = true;
-
-			return;
 		} else {
-			if (!ScrollContainer) {
-				
-				ScrollContainer = 'loading';
-				import('../components/ScrollContainer/ScrollContainer.svelte')
-					.then((module) => {
-						return module.default;
-					})
-					.then((comp) => {
-						ScrollContainer = comp;
-					});
-				return;
-			}
-
 			windowThreshHold = false;
 		}
 	}
@@ -62,11 +36,12 @@
 
 <div>
 	<Navbar />
-	{#if ScrollContainer && ScrollContainer !== 'loading'}
-		<svelte:component this={ScrollContainer} />
-	{/if}{#if CardContainer}
-		<svelte:component this={CardContainer} />
+	{#if !windowThreshHold}
+		<ScrollContainer />
+	{:else}
+		<CardContainer />
 	{/if}
+
 	<Modal />
 </div>
 

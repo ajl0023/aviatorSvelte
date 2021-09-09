@@ -22,9 +22,9 @@ export function init(settings = default_settings) {
 		amp: false,
 		dev: false,
 		entry: {
-			file: assets + "/_app/start-dfb585a9.js",
+			file: assets + "/_app/start-8151849b.js",
 			css: [assets + "/_app/assets/start-61d1577b.css"],
-			js: [assets + "/_app/start-dfb585a9.js",assets + "/_app/chunks/vendor-f6f84009.js",assets + "/_app/chunks/preload-helper-ec9aa979.js"]
+			js: [assets + "/_app/start-8151849b.js",assets + "/_app/chunks/vendor-e7649f07.js"]
 		},
 		fetched: undefined,
 		floc: false,
@@ -83,7 +83,7 @@ const module_lookup = {
 	".svelte-kit/build/components/layout.svelte": () => import("./components\\layout.svelte"),".svelte-kit/build/components/error.svelte": () => import("./components\\error.svelte"),"src/routes/index.svelte": () => import("..\\..\\src\\routes\\index.svelte")
 };
 
-const metadata_lookup = {".svelte-kit/build/components/layout.svelte":{"entry":"layout.svelte-b80c6bf5.js","css":[],"js":["layout.svelte-b80c6bf5.js","chunks/vendor-f6f84009.js"],"styles":[]},".svelte-kit/build/components/error.svelte":{"entry":"error.svelte-dd68dba2.js","css":[],"js":["error.svelte-dd68dba2.js","chunks/vendor-f6f84009.js"],"styles":[]},"src/routes/index.svelte":{"entry":"pages/index.svelte-ebf42336.js","css":["assets/index-c91d9f15.css"],"js":["pages/index.svelte-ebf42336.js","chunks/preload-helper-ec9aa979.js","chunks/vendor-f6f84009.js","chunks/index-edea710f.js"],"styles":[]}};
+const metadata_lookup = {".svelte-kit/build/components/layout.svelte":{"entry":"layout.svelte-00d2ab9e.js","css":[],"js":["layout.svelte-00d2ab9e.js","chunks/vendor-e7649f07.js"],"styles":[]},".svelte-kit/build/components/error.svelte":{"entry":"error.svelte-d864e9ff.js","css":[],"js":["error.svelte-d864e9ff.js","chunks/vendor-e7649f07.js"],"styles":[]},"src/routes/index.svelte":{"entry":"pages/index.svelte-a5e4c119.js","css":["assets/pages/index.svelte-54455209.css"],"js":["pages/index.svelte-a5e4c119.js","chunks/vendor-e7649f07.js"],"styles":[]}};
 
 async function load_component(file) {
 	const { entry, css, js, styles } = metadata_lookup[file];
