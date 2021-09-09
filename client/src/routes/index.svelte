@@ -33,11 +33,11 @@
 </script>
 
 <div>
-	<!-- <Navbar /> -->
+	<Navbar />
 
 	<ScrollContainer />
 
-	<!-- <CardContainer /> -->
+	<CardContainer />
 
 	<Modal />
 </div>
