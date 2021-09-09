@@ -55,6 +55,9 @@
 		padding: 20px;
 		top: 0;
 	}
+	.glide__slides {
+		height: 100%;
+	}
 	.glide__arrow {
 		border: none;
 		background-color: transparent;
