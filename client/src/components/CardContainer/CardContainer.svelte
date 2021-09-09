@@ -58,7 +58,7 @@
 			{:else if cardLayout[i].type === 'gallery'}
 				<CardGallery />
 			{:else}
-				<!-- <CardCarousel page={card} index={i} /> -->
+				<CardCarousel page={card} index={i} />
 			{/if}
 		{/each}
 		<CardCredits />

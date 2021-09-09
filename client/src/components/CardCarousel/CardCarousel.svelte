@@ -4,6 +4,7 @@
 	import { afterUpdate, onMount } from 'svelte';
 	import { navToLink, textPages } from '../../pageContent';
 	import Arrow from '../Card/Arrow.svelte';
+	import { browser } from '$app/env';
 	let carousel;
 	let lazyImage;
 	let firstImage;
@@ -31,25 +32,26 @@
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630888753/floorPlansResized/SITE_PLAN__33340_Mullholland_Hwy_20200810_mt2t3r.jpg'
 	];
 	onMount(() => {
-		const firstChild = lazyImage.firstElementChild.getElementsByTagName('img')[0];
+		if (browser) {
+			const firstChild = lazyImage.firstElementChild.getElementsByTagName('img')[0];
 
-		const glide = new Glide(carousel);
+			const glide = new Glide(carousel);
 
-		glide.mount();
+			glide.mount();
 
-		var intersectionObserver = new IntersectionObserver(function (entries) {
-			// If intersectionRatio is 0, the target is out of view
-			// and we do not need to do anything.
+			var intersectionObserver = new IntersectionObserver(function (entries) {
+				// If intersectionRatio is 0, the target is out of view
+				// and we do not need to do anything.
 
-			if (entries[0].intersectionRatio <= 0) return;
-			firstChild.src = page.title === 'renders' ? images[0] : floorplans[0];
-			intersectionObserver.disconnect();
-		});
-		// start observing
+				if (entries[0].intersectionRatio <= 0) return;
+				firstChild.src = page.title === 'renders' ? images[0] : floorplans[0];
+				intersectionObserver.disconnect();
+			});
+			// start observing
 
-		intersectionObserver.observe(lazyImage);
+			intersectionObserver.observe(lazyImage);
+		}
 	});
-	afterUpdate(() => {});
 </script>
 
 <div bind:this={lazyImage} id={navToLink[index + 1]} class="bu-card card-container">
@@ -61,9 +63,9 @@
 						<li class="glide__slide">
 							<div class="glide-image-container">
 								<img
-									loading={i !== 0 && 'lazy'}
+									loading={i !== 0 ? 'lazy' : 'eager'}
 									class="carousel-image lazy"
-									src={i !== 0 && img}
+									src={i !== 0 ? img : ''}
 									alt=""
 								/>
 							</div>
