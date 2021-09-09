@@ -17,7 +17,6 @@
 		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_2_mqzixc.jpg',
 		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_3_wwredc.jpg'
 	];
-	console.log(images.length);
 </script>
 
 <div>

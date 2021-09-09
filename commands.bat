@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "code splitting/lazy loading/css fixes" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "adding headers.txt" && git push origin main

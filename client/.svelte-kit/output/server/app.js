@@ -1499,9 +1499,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-b7413aad.js",
+      file: assets + "/_app/start-dfb585a9.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-b7413aad.js", assets + "/_app/chunks/vendor-f6f84009.js", assets + "/_app/chunks/preload-helper-ec9aa979.js"]
+      js: [assets + "/_app/start-dfb585a9.js", assets + "/_app/chunks/vendor-f6f84009.js", assets + "/_app/chunks/preload-helper-ec9aa979.js"]
     },
     fetched: void 0,
     floc: false,
@@ -1560,7 +1560,7 @@ const module_lookup = {
     return index;
   })
 };
-const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-b80c6bf5.js", "css": [], "js": ["layout.svelte-b80c6bf5.js", "chunks/vendor-f6f84009.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-dd68dba2.js", "css": [], "js": ["error.svelte-dd68dba2.js", "chunks/vendor-f6f84009.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-c0deebf3.js", "css": ["assets/index-c91d9f15.css"], "js": ["pages/index.svelte-c0deebf3.js", "chunks/preload-helper-ec9aa979.js", "chunks/vendor-f6f84009.js", "chunks/index-e2f18cc9.js"], "styles": [] } };
+const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-b80c6bf5.js", "css": [], "js": ["layout.svelte-b80c6bf5.js", "chunks/vendor-f6f84009.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-dd68dba2.js", "css": [], "js": ["error.svelte-dd68dba2.js", "chunks/vendor-f6f84009.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-ebf42336.js", "css": ["assets/index-c91d9f15.css"], "js": ["pages/index.svelte-ebf42336.js", "chunks/preload-helper-ec9aa979.js", "chunks/vendor-f6f84009.js", "chunks/index-edea710f.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
