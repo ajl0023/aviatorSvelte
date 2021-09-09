@@ -1500,9 +1500,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-e139481b.js",
+      file: assets + "/_app/start-07c0dfa4.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-e139481b.js", assets + "/_app/chunks/vendor-e7649f07.js"]
+      js: [assets + "/_app/start-07c0dfa4.js", assets + "/_app/chunks/vendor-e7649f07.js"]
     },
     fetched: void 0,
     floc: false,
@@ -1561,7 +1561,7 @@ const module_lookup = {
     return index;
   })
 };
-const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-00d2ab9e.js", "css": [], "js": ["layout.svelte-00d2ab9e.js", "chunks/vendor-e7649f07.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-d864e9ff.js", "css": [], "js": ["error.svelte-d864e9ff.js", "chunks/vendor-e7649f07.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-050e5b36.js", "css": ["assets/pages/index.svelte-b567bdc4.css"], "js": ["pages/index.svelte-050e5b36.js", "chunks/vendor-e7649f07.js"], "styles": [] } };
+const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-00d2ab9e.js", "css": [], "js": ["layout.svelte-00d2ab9e.js", "chunks/vendor-e7649f07.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-d864e9ff.js", "css": [], "js": ["error.svelte-d864e9ff.js", "chunks/vendor-e7649f07.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-9325c317.js", "css": ["assets/pages/index.svelte-5d939491.css"], "js": ["pages/index.svelte-9325c317.js", "chunks/vendor-e7649f07.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -1750,9 +1750,7 @@ const textPages = [
   {
     header: "malibu",
     paragraphs: [
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, sunt, assumenda expedita eaque saepe distinctio consequuntur quam vel odit fugiat, ut doloremque nemo voluptate numquam cum nobis facere voluptatibus ad!",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, sunt, assumenda expedita eaque saepe distinctio consequuntur quam vel odit fugiat, ut doloremque nemo voluptate numquam cum nobis facere voluptatibus ad!",
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, sunt, assumenda expedita eaque saepe distinctio consequuntur quam vel odit fugiat, ut doloremque nemo voluptate numquam cum nobis facere voluptatibus ad!"
+      "Stretching for more than 30 miles along the coastline, Malibu has achieved almost mythological status among Californian beach towns. Hollywood stars and top athletes live in oceanfront homes here and enjoy front-row seats for surfing and unforgettable sunsets."
     ]
   },
   {
@@ -1765,21 +1763,18 @@ const textPages = [
   },
   {
     header: "renders",
-    paragraphs: [
-      "Browse for interior and exterior renderse of Maliview Estates"
-    ]
+    paragraphs: ["Browse for interior and exterior renderse of Maliview Estates"]
   },
   {
     header: "floorplans",
     paragraphs: [
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel vero illum omnis? Non similique cumque ducimus, molestias minima officiis odit alias dignissimos beatae natus ab itaque, soluta eligendi, omnis laudantium?"
+      "Live the dreams in the hills of Malibu when this stunning Tuscany modern architectur- al home and equestrian property is completed. Comprising a spacious four acres, this estate compound will have a matching architectural style horse barn with stalls. There is a separate entrance to the barn with plenty of additional parking for a horse trailer and RV parking. There are spectacular views of the Santa Monica Mountains with horse trails throughout leading to stunning countryside and ocean views."
     ]
   },
   {
     header: "equestrian",
     paragraphs: [
       "This equestrian property will present a barn with stalls on a lower portion of a four-acre space with its own separate driveway and plenty of room for the horses, other equestrians, or your trailer. You will have access to trails directly from the property and a creek of your own. You can call this paradise your home!",
-      "(More Equestrian Info Here)",
       "As much as it feels remote, you will be only 15 minutes away from PCH and less than 20 minutes away from Westlake Village. Great school district with plenty of activities. Come by to see this beautifully planned home in the making for yourself."
     ]
   },
@@ -1795,7 +1790,7 @@ const textPages = [
   },
   {
     header: "drone footage",
-    paragraphs: ["take a view from above of the lot and build progress"]
+    paragraphs: ["Take a view from above of the lot and build progress"]
   }
 ];
 const creditsContent = [
@@ -2151,10 +2146,10 @@ const LeftContainer = create_ssr_component(($$result, $$props, $$bindings, slots
   ${validate_component(Credits, "Credits").$$render($$result, { page: "left" }, {}, {})}
 </div>`;
 });
-var CarouselFull_svelte_svelte_type_style_lang = ".glide__arrows.svelte-ystzhb.svelte-ystzhb{position:absolute;z-index:121233;width:100%;transform:translateY(50vh);display:flex;justify-content:space-between;padding:20px;top:0}.glide__slides.svelte-ystzhb.svelte-ystzhb{height:100%}.glide__arrow.svelte-ystzhb.svelte-ystzhb{border:none;background-color:transparent;width:50px;height:50px}.glide__arrow--right.svelte-ystzhb.svelte-ystzhb{transform:rotate(180deg);right:60px}.glide.svelte-ystzhb.svelte-ystzhb{height:100%}.glide.svelte-ystzhb .glide__track.svelte-ystzhb{height:100%}.glide.svelte-ystzhb .glide__track img.svelte-ystzhb{height:100%}";
+var CarouselFull_svelte_svelte_type_style_lang = ".glide__arrows.svelte-w6oslu.svelte-w6oslu{position:absolute;z-index:121233;width:100%;transform:translateY(50vh);display:flex;justify-content:space-between;padding:20px;top:0}.glide__slides.svelte-w6oslu.svelte-w6oslu{height:100%;display:flex;justify-content:center}.glide__arrow.svelte-w6oslu.svelte-w6oslu{border:none;background-color:transparent;width:50px;height:50px}.glide__arrow--right.svelte-w6oslu.svelte-w6oslu{transform:rotate(180deg);right:60px}.glide__slide.svelte-w6oslu.svelte-w6oslu{display:flex;justify-content:center}.glide.svelte-w6oslu.svelte-w6oslu{height:100%}.glide.svelte-w6oslu .glide__track.svelte-w6oslu{height:100%}.glide.svelte-w6oslu .glide__track img.svelte-w6oslu{width:80%;object-fit:cover;height:100%}";
 const css$4 = {
-  code: ".glide__arrows.svelte-ystzhb.svelte-ystzhb{position:absolute;z-index:121233;width:100%;transform:translateY(50vh);display:flex;justify-content:space-between;padding:20px;top:0}.glide__slides.svelte-ystzhb.svelte-ystzhb{height:100%}.glide__arrow.svelte-ystzhb.svelte-ystzhb{border:none;background-color:transparent;width:50px;height:50px}.glide__arrow--right.svelte-ystzhb.svelte-ystzhb{transform:rotate(180deg);right:60px}.glide.svelte-ystzhb.svelte-ystzhb{height:100%}.glide.svelte-ystzhb .glide__track.svelte-ystzhb{height:100%}.glide.svelte-ystzhb .glide__track img.svelte-ystzhb{height:100%}",
-  map: `{"version":3,"file":"CarouselFull.svelte","sources":["CarouselFull.svelte"],"sourcesContent":["\uFEFF<script>\\r\\n\\timport Glide from '@glidejs/glide';\\r\\n\\timport { onMount } from 'svelte';\\r\\n\\r\\n\\tlet glider;\\r\\n\\tconst images = [\\r\\n\\t\\t'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/SITE_PLAN__33340_Mullholland_Hwy_20200810_ix5bw3.jpg',\\r\\n\\t\\t'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/2ND_FLOOR__33340_Mullholland_Hwy_20200810_gbaey8.jpg',\\r\\n\\t\\t'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/1ST_FLOOR__33340_Mullholland_Hwy_20200810_niansx.jpg'\\r\\n\\t];\\r\\n\\r\\n\\tonMount(() => {\\r\\n\\t\\tconst glide = new Glide(glider);\\r\\n\\t\\tglide.mount();\\r\\n\\t});\\r\\n<\/script>\\r\\n\\r\\n<div class=\\"page\\">\\r\\n\\t<div bind:this={glider} class=\\"glide\\">\\r\\n\\t\\t<div class=\\"glide__track\\" data-glide-el=\\"track\\">\\r\\n\\t\\t\\t<ul class=\\"glide__slides\\">\\r\\n\\t\\t\\t\\t{#each images as img, i}\\r\\n\\t\\t\\t\\t\\t<li class=\\"glide__slide\\">\\r\\n\\t\\t\\t\\t\\t\\t<img class=\\"carousel-image\\" src={img} alt=\\"\\" />\\r\\n\\t\\t\\t\\t\\t</li>\\r\\n\\t\\t\\t\\t{/each}\\r\\n\\t\\t\\t</ul>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div class=\\"glide__arrows\\" data-glide-el=\\"controls\\">\\r\\n\\t\\t\\t<button class=\\"glide__arrow glide__arrow--left\\" data-glide-dir=\\"<\\">\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/></button\\r\\n\\t\\t\\t>\\r\\n\\t\\t\\t<button class=\\"glide__arrow glide__arrow--right\\" data-glide-dir=\\">\\">\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/>\\r\\n\\t\\t\\t</button>\\r\\n\\t\\t</div>\\r\\n\\t</div>\\r\\n</div>\\r\\n\\r\\n<style lang=\\"scss\\">.glide__arrows {\\n  position: absolute;\\n  z-index: 121233;\\n  width: 100%;\\n  transform: translateY(50vh);\\n  display: flex;\\n  justify-content: space-between;\\n  padding: 20px;\\n  top: 0;\\n}\\n\\n.glide__slides {\\n  height: 100%;\\n}\\n\\n.glide__arrow {\\n  border: none;\\n  background-color: transparent;\\n  width: 50px;\\n  height: 50px;\\n}\\n\\n.glide__arrow--right {\\n  transform: rotate(180deg);\\n  right: 60px;\\n}\\n\\n.glide {\\n  height: 100%;\\n}\\n.glide .glide__track {\\n  height: 100%;\\n}\\n.glide .glide__track img {\\n  height: 100%;\\n}</style>\\r\\n"],"names":[],"mappings":"AA6CmB,cAAc,4BAAC,CAAC,AACjC,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,MAAM,CACf,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,WAAW,IAAI,CAAC,CAC3B,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,OAAO,CAAE,IAAI,CACb,GAAG,CAAE,CAAC,AACR,CAAC,AAED,cAAc,4BAAC,CAAC,AACd,MAAM,CAAE,IAAI,AACd,CAAC,AAED,aAAa,4BAAC,CAAC,AACb,MAAM,CAAE,IAAI,CACZ,gBAAgB,CAAE,WAAW,CAC7B,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACd,CAAC,AAED,oBAAoB,4BAAC,CAAC,AACpB,SAAS,CAAE,OAAO,MAAM,CAAC,CACzB,KAAK,CAAE,IAAI,AACb,CAAC,AAED,MAAM,4BAAC,CAAC,AACN,MAAM,CAAE,IAAI,AACd,CAAC,AACD,oBAAM,CAAC,aAAa,cAAC,CAAC,AACpB,MAAM,CAAE,IAAI,AACd,CAAC,AACD,oBAAM,CAAC,aAAa,CAAC,GAAG,cAAC,CAAC,AACxB,MAAM,CAAE,IAAI,AACd,CAAC"}`
+  code: ".glide__arrows.svelte-w6oslu.svelte-w6oslu{position:absolute;z-index:121233;width:100%;transform:translateY(50vh);display:flex;justify-content:space-between;padding:20px;top:0}.glide__slides.svelte-w6oslu.svelte-w6oslu{height:100%;display:flex;justify-content:center}.glide__arrow.svelte-w6oslu.svelte-w6oslu{border:none;background-color:transparent;width:50px;height:50px}.glide__arrow--right.svelte-w6oslu.svelte-w6oslu{transform:rotate(180deg);right:60px}.glide__slide.svelte-w6oslu.svelte-w6oslu{display:flex;justify-content:center}.glide.svelte-w6oslu.svelte-w6oslu{height:100%}.glide.svelte-w6oslu .glide__track.svelte-w6oslu{height:100%}.glide.svelte-w6oslu .glide__track img.svelte-w6oslu{width:80%;object-fit:cover;height:100%}",
+  map: `{"version":3,"file":"CarouselFull.svelte","sources":["CarouselFull.svelte"],"sourcesContent":["\uFEFF<script>\\r\\n\\timport Glide from '@glidejs/glide';\\r\\n\\timport { onMount } from 'svelte';\\r\\n\\r\\n\\tlet glider;\\r\\n\\tconst images = [\\r\\n\\t\\t'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/SITE_PLAN__33340_Mullholland_Hwy_20200810_ix5bw3.jpg',\\r\\n\\t\\t'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/2ND_FLOOR__33340_Mullholland_Hwy_20200810_gbaey8.jpg',\\r\\n\\t\\t'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/1ST_FLOOR__33340_Mullholland_Hwy_20200810_niansx.jpg'\\r\\n\\t];\\r\\n\\r\\n\\tonMount(() => {\\r\\n\\t\\tconst glide = new Glide(glider);\\r\\n\\t\\tglide.mount();\\r\\n\\t});\\r\\n<\/script>\\r\\n\\r\\n<div class=\\"page\\">\\r\\n\\t<div bind:this={glider} class=\\"glide\\">\\r\\n\\t\\t<div class=\\"glide__track\\" data-glide-el=\\"track\\">\\r\\n\\t\\t\\t<ul class=\\"glide__slides\\">\\r\\n\\t\\t\\t\\t{#each images as img, i}\\r\\n\\t\\t\\t\\t\\t<li class=\\"glide__slide\\">\\r\\n\\t\\t\\t\\t\\t\\t<img class=\\"carousel-image\\" src={img} alt=\\"\\" />\\r\\n\\t\\t\\t\\t\\t</li>\\r\\n\\t\\t\\t\\t{/each}\\r\\n\\t\\t\\t</ul>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div class=\\"glide__arrows\\" data-glide-el=\\"controls\\">\\r\\n\\t\\t\\t<button class=\\"glide__arrow glide__arrow--left\\" data-glide-dir=\\"<\\">\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/></button\\r\\n\\t\\t\\t>\\r\\n\\t\\t\\t<button class=\\"glide__arrow glide__arrow--right\\" data-glide-dir=\\">\\">\\r\\n\\t\\t\\t\\t<img\\r\\n\\t\\t\\t\\t\\tsrc=\\"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png\\"\\r\\n\\t\\t\\t\\t\\talt=\\"\\"\\r\\n\\t\\t\\t\\t/>\\r\\n\\t\\t\\t</button>\\r\\n\\t\\t</div>\\r\\n\\t</div>\\r\\n</div>\\r\\n\\r\\n<style lang=\\"scss\\">.glide__arrows {\\n  position: absolute;\\n  z-index: 121233;\\n  width: 100%;\\n  transform: translateY(50vh);\\n  display: flex;\\n  justify-content: space-between;\\n  padding: 20px;\\n  top: 0;\\n}\\n\\n.glide__slides {\\n  height: 100%;\\n  display: flex;\\n  justify-content: center;\\n}\\n\\n.glide__arrow {\\n  border: none;\\n  background-color: transparent;\\n  width: 50px;\\n  height: 50px;\\n}\\n\\n.glide__arrow--right {\\n  transform: rotate(180deg);\\n  right: 60px;\\n}\\n\\n.glide__slide {\\n  display: flex;\\n  justify-content: center;\\n}\\n\\n.glide {\\n  height: 100%;\\n}\\n.glide .glide__track {\\n  height: 100%;\\n}\\n.glide .glide__track img {\\n  width: 80%;\\n  object-fit: cover;\\n  height: 100%;\\n}</style>\\r\\n"],"names":[],"mappings":"AA6CmB,cAAc,4BAAC,CAAC,AACjC,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,MAAM,CACf,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,WAAW,IAAI,CAAC,CAC3B,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,OAAO,CAAE,IAAI,CACb,GAAG,CAAE,CAAC,AACR,CAAC,AAED,cAAc,4BAAC,CAAC,AACd,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,AACzB,CAAC,AAED,aAAa,4BAAC,CAAC,AACb,MAAM,CAAE,IAAI,CACZ,gBAAgB,CAAE,WAAW,CAC7B,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACd,CAAC,AAED,oBAAoB,4BAAC,CAAC,AACpB,SAAS,CAAE,OAAO,MAAM,CAAC,CACzB,KAAK,CAAE,IAAI,AACb,CAAC,AAED,aAAa,4BAAC,CAAC,AACb,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,AACzB,CAAC,AAED,MAAM,4BAAC,CAAC,AACN,MAAM,CAAE,IAAI,AACd,CAAC,AACD,oBAAM,CAAC,aAAa,cAAC,CAAC,AACpB,MAAM,CAAE,IAAI,AACd,CAAC,AACD,oBAAM,CAAC,aAAa,CAAC,GAAG,cAAC,CAAC,AACxB,KAAK,CAAE,GAAG,CACV,UAAU,CAAE,KAAK,CACjB,MAAM,CAAE,IAAI,AACd,CAAC"}`
 };
 const CarouselFull = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let glider;
@@ -2164,10 +2159,10 @@ const CarouselFull = create_ssr_component(($$result, $$props, $$bindings, slots)
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/1ST_FLOOR__33340_Mullholland_Hwy_20200810_niansx.jpg"
   ];
   $$result.css.add(css$4);
-  return `<div class="${"page"}"><div class="${"glide svelte-ystzhb"}"${add_attribute("this", glider, 0)}><div class="${"glide__track svelte-ystzhb"}" data-glide-el="${"track"}"><ul class="${"glide__slides svelte-ystzhb"}">${each(images2, (img, i) => `<li class="${"glide__slide"}"><img class="${"carousel-image svelte-ystzhb"}"${add_attribute("src", img, 0)} alt="${""}">
+  return `<div class="${"page"}"><div class="${"glide svelte-w6oslu"}"${add_attribute("this", glider, 0)}><div class="${"glide__track svelte-w6oslu"}" data-glide-el="${"track"}"><ul class="${"glide__slides svelte-w6oslu"}">${each(images2, (img, i) => `<li class="${"glide__slide svelte-w6oslu"}"><img class="${"carousel-image svelte-w6oslu"}"${add_attribute("src", img, 0)} alt="${""}">
 					</li>`)}</ul></div>
-		<div class="${"glide__arrows svelte-ystzhb"}" data-glide-el="${"controls"}"><button class="${"glide__arrow glide__arrow--left svelte-ystzhb"}" data-glide-dir="${"<"}"><img src="${"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"}" alt="${""}" class="${"svelte-ystzhb"}"></button>
-			<button class="${"glide__arrow glide__arrow--right svelte-ystzhb"}" data-glide-dir="${">"}"><img src="${"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"}" alt="${""}" class="${"svelte-ystzhb"}"></button></div></div>
+		<div class="${"glide__arrows svelte-w6oslu"}" data-glide-el="${"controls"}"><button class="${"glide__arrow glide__arrow--left svelte-w6oslu"}" data-glide-dir="${"<"}"><img src="${"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"}" alt="${""}" class="${"svelte-w6oslu"}"></button>
+			<button class="${"glide__arrow glide__arrow--right svelte-w6oslu"}" data-glide-dir="${">"}"><img src="${"https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"}" alt="${""}" class="${"svelte-w6oslu"}"></button></div></div>
 </div>`;
 });
 var CarouselRight_svelte_svelte_type_style_lang = ".content.svelte-15bztgj.svelte-15bztgj{max-width:40%}.page-arrow-container.svelte-15bztgj.svelte-15bztgj{width:20px;height:20px;position:absolute;right:-60px;bottom:0;top:50%;border:none;overflow:hidden;background:none;transform:rotate(180deg);border-radius:50%;background-color:white}.page-arrow-container.svelte-15bztgj .page-arrow.svelte-15bztgj{object-fit:cover;width:100%}.flex-container.svelte-15bztgj.svelte-15bztgj{display:flex;height:100%;justify-content:center;align-items:flex-start;flex-direction:column}.carousel-container.svelte-15bztgj.svelte-15bztgj{width:50%;display:flex;position:relative}.carousel-image.svelte-15bztgj.svelte-15bztgj{width:100%;height:100%;object-fit:contain}";

@@ -57,6 +57,9 @@
 	}
 	.glide__slides {
 		height: 100%;
+		display: flex;
+
+		justify-content: center;
 	}
 	.glide__arrow {
 		border: none;
@@ -68,11 +71,17 @@
 		transform: rotate(180deg);
 		right: 60px;
 	}
+	.glide__slide {
+		display: flex;
+		justify-content: center;
+	}
 	.glide {
 		height: 100%;
 		.glide__track {
 			height: 100%;
 			img {
+				width: 80%;
+				object-fit: cover;
 				height: 100%;
 			}
 		}
