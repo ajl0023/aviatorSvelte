@@ -7,5 +7,5 @@ export let lazy;
 // 	return lazy;
 // };
 export const lazyLoadInstance = function () {
-	new LazyLoad();
+	return new LazyLoad();
 };

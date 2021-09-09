@@ -62,12 +62,7 @@
 					{#each page.title === 'renders' ? images : floorplans as img, i}
 						<li class="glide__slide">
 							<div class="glide-image-container">
-								<img
-									loading={i !== 0 ? 'lazy' : 'eager'}
-									class="carousel-image lazy"
-									src={i !== 0 ? img : ''}
-									alt=""
-								/>
+								<img loading='eager' class="carousel-image" src={img} alt="" />
 							</div>
 						</li>
 					{/each}
