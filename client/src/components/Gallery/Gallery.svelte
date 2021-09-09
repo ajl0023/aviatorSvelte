@@ -38,8 +38,8 @@
 						on:click={() => {
 							selectImage(i);
 						}}
-						class="lazy"
-						data-src={img}
+						loading="lazy"
+						src={img}
 						alt=""
 					/>
 				</div>

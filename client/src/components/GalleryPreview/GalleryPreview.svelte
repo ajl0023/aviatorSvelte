@@ -11,7 +11,7 @@
 
 <div class="page">
 	<div class="image-container">
-		<img class="lazy" data-src={highResBts[index]} alt="" />
+		<img loading="lazy" src={highResBts[index]} alt="" />
 	</div>
 </div>
 

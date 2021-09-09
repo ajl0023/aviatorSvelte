@@ -1,7 +1,7 @@
 ﻿<script>
 	import { modal } from '../../stores';
 	import { afterUpdate, beforeUpdate, onMount } from 'svelte';
-	import { lazyLoadInstance } from '../../lazy.js';
+	import { lazy } from '../../lazy.js';
 	export let index;
 	const images = [
 		{
@@ -33,10 +33,6 @@
 				'https://res.cloudinary.com/dt4xntymn/image/upload/v1630790322/misc/bgPhotos/drone_s8lkqw.png'
 		}
 	];
-
-	onMount(() => {
-		lazyLoadInstance.update();
-	});
 </script>
 
 <div
@@ -58,7 +54,7 @@
 			/>
 		{/if}
 
-		<img data-src={images[index].url} alt="" class="main-image lazy" />
+		<img loading="lazy" src={images[index].url} alt="" class="main-image lazy" />
 	</div>
 </div>
 

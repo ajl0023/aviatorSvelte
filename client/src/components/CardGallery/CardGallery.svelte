@@ -15,9 +15,9 @@
 		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879412/gallery/electrical_discussion_fzgod7.jpg',
 		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879412/gallery/framing_discussion_skcuns.jpg',
 		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_2_mqzixc.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_3_wwredc.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_ynx88u.jpg'
+		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_3_wwredc.jpg'
 	];
+	console.log(images.length);
 </script>
 
 <div>
@@ -26,13 +26,13 @@
 		<div class="gallery-container">
 			{#each images as image, i}
 				<img
-					class="lazy"
+					src={image}
 					on:click={() => {
 						$modal.visibility = true;
 						$modal.content = highResBts[i];
 						$modal.type = 'image';
 					}}
-					data-src={image}
+					loading="lazy"
 					alt=""
 				/>{/each}
 		</div>
@@ -52,16 +52,29 @@
 	.bu-title {
 		font-family: Orator;
 		color: white;
+		font-weight: 200;
 	}
 	.gallery-container {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(20px, 1fr));
-		grid-gap: 25px;
-		padding: 15px;
+		width: 100%;
+		gap: 6px;
+		overflow: hidden;
+		grid-template-columns: repeat(4, minmax(50px, 1fr));
 
 		img {
+			object-fit: cover;
+			width: 100%;
 			border-radius: 4px;
 			animation-fill-mode: forwards;
 		}
+	}
+	.container {
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		margin-bottom: 20px;
 	}
 </style>

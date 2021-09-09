@@ -37,7 +37,7 @@
 					<ul class="glide__slides">
 						{#each images.slice(0, 17) as img, i}
 							<li class="glide__slide">
-								<img class="carousel-image lazy" data-src={img} alt="" />
+								<img loading="lazy" class="carousel-image lazy" src={img} alt="" />
 							</li>
 						{/each}
 					</ul>

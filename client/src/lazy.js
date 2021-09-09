@@ -1,2 +1,8 @@
 import LazyLoad from 'vanilla-lazyload';
-export const lazyLoadInstance = () => new LazyLoad();
+export let lazy;
+export const lazyLoadInstance = () => {
+	if (!lazy) {
+		lazy = new LazyLoad();
+	}
+	return lazy;
+};

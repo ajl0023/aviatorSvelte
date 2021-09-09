@@ -46,7 +46,8 @@
 		{
 			type: 'video',
 			url:
-				'https://res.cloudinary.com/dt4xntymn/image/upload/v1630790322/misc/bgPhotos/drone_s8lkqw.png'
+				'https://res.cloudinary.com/dt4xntymn/image/upload/v1630790322/misc/bgPhotos/drone_s8lkqw.png',
+			videoUrl: 'https://www.youtube.com/embed/l7h2P07cSbc'
 		}
 	];
 </script>
@@ -73,7 +74,7 @@
 					</figure>
 				</div>
 			{/if}
-			<img loading="lazy" class="main-image" src={images[index] && images[index].url} alt="" />
+			<img l class="main-image" src={images[index] && images[index].url} alt="" />
 		</figure>
 	</div>
 	<div class="card-content bu-card-content">
