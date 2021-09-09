@@ -52,15 +52,15 @@
 		</div>
 	</div>
 	<div class="card-container">
-		<!-- {#each cardLayout as card, i}
+		{#each cardLayout as card, i}
 			{#if cardLayout[i].type === 'image' || cardLayout[i].type === 'video'}
 				<Card page={card} index={i} />
 			{:else if cardLayout[i].type === 'gallery'}
-				<CardGallery />
+				<!-- <CardGallery /> -->
 			{:else}
-				<CardCarousel page={card} index={i} />
+				<!-- <CardCarousel page={card} index={i} /> -->
 			{/if}
-		{/each} -->
+		{/each}
 		<CardCredits />
 	</div>
 </div>
