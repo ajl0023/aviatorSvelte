@@ -1,5 +1,6 @@
 ﻿<script>
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import { browser } from '$app/env';
 
 	import { navToLink, textPages } from '../../pageContent';
 	import { modal } from '../../stores';
@@ -7,6 +8,8 @@
 
 	export let index;
 	let showMore = false;
+	let mainText;
+	let overFlowing;
 
 	const images = [
 		{
@@ -50,6 +53,25 @@
 			videoUrl: 'https://www.youtube.com/embed/l7h2P07cSbc'
 		}
 	];
+	function checkOverFlow() {
+		if (mainText.scrollHeight > mainText.clientHeight) {
+			overFlowing = true;
+		} else {
+			overFlowing = false;
+		}
+	}
+	onMount(() => {
+		if (browser) {
+			window.addEventListener('resize', checkOverFlow);
+		}
+
+		checkOverFlow();
+	});
+	onDestroy(() => {
+		if (browser) {
+			window.removeEventListener('resize', checkOverFlow);
+		}
+	});
 </script>
 
 <div class="bu-card card-container" id={navToLink[index + 1]}>
@@ -90,27 +112,32 @@
 				</h5>
 			{/if}
 		</div>
-		<div class="content bu-is-clipped content font-white {showMore ? 'show-more' : ''}">
+		<div
+			bind:this={mainText}
+			class="content bu-is-clipped content font-white {showMore ? 'show-more' : ''}"
+		>
 			{#if textPages[index]}
 				{#each textPages[index].paragraphs as p}
-					<p>{p}</p>
+					{p}
 				{/each}
 			{/if}
 		</div>
 		<br />
-		<div
-			on:click={() => {
-				showMore = !showMore;
-			}}
-			class="bu-level bu-is-mobile"
-		>
-			<div class="bu-level-left">
-				<p class="bu-level-left bu-level-item">Read More</p>
-				<span class="bu-level-left bu-level-item bu-icon bu-is-small">
-					<Arrow {showMore} />
-				</span>
+		{#if overFlowing}
+			<div
+				on:click={() => {
+					showMore = !showMore;
+				}}
+				class="bu-level bu-is-mobile"
+			>
+				<div class="bu-level-left">
+					<p class="bu-level-left bu-level-item">Read More</p>
+					<span class="bu-level-left bu-level-item bu-icon bu-is-small">
+						<Arrow {showMore} />
+					</span>
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 </div>
 

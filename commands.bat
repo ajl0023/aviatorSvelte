@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "uploaded new floor plans" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "fixed few issues with css, also had to fix certain safari specific issues" && git push origin main

@@ -1,7 +1,7 @@
 ﻿<script>
 	import Glide from '@glidejs/glide';
 	import { lazyLoadInstance } from '../../lazy.js';
-	import { afterUpdate, onMount } from 'svelte';
+	import { afterUpdate, onDestroy, onMount } from 'svelte';
 	import { navToLink, textPages } from '../../pageContent';
 	import Arrow from '../Card/Arrow.svelte';
 	import { browser } from '$app/env';
@@ -9,8 +9,11 @@
 	let lazyImage;
 	let firstImage;
 	let showMore = false;
+
 	export let index;
 	export let page;
+	let overFlowing;
+	let mainText;
 	const images = [
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630887731/rendersHighRes/33340_MULHOLLAND_INT_IMG_12A_00-min_ciecgp.jpg',
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630887728/rendersHighRes/33340_MULHOLLAND_INT_IMG_14A-min_a51cfk.jpg',
@@ -34,6 +37,25 @@
 		const glide = new Glide(carousel);
 
 		glide.mount();
+
+		if (browser) {
+			window.addEventListener('resize', checkOverFlow);
+		}
+
+		checkOverFlow();
+	});
+	function checkOverFlow() {
+		if (mainText.scrollHeight > mainText.clientHeight) {
+			overFlowing = true;
+		} else {
+			overFlowing = false;
+		}
+	}
+
+	onDestroy(() => {
+		if (browser) {
+			window.removeEventListener('resize', checkOverFlow);
+		}
 	});
 </script>
 
@@ -82,7 +104,10 @@
 				</h5>
 			{/if}
 		</div>
-		<div class="content bu-is-clipped content font-white {showMore ? 'show-more' : ''}">
+		<div
+			bind:this={mainText}
+			class="content bu-is-clipped content font-white {showMore ? 'show-more' : ''}"
+		>
 			{#if textPages[index]}
 				{#each textPages[index].paragraphs as p}
 					<p>{p}</p>
@@ -90,19 +115,21 @@
 			{/if}
 		</div>
 		<br />
-		<div
-			on:click={() => {
-				showMore = !showMore;
-			}}
-			class="bu-level bu-is-mobile"
-		>
-			<div class="bu-level-left">
-				<p class="bu-level-left bu-level-item">Read More</p>
-				<span class="bu-level-left bu-level-item bu-icon bu-is-small">
-					<Arrow {showMore} />
-				</span>
+		{#if overFlowing}
+			<div
+				on:click={() => {
+					showMore = !showMore;
+				}}
+				class="bu-level bu-is-mobile"
+			>
+				<div class="bu-level-left">
+					<p class="bu-level-left bu-level-item">Read More</p>
+					<span class="bu-level-left bu-level-item bu-icon bu-is-small">
+						<Arrow {showMore} />
+					</span>
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 </div>
 
