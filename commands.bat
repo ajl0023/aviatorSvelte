@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "fixed few issues with css, also had to fix certain safari specific issues" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "svg not showing up in safari fixed" && git push origin main

@@ -125,7 +125,7 @@
 				<div class="bu-level-left">
 					<p class="bu-level-left bu-level-item">Read More</p>
 					<span class="bu-level-left bu-level-item bu-icon bu-is-small">
-						<Arrow {showMore} />
+						<Arrow styleP="height:16px; width:16px;" {showMore} />
 					</span>
 				</div>
 			</div>
