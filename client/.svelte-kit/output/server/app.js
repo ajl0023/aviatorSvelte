@@ -1503,9 +1503,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-3ccc9be5.js",
+      file: assets + "/_app/start-ed455c86.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-3ccc9be5.js", assets + "/_app/chunks/vendor-9b70e41c.js"]
+      js: [assets + "/_app/start-ed455c86.js", assets + "/_app/chunks/vendor-9b70e41c.js"]
     },
     fetched: void 0,
     floc: false,
@@ -1564,7 +1564,7 @@ const module_lookup = {
     return index;
   })
 };
-const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-568fd069.js", "css": [], "js": ["layout.svelte-568fd069.js", "chunks/vendor-9b70e41c.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-6bc0041d.js", "css": [], "js": ["error.svelte-6bc0041d.js", "chunks/vendor-9b70e41c.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-3340d6c1.js", "css": ["assets/pages/index.svelte-6388df0c.css"], "js": ["pages/index.svelte-3340d6c1.js", "chunks/vendor-9b70e41c.js"], "styles": [] } };
+const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-568fd069.js", "css": [], "js": ["layout.svelte-568fd069.js", "chunks/vendor-9b70e41c.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-6bc0041d.js", "css": [], "js": ["error.svelte-6bc0041d.js", "chunks/vendor-9b70e41c.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-44cc393a.js", "css": ["assets/pages/index.svelte-6388df0c.css"], "js": ["pages/index.svelte-44cc393a.js", "chunks/vendor-9b70e41c.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -1782,19 +1782,19 @@ const navToLink = navButtons.map((item) => {
   return item.replace(/\s/g, "-");
 });
 const highResBts = [
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/2021.05.29_roof_2_cm4ouk.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880380/galleryHighRes/Amit_and_Russel_asulsg.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/Bike_d1id7e.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880380/galleryHighRes/Framing_hqxw7y.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/Humming_Bird_vwjffp.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/circle_window_with_pendant_light_mbvjwj.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/dining_room_discussion_wxmdwj.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/electrical_2_xv2vdj.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/electrical_discussion_qpavea.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/framing_discussion_tmw90t.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/kitchen_discussion_2_mzb1yv.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/kitchen_discussion_3_jniqgh.jpg",
-  "http://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/kitchen_discussion_ipeyz4.jpg"
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/2021.05.29_roof_2_cm4ouk.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880380/galleryHighRes/Amit_and_Russel_asulsg.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/Bike_d1id7e.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880380/galleryHighRes/Framing_hqxw7y.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/Humming_Bird_vwjffp.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/circle_window_with_pendant_light_mbvjwj.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/dining_room_discussion_wxmdwj.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/electrical_2_xv2vdj.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/electrical_discussion_qpavea.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/framing_discussion_tmw90t.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/kitchen_discussion_2_mzb1yv.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/kitchen_discussion_3_jniqgh.jpg",
+  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/kitchen_discussion_ipeyz4.jpg"
 ];
 const currentPage = writable(0);
 const galleryImg = writable(0);
