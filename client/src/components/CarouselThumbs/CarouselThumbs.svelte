@@ -11,20 +11,20 @@
 	let initalIndex = 0;
 	let changeVal;
 	const images = [
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/1_wohazp.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/2_ntogjy.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/3_wv7c2m.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/4_kdlq6e.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/5_dbtnm5.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/6_h0qu9t.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815471/carouselThumbs/7_khodvl.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815471/carouselThumbs/8_gai2yo.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815471/carouselThumbs/9_webihd.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/10_ircdxh.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/11_pe8ndb.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/12_cnbadh.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/13_vn65ka.jpg',
-		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/14_ndznnt.jpg'
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/1_wohazp.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/2_ntogjy.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/3_wv7c2m.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/4_kdlq6e.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/5_dbtnm5.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/6_h0qu9t.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815471/carouselThumbs/7_khodvl.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815471/carouselThumbs/8_gai2yo.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815471/carouselThumbs/9_webihd.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/10_ircdxh.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/11_pe8ndb.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/12_cnbadh.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/13_vn65ka.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/14_ndznnt.jpg'
 	];
 	let imagesToDisplay = [];
 	onMount(() => {
