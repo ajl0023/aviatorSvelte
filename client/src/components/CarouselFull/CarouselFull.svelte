@@ -22,7 +22,7 @@
 			<ul class="glide__slides">
 				{#each images as img, i}
 					<li class="glide__slide">
-						<img class="carousel-image" src={img} alt="" />
+						<img loading='lazy' class="carousel-image" src={img} alt="" />
 					</li>
 				{/each}
 			</ul>

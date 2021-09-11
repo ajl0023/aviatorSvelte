@@ -1,4 +1,8 @@
 ﻿<script>
+	import { onMount } from 'svelte';
+
+	import { lazyLoadInstance } from '../../lazy';
+
 	import { currentPage } from '../../stores';
 
 	export let page;
@@ -23,7 +27,9 @@
 		'http://res.cloudinary.com/dt4xntymn/image/upload/v1630815470/carouselThumbs/14_ndznnt.jpg'
 	];
 	let imagesToDisplay = [];
-
+	onMount(() => {
+		lazyLoadInstance();
+	});
 	currentPage.subscribe((value) => {
 		carouselPage = value;
 
@@ -70,7 +76,7 @@
 					: ''}"
 				class="image-container"
 			>
-				<img src={img} alt="" />;
+				<img class="lazy" width="200px" height="200px" data-src={img} alt="" />;
 			</div>
 		{:else}
 			<div style="background-color:black" class="image-container" />

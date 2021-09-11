@@ -54,7 +54,7 @@
 			/>
 		{/if}
 
-		<img loading="lazy" src={images[index].url} alt="" class="main-image lazy" />
+		<img data-src={images[index].url} alt="" class="main-image lazy" />
 	</div>
 </div>
 
