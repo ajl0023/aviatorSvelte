@@ -27,9 +27,8 @@
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630887731/rendersHighRes/33340_MULHOLLAND_INT_IMG_4A-min_ihzxkw.jpg'
 	];
 	const floorplans = [
-		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630888753/floorPlansResized/SITE_PLAN__33340_Mullholland_Hwy_20200810_mt2t3r.jpg',
-		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630888757/floorPlansResized/1ST_FLOOR__33340_Mullholland_Hwy_20200810_-_Copy_rkqlng.jpg',
-		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630888753/floorPlansResized/SITE_PLAN__33340_Mullholland_Hwy_20200810_mt2t3r.jpg'
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/2ND_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_xhlvzr.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/1ST_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_ouauck.jpg'
 	];
 	onMount(() => {
 		const glide = new Glide(carousel);

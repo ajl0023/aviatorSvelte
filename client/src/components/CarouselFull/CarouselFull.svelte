@@ -5,9 +5,8 @@
 
 	let glider;
 	const images = [
-		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/SITE_PLAN__33340_Mullholland_Hwy_20200810_ix5bw3.jpg',
-		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/2ND_FLOOR__33340_Mullholland_Hwy_20200810_gbaey8.jpg',
-		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630877054/FloorPlans/1ST_FLOOR__33340_Mullholland_Hwy_20200810_niansx.jpg'
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/2ND_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_xhlvzr.jpg',
+		'https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/1ST_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_ouauck.jpg'
 	];
 
 	onMount(() => {
@@ -22,7 +21,9 @@
 			<ul class="glide__slides">
 				{#each images as img, i}
 					<li class="glide__slide">
-						<img loading='lazy' class="carousel-image" src={img} alt="" />
+						<div class="image-container">
+							<img loading="lazy" class="carousel-image" src={img} alt="" />
+						</div>
 					</li>
 				{/each}
 			</ul>
@@ -102,10 +103,13 @@
 		height: 100%;
 		.glide__track {
 			height: 100%;
-			img {
+			.image-container {
 				width: 80%;
-				object-fit: cover;
-				height: 100%;
+				img {
+					width: 100%;
+					object-fit: cover;
+					height: 100%;
+				}
 			}
 		}
 	}
