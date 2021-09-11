@@ -21,6 +21,16 @@ function find_anchor(node) {
 	return /** @type {HTMLAnchorElement | SVGAElement} */ (node);
 }
 
+/**
+ * @param {HTMLAnchorElement | SVGAElement} node
+ * @returns {URL}
+ */
+function get_href(node) {
+	return node instanceof SVGAElement
+		? new URL(node.href.baseVal, document.baseURI)
+		: new URL(node.href);
+}
+
 class Router {
 	/**
 	 * @param {{
@@ -88,7 +98,7 @@ class Router {
 		const trigger_prefetch = (event) => {
 			const a = find_anchor(/** @type {Node} */ (event.target));
 			if (a && a.href && a.hasAttribute('sveltekit:prefetch')) {
-				this.prefetch(new URL(/** @type {string} */ (a.href)));
+				this.prefetch(get_href(a));
 			}
 		};
 
@@ -121,12 +131,8 @@ class Router {
 
 			if (!a.href) return;
 
-			// check if link is inside an svg
-			// in this case, both href and target are always inside an object
-			const svg = typeof a.href === 'object' && a.href.constructor.name === 'SVGAnimatedString';
-			const href = String(svg ? /** @type {SVGAElement} */ (a).href.baseVal : a.href);
-
-			if (href === location.href) {
+			const url = get_href(a);
+			if (url.toString() === location.href) {
 				if (!location.hash) event.preventDefault();
 				return;
 			}
@@ -141,9 +147,7 @@ class Router {
 			}
 
 			// Ignore if <a> has a target
-			if (svg ? /** @type {SVGAElement} */ (a).target.baseVal : a.target) return;
-
-			const url = new URL(href);
+			if (a instanceof SVGAElement ? a.target.baseVal : a.target) return;
 
 			if (!this.owns(url)) return;
 

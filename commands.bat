@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "lazy loading is very bugged, will fix" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "lazy loading is fixed, images were permantently out of view, height had to be responsive because of the general design" && git push origin main

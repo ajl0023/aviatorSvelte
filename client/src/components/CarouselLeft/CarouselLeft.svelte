@@ -4,100 +4,144 @@
 	import { currentPage } from '../../stores';
 	import CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';
 	import { images } from '../image';
-
-	var glide = new Glide('div.glide', {
-		dragThreshold: false
-	});
+	import Arrow from '../Card/Arrow.svelte';
+	let carousel;
+	let glide;
 	let page;
+
 	const setPage = currentPage.subscribe((value) => {
 		page = value;
 	});
 
 	onMount(() => {
+		glide = new Glide(carousel, {
+			dragThreshold: false
+		});
 		glide.mount();
 	});
 	afterUpdate(() => {
-		if (glide) {
-			glide.go(`=${page}`);
-		}
+		glide.go(`=${page}`);
 	});
 </script>
 
 <div class="page">
-	<div class="flex-container">
-		<div class="content">
-			<img
-				src={'https://res.cloudinary.com/dt4xntymn/image/upload/v1630813204/titleimages/Renders_Page_Text_Left_wd8jcv.png'}
-				alt=""
-			/>
-		</div>
-		<div class="carousel-container">
-			<div data-glide-dir={`${page}`} class="glide ">
-				<div class="glide__track" data-glide-el="track">
-					<ul class="glide__slides">
-						{#each images.slice(0, 17) as img, i}
-							<li class="glide__slide">
-								<img loading="lazy" class="carousel-image lazy" src={img} alt="" />
-							</li>
-						{/each}
-					</ul>
-				</div>
+	<div class="content-container">
+		<div class="carousel-content-container">
+			<div class="title-container">
+				<h1>ren</h1>
+				<p>Browse below for interior and ext</p>
 			</div>
-			<button
-				on:click={() => {
-					currentPage.update((n) => n - 1);
-				}}
-				class="page-arrow-container"
-			>
-				<img
-					class="page-arrow"
-					src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"
-					alt=""
-				/>
-			</button>
+			<div class="carousel-container">
+				<div bind:this={carousel} data-glide-dir={`${page}`} class="glide ">
+					<div class="glide__track" data-glide-el="track">
+						<ul class="glide__slides">
+							{#each images.slice(0, 17) as img, i}
+								<li class="glide__slide">
+									<div class="slide-image-container">
+										<img loading="lazy" class="carousel-image lazy" src={img} alt="" />
+									</div>
+								</li>
+							{/each}
+						</ul>
+					</div>
+				</div>
+				<button
+					on:click={() => {
+						currentPage.update((n) => n - 1);
+					}}
+					class="page-arrow-container"
+				>
+					<div class="page-arrow-relative">
+						<Arrow
+							styleP="object-fit:cover;width:100%;fill:white; transform:rotate(-90deg); height:100%; "
+						/>
+					</div>
+				</button>
+			</div>
+			<CarouselThumbs page="left" />
 		</div>
-		<CarouselThumbs page="left" />
-		<p style="color: red; font-size:9000px" />
 	</div>
 </div>
 
 <style lang="scss">
-	.content {
-		max-width: 40%;
+	.title-container {
+		text-align: right;
+		color: white;
+		padding: 20px 0 20px 20px;
+		h1 {
+			font-size: 3em;
+			text-transform: uppercase;
+			font-family: Orator;
+			color: white;
+		}
 	}
-	.page-arrow-container {
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		left: -60px;
-		bottom: 0;
-		top: 50%;
-		border-radius: 50%;
-		background-color: white;
-		border: none;
+	.content-container {
+		display: flex;
+		height: 100%;
+		padding: 10px 0 10px 30px;
 		overflow: hidden;
-		background: none;
-		.page-arrow {
-			object-fit: cover;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	.carousel-content-container {
+		max-width: 500px;
+		width: 100%;
+		height: 100%;
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.slide-image-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		img {
+			position: absolute;
+			height: 100%;
+
 			width: 100%;
 		}
 	}
-	.flex-container {
-		display: flex;
+	.glide__track {
 		height: 100%;
-		justify-content: center;
-		align-items: flex-end;
-		flex-direction: column;
+	}
+	.content {
+		float: right;
+	}
+	.page-arrow-container {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		left: 10px;
+		bottom: 0;
+		top: 50%;
+		border-radius: 50%;
+		background-color: rgba(0 0 0 / 0.5);
+		border: none;
+		overflow: hidden;
+
+		.page-arrow-relative {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+
+			right: 0;
+			padding: 5px;
+			margin: auto;
+		}
+	}
+
+	.glide__slides {
+		height: 100%;
 	}
 	.carousel-container {
-		width: 50%;
-
+		width: 100%;
+		height: 65%;
 		display: flex;
 		position: relative;
-	}
-	.carousel-image {
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
 	}
 </style>

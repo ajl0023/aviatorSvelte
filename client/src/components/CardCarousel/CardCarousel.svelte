@@ -32,25 +32,9 @@
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630888753/floorPlansResized/SITE_PLAN__33340_Mullholland_Hwy_20200810_mt2t3r.jpg'
 	];
 	onMount(() => {
-		if (browser) {
-			const firstChild = lazyImage.firstElementChild.getElementsByTagName('img')[0];
+		const glide = new Glide(carousel);
 
-			const glide = new Glide(carousel);
-
-			glide.mount();
-
-			var intersectionObserver = new IntersectionObserver(function (entries) {
-				// If intersectionRatio is 0, the target is out of view
-				// and we do not need to do anything.
-
-				if (entries[0].intersectionRatio <= 0) return;
-				firstChild.src = page.title === 'renders' ? images[0] : floorplans[0];
-				intersectionObserver.disconnect();
-			});
-			// start observing
-
-			intersectionObserver.observe(lazyImage);
-		}
+		glide.mount();
 	});
 </script>
 
@@ -62,7 +46,7 @@
 					{#each page.title === 'renders' ? images : floorplans as img, i}
 						<li class="glide__slide">
 							<div class="glide-image-container">
-								<img loading='eager' class="carousel-image" src={img} alt="" />
+								<img loading="lazy" class="carousel-image" src={img} alt="" />
 							</div>
 						</li>
 					{/each}
@@ -149,14 +133,18 @@
 	}
 
 	.carousel-container {
-		img {
-			object-position: right;
-			object-fit: cover;
-		}
 		.glide-image-container {
 			display: flex;
+			padding-bottom: 100%;
+			height: 0;
 			position: relative;
 			justify-content: center;
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				object-fit: cover;
+			}
 		}
 	}
 	.page-arrow-container {

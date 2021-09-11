@@ -1,6 +1,7 @@
 ﻿<script>
 	import Glide from '@glidejs/glide';
 	import { onMount } from 'svelte';
+	import Arrow from '../Card/Arrow.svelte';
 
 	let glider;
 	const images = [
@@ -27,53 +28,75 @@
 			</ul>
 		</div>
 		<div class="glide__arrows" data-glide-el="controls">
-			<button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-				<img
-					src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"
-					alt=""
-				/></button
+			<button class="glide__arrow page-arrow-container glide__arrow--left" data-glide-dir="<">
+				<div class="page-arrow-relative">
+					<Arrow
+						styleP="object-fit:cover;width:100%;fill:white; transform:rotate(-90deg); height:100%; "
+					/>
+				</div></button
 			>
-			<button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-				<img
-					src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"
-					alt=""
-				/>
+			<button class="glide__arrow  page-arrow-container glide__arrow--right" data-glide-dir=">">
+				<div class="page-arrow-relative">
+					<Arrow
+						styleP="object-fit:cover;width:100%;fill:white; transform:rotate(-90deg); height:100%; "
+					/>
+				</div>
 			</button>
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-	.glide__arrows {
-		position: absolute;
-		z-index: 121233;
-		width: 100%;
-
-		transform: translateY(50vh);
-		display: flex;
-		justify-content: space-between;
-		padding: 20px;
-		top: 0;
+	.glide__arrow--right {
+		right: 20px;
+		transform: rotate(180deg);
 	}
+	.glide__arrow--left {
+		left: 20px;
+	}
+	.page-arrow-container {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+
+		bottom: 0;
+		top: 50%;
+		border-radius: 50%;
+		background-color: rgba(0 0 0 / 0.5);
+		border: none;
+		overflow: hidden;
+
+		.page-arrow-relative {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+
+			right: 0;
+			padding: 5px;
+			margin: auto;
+		}
+	}
+
 	.glide__slides {
 		height: 100%;
 		display: flex;
 
 		justify-content: center;
 	}
-	.glide__arrow {
-		border: none;
-		background-color: transparent;
-		width: 50px;
-		height: 50px;
-	}
-	.glide__arrow--right {
-		transform: rotate(180deg);
-		right: 60px;
-	}
+
 	.glide__slide {
 		display: flex;
 		justify-content: center;
+	}
+	.glide__arrows {
+		position: absolute;
+		left: 0;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
 	}
 	.glide {
 		height: 100%;

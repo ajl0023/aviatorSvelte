@@ -4,7 +4,7 @@ import { set_paths, assets } from './runtime/paths.js';
 import { set_prerendering } from './runtime/env.js';
 import * as user_hooks from "./hooks.js";
 
-const template = ({ head, body }) => "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<link rel=\"icon\" href=\"/logo.inline.svg\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body>\n\t\t<div id=\"svelte\">" + body + "</div>\n\t</body>\n</html>\n";
+const template = ({ head, body }) => "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\t<head>\r\n\t\t<meta charset=\"utf-8\" />\r\n\t\t<link rel=\"icon\" href=\"/logo.inline.svg\" />\r\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n\t\t" + head + "\r\n\t</head>\r\n\t<body>\r\n\t\t<div id=\"svelte\">" + body + "</div>\r\n\t</body>\r\n</html>\r\n";
 
 let options = null;
 
@@ -22,9 +22,9 @@ export function init(settings = default_settings) {
 		amp: false,
 		dev: false,
 		entry: {
-			file: assets + "/_app/start-0dfe7b90.js",
+			file: assets + "/_app/start-a1ab87c2.js",
 			css: [assets + "/_app/assets/start-61d1577b.css"],
-			js: [assets + "/_app/start-0dfe7b90.js",assets + "/_app/chunks/vendor-6b32decb.js"]
+			js: [assets + "/_app/start-a1ab87c2.js",assets + "/_app/chunks/vendor-a67d5603.js"]
 		},
 		fetched: undefined,
 		floc: false,
@@ -56,7 +56,7 @@ const d = decodeURIComponent;
 const empty = () => ({});
 
 const manifest = {
-	assets: [{"file":"logo.inline.svg","size":37724,"type":"image/svg+xml"},{"file":"_headers.txt","size":35,"type":"text/plain"}],
+	assets: [{"file":"logo.inline.svg","size":37735,"type":"image/svg+xml"},{"file":"_headers.txt","size":35,"type":"text/plain"}],
 	layout: ".svelte-kit/build/components/layout.svelte",
 	error: ".svelte-kit/build/components/error.svelte",
 	routes: [
@@ -83,7 +83,7 @@ const module_lookup = {
 	".svelte-kit/build/components/layout.svelte": () => import("./components\\layout.svelte"),".svelte-kit/build/components/error.svelte": () => import("./components\\error.svelte"),"src/routes/index.svelte": () => import("..\\..\\src\\routes\\index.svelte")
 };
 
-const metadata_lookup = {".svelte-kit/build/components/layout.svelte":{"entry":"layout.svelte-537fb5d6.js","css":[],"js":["layout.svelte-537fb5d6.js","chunks/vendor-6b32decb.js"],"styles":[]},".svelte-kit/build/components/error.svelte":{"entry":"error.svelte-8f05ffc5.js","css":[],"js":["error.svelte-8f05ffc5.js","chunks/vendor-6b32decb.js"],"styles":[]},"src/routes/index.svelte":{"entry":"pages/index.svelte-7c588c73.js","css":["assets/pages/index.svelte-8a6754de.css"],"js":["pages/index.svelte-7c588c73.js","chunks/vendor-6b32decb.js"],"styles":[]}};
+const metadata_lookup = {".svelte-kit/build/components/layout.svelte":{"entry":"layout.svelte-75d99546.js","css":[],"js":["layout.svelte-75d99546.js","chunks/vendor-a67d5603.js"],"styles":[]},".svelte-kit/build/components/error.svelte":{"entry":"error.svelte-4c5fcfcb.js","css":[],"js":["error.svelte-4c5fcfcb.js","chunks/vendor-a67d5603.js"],"styles":[]},"src/routes/index.svelte":{"entry":"pages/index.svelte-f453a0f1.js","css":["assets/pages/index.svelte-6388df0c.css"],"js":["pages/index.svelte-f453a0f1.js","chunks/vendor-a67d5603.js"],"styles":[]}};
 
 async function load_component(file) {
 	const { entry, css, js, styles } = metadata_lookup[file];

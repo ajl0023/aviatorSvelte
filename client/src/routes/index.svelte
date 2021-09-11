@@ -8,7 +8,6 @@
 	import '../bulma.prefixed.css';
 	import ScrollContainer from '../components/ScrollContainer/ScrollContainer.svelte';
 	import CardContainer from '../components/CardContainer/CardContainer.svelte';
-	import { lazyLoadInstance } from '../lazy';
 
 	let windowThreshHold = false;
 
@@ -20,12 +19,10 @@
 		}
 	}
 	onMount(() => {
+	
 		handleResponsiveResize();
 
 		window.addEventListener('resize', handleResponsiveResize);
-		if (browser) {
-			lazyLoadInstance();
-		}
 	});
 	onDestroy(() => {
 		if (browser) {
@@ -36,11 +33,10 @@
 
 <div>
 	<Navbar />
-	{#if !windowThreshHold}
-		<ScrollContainer />
-	{:else}
-		<CardContainer />
-	{/if}
+
+	<ScrollContainer />
+
+	<CardContainer />
 
 	<Modal />
 </div>
