@@ -200,6 +200,12 @@
 			right: 0;
 			top: 0;
 			z-index: 2;
+
+			@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+				background: rgba(0, 0, 0, 0.5);
+			}
+
+			-webkit-backdrop-filter: blur(5px);
 			backdrop-filter: blur(5px);
 		}
 	}
