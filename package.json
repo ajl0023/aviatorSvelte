@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ajl0023/Maliview-1-sveltekit#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cloudinary": "^1.27.0",
     "express": "^4.17.1",
     "netlify-lambda": "^2.0.14",
     "nodemon": "^2.0.12",

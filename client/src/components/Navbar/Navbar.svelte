@@ -2,22 +2,26 @@
   let name = "world";
   import Logo from "../../images/svgs/Logo/index.js";
   import Hamburger from "../Hamburger/Hamburger.svelte";
-
-
 </script>
 
 <nav class="wrapper">
   <div class="container">
     <div class="left-container">
       <Hamburger />
-      <label class="nav-menu-label" for="burger-trigger">
-        <p class="secondary-main-trigger-icon">menu</p>
-      </label>
+      <div>
+        <label class="nav-menu-label" for="burger-trigger">
+          <p class="secondary-main-trigger-icon">menu</p>
+        </label>
+      </div>
     </div>
 
     <div class="logo-container">
       <a href="https://www.apeldesign.com/">
-        <Logo fill="white" />
+        <!-- <Logo fill="white" /> -->
+        <img
+          src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631656727/misc/By_Apel_Design_White_hkfvc4.png"
+          alt=""
+        />
       </a>
     </div>
   </div>
@@ -40,24 +44,42 @@
     font-weight: 100;
 
     .left-container {
-      gap: 9px;
       display: flex;
 
       align-items: center;
-      .secondary-main-trigger-icon {
-        font-size: 18px;
-        cursor: pointer;
-      }
     }
     .logo-container {
       max-width: 10em;
       height: auto;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 
   @media (max-width: 650px) {
     .secondary-main-trigger-icon {
       display: none;
+    }
+  }
+  .nav-menu-label {
+    display: flex;
+
+    align-items: center;
+    flex-grow: 1;
+    .secondary-main-trigger-icon {
+      font-size: 18px;
+      margin-left: 9px;
+      line-height: 18px;
+      cursor: pointer;
+      line-height: 20px;
+      margin-top: -2px;
+      margin-bottom: -10px;
+      text-transform: uppercase;
+      font-family: Orator;
+      height: fit-content;
+      display: inline;
     }
   }
 </style>

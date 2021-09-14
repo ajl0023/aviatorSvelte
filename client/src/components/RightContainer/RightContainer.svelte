@@ -19,7 +19,7 @@
 	<TextPage index={4} />
 	<CarouselFull />
 	<CarouselRight {carouselPage} page="right" />
-	<ImagePage index={1} />
+	<CarouselFull name='discover' index={1}  />
 	<TextPage index={0} />
 	<div class="bg-image-container">
 		<img class="bg-image" src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631649616/homebg/HomeRight_jcgxwh.jpg" alt="">
