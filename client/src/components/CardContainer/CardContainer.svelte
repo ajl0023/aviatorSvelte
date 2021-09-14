@@ -41,8 +41,11 @@
 	];
 </script>
 
-<div class="card-wrapper">
+<div class="card-wrapper"><div class="bg-image-container">
+	<img class="bg-image" src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631654002/homebg/Horses_Running_t0wcvh.jpg" alt="">
+</div>
 	<div id="home" class="logo-wrapper">
+		
 		<div class="logo-container">
 			<img
 				class="image-logo"
@@ -66,10 +69,22 @@
 </div>
 
 <style lang="scss">
+	.bg-image-container{
+		position: absolute;
+		z-index: 1;			width: 100%;	height: 100%;
+		.bg-image{
+			width: 100%;
+			object-fit: cover;
+			height: 100%;
+		}
+	}
 	.card-container {
+		position: relative;
 		background-color: #2c2a2b;
 	}
 	.logo-wrapper {
+		z-index: 2;
+		position: relative;
 		width: 100vw;
 		height: 100vh;
 

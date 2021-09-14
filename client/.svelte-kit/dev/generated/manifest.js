@@ -1,13 +1,7 @@
 const c = [
-<<<<<<< HEAD
 	() => import("../components/layout.svelte"),
 	() => import("../components/error.svelte"),
 	() => import("../../../src/routes/index.svelte")
-=======
-	() => import("..\\components\\layout.svelte"),
-	() => import("..\\components\\error.svelte"),
-	() => import("..\\..\\..\\src\\routes\\index.svelte")
->>>>>>> bf4bdecb92398b2e1375113f515ab94f4bdee812
 ];
 
 const d = decodeURIComponent;
