@@ -1,1 +1,1 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "removed files from git remote" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "fixed a few css bugs" && git push origin main

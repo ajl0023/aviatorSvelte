@@ -65,7 +65,7 @@
 
 <div
   bind:this={lazyImage}
-  id={navToLink[index + 1]}
+  id={navToLink[index + 2]}
   class="bu-card card-container"
 >
   <div class="carousel-container">

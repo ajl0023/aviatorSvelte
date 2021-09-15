@@ -28,6 +28,11 @@
       url:
         "https://res.cloudinary.com/dt4xntymn/image/upload/v1631732958/aviator/bgphotos/theImpact/The_Impact_Pic_r8p3r2.jpg",
     },
+    {
+      type: "video",
+      url:
+        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631733408/aviator/bgphotos/videoRender/Copy_of_CAYMAN_AVIATOR_20210722_3_yhkqho.jpg",
+    },
   ];
   function checkOverFlow() {
     if (mainText.scrollHeight > mainText.clientHeight) {
@@ -50,7 +55,7 @@
   });
 </script>
 
-<div class="bu-card card-container" id={navToLink[index + 1]}>
+<div class="bu-card card-container" id={navToLink[index + 2]}>
   <div class="bu-card-image">
     <figure
       on:click={() => {

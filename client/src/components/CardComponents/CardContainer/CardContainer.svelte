@@ -1,4 +1,6 @@
 ﻿<script>
+  import { onMount } from "svelte";
+
   import Card from "../Card/Card.svelte";
   import CardCarousel from "../CardCarousel/CardCarousel.svelte";
 
@@ -13,12 +15,23 @@
       title: "the concept",
       type: "carousel",
     },
-
+    {
+      title: "the impact",
+      type: "image",
+    },
     {
       title: "video render",
       type: "video",
     },
   ];
+  onMount(() => {
+    setTimeout(() => {
+      const images = document.querySelectorAll("img");
+      images.forEach((img) => {
+        // img.src = "";
+      });
+    }, 2000);
+  });
 </script>
 
 <div class="card-wrapper">
@@ -38,7 +51,7 @@
       />
     </div>
   </div>
-  <div class="quote-container">
+  <div id="quote" class="quote-container">
     <div class="quote-image-container">
       <img
         src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631744012/aviator/mobile/Phoenix_Quote_tpsonx.png"
@@ -67,18 +80,24 @@
     position: relative;
 
     .quote-image-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      clip: rect(0, auto, auto, 0);
-      width: 500px;
+    
+      padding: 50px;
+      width: 100%;
+      clip-path: inset(0);
       height: 500px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      right: 0;
+
       .quote-image {
         top: 0;
         bottom: 0;
+        left: 0;
+        padding: 30px;
+        right: 0;
+        width: 100%;
         margin: auto;
         object-fit: cover;
         position: fixed;
