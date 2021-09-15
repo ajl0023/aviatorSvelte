@@ -93,7 +93,7 @@
 		justify-content: center;
 		align-items: center;
 		.logo-container {
-			max-width: 33%;
+			max-width: 55%;
 			.image-logo {
 				object-fit: contain;
 

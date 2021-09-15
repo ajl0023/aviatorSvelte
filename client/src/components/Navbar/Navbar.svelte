@@ -19,6 +19,7 @@
       <a href="https://www.apeldesign.com/">
         <!-- <Logo fill="white" /> -->
         <img
+          class="logo"
           src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631656727/misc/By_Apel_Design_White_hkfvc4.png"
           alt=""
         />
@@ -50,7 +51,7 @@
     }
     .logo-container {
       max-width: 10em;
-      height: auto;
+      height: 66px;
       img {
         width: 100%;
         object-fit: cover;
@@ -60,6 +61,9 @@
 
   @media (max-width: 650px) {
     .secondary-main-trigger-icon {
+      display: none;
+    }
+    .logo {
       display: none;
     }
   }
@@ -79,7 +83,6 @@
       text-transform: uppercase;
       font-family: Orator;
       height: fit-content;
-      display: inline;
     }
   }
 </style>

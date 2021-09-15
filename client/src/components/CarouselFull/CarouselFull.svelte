@@ -130,6 +130,7 @@
           width: 100%;
           object-fit: cover;
           height: 100%;
+		  object-position: center center;
         }
       }
     }
