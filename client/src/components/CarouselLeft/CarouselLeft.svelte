@@ -4,7 +4,7 @@
 	import { currentPage } from '../../stores';
 	import CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';
 	import { images } from '../image';
-	import Arrow from '../Card/Arrow.svelte';
+	import Arrow from "../CardComponents/Card/Arrow.svelte";
 	let carousel;
 	let glide;
 	let page;

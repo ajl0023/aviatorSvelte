@@ -2,7 +2,7 @@
 	import Glide from '@glidejs/glide';
 	import { afterUpdate, beforeUpdate, onMount } from 'svelte';
 	import { currentPage } from '../../stores';
-	import Arrow from '../Card/Arrow.svelte';
+	import Arrow from '../CardComponents/Card/Arrow.svelte';
 	import CarouselThumbs from '../CarouselThumbs/CarouselThumbs.svelte';
 	import { images } from '../image';
 	var glide;

@@ -1,109 +1,105 @@
 ﻿<script>
-	import CarouselFull from '../CarouselFull/CarouselFull.svelte';
-	import CarouselRight from '../CarouselRight/CarouselRight.svelte';
-	import Credits from '../Credits/Credits.svelte';
-	import Gallery from '../Gallery/Gallery.svelte';
-	import ImagePage from '../ImagePage/ImagePage.svelte';
-	import TextPage from '../TextPage/TextPage.svelte';
+  import CarouselFull from "../CarouselFull/CarouselFull.svelte";
+  import CarouselRight from "../CarouselRight/CarouselRight.svelte";
+  import Credits from "../Credits/Credits.svelte";
+  import Gallery from "../Gallery/Gallery.svelte";
+  import ImagePage from "../ImagePage/ImagePage.svelte";
+  import Quotes from "../Quotes/Quotes.svelte";
+  import TextPage from "../TextPage/TextPage.svelte";
 
-	export let rightPage;
-	export let carouselPage;
+  export let rightPage;
+  export let carouselPage;
 </script>
 
 <div bind:this={rightPage} class="container">
-	<Credits page="right" />
-	<ImagePage index={4} />
-	<Gallery />
-	<ImagePage index={3} />
-
-	<TextPage index={4} />
-	<CarouselFull />
-	<CarouselRight {carouselPage} page="right" />
-	<CarouselFull name='discover' index={1}  />
-	<TextPage index={0} />
-	<div class="bg-image-container">
-		<img class="bg-image" src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631649616/homebg/HomeRight_jcgxwh.jpg" alt="">
-	  </div>
-	<div class="logo-wrapper">
-		<div class="logo-container">
-			<img
-				class="image-logo"
-				src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/Maliview_Right_Logo_njwkyp.png"
-				alt=""
-			/>
-		</div>
-	</div>
+  <ImagePage index={2} />
+  <TextPage index={2} />
+  <CarouselFull name="concept" />
+  <TextPage index={0} />
+  <Quotes page="right" />
+  <div class="bg-image-container">
+    <img
+      class="bg-image"
+      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674250/aviator/home/Home_Right_1_sbkq8y.jpg"
+      alt=""
+    />
+  </div>
+  <div class="logo-wrapper">
+    <div class="logo-container">
+      <img
+        class="image-logo"
+        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674485/aviator/home/Aviator_Home_Right_cfdw58.png"
+        alt=""
+      />
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
-.bg-image-container{
+  .bg-image-container {
     width: 100%;
     height: 100%;
     position: absolute;
-	z-index: 1
-      ;
-	margin: auto;
-    .bg-image{
+    z-index: 1;
+    margin: auto;
+    .bg-image {
       width: 100%;
       height: 100%;
-  
-     
-     
     }
   }
-	.container {
-		position: relative;
-		align-items: center;
-		transform: translateY(-900vh);
-		transition: all 1s ease-out;
-		height: 100vh;
-		max-width: 50vw;
-		width: 100%;
-		
-		.logo-wrapper {
-			width: 50vw;
-			height: 100vh;
+  .container {
+    position: relative;
+    align-items: center;
+    transform: translateY(-500vh);
+    transition: all 1s ease-out;
+    height: 100vh;
+    max-width: 50vw;
+    width: 100%;
 
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-			z-index: 2;
-			position: relative;
-			.logo-container {
-				max-width: 33%;
-				.image-logo {
-					object-fit: contain;
+    .logo-wrapper {
+      width: 50vw;
+      height: 100vh;
 
-					width: 100%;
-				}
-			}
-			@media (max-width: 650px) {
-				width: 100%;
-				max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      z-index: 2;
+      position: relative;
+      .logo-container {
+        max-width: 33%;
+        .image-logo {
+          object-fit: contain;
 
-				.logo-container {
-					max-width: 40%;
-					.image-logo {
-						width: 100%;
-					}
-				}
-				justify-content: center;
-			}
-		}
-		@media (max-width: 650px) {
-			max-width: 100%;
-		}
-	}
-	@media (max-width: 650px) {
-		.image-logo {
-			display: none;
-		}
-		.container {
-			width: 100vw;
-		}
-		.container {
-			transform: translateY(0) !important;
-			justify-content: center;
-		}
-	}
+          width: 100%;
+        }
+      }
+      @media (max-width: 650px) {
+        width: 100%;
+        max-width: 100%;
+
+        .logo-container {
+          max-width: 40%;
+          .image-logo {
+            width: 100%;
+          }
+        }
+        justify-content: center;
+      }
+    }
+    @media (max-width: 650px) {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 650px) {
+    .image-logo {
+      display: none;
+    }
+    .container {
+      width: 100vw;
+    }
+    .container {
+      transform: translateY(0) !important;
+      justify-content: center;
+    }
+  }
 </style>

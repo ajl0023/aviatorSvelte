@@ -1,8 +1,8 @@
 ﻿<script>
   import Glide from "@glidejs/glide";
-  import { lazyLoadInstance } from "../../lazy.js";
+
   import { afterUpdate, onDestroy, onMount } from "svelte";
-  import { navToLink, textPages } from "../../pageContent";
+  import { navToLink, textPages } from "../../../pageContent";
   import Arrow from "../Card/Arrow.svelte";
   import { browser } from "$app/env";
   let carousel;
@@ -30,8 +30,12 @@
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887731/rendersHighRes/33340_MULHOLLAND_INT_IMG_4A-min_ihzxkw.jpg",
   ];
   const floorplans = [
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/2ND_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_xhlvzr.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/1ST_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_ouauck.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Waypoint_Sketch_xsevlg.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Telescope_Sketch_l4agfq.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Take_Off_Sketch_sx4qda.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Sketch_Carousel_Pics_1_o8wncj.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Geometry_Sketch_inkt7s.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Depth_Sketch_gz4wzm.jpg",
   ];
   onMount(() => {
     const glide = new Glide(carousel);
@@ -78,19 +82,25 @@
         </ul>
       </div>
       <div class="glide__arrows" data-glide-el="controls">
-        <button data-glide-dir="<" class="page-arrow-container arrow-left">
-          <img
-            class="page-arrow"
-            src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"
-            alt=""
-          />
-        </button>
-        <button data-glide-dir=">" class="page-arrow-container arrow-right ">
-          <img
-            class="page-arrow"
-            src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/z-caroArrow_tejk9h.png"
-            alt=""
-          />
+        <button
+          class="glide__arrow page-arrow-container glide__arrow--left arrow-left"
+          data-glide-dir="<"
+        >
+          <div class="page-arrow-relative">
+            <Arrow
+              styleP="object-fit:cover;width:100%;fill:white; transform:rotate(-90deg); height:100%; "
+            />
+          </div></button
+        >
+        <button
+          class="glide__arrow  page-arrow-container glide__arrow--right arrow-right"
+          data-glide-dir=">"
+        >
+          <div class="page-arrow-relative">
+            <Arrow
+              styleP="object-fit:cover;width:100%;fill:white; transform:rotate(90deg); height:100%; "
+            />
+          </div>
         </button>
       </div>
     </div>
@@ -101,7 +111,7 @@
         <figure class="bu-image bu-is-48x48">
           <div class="square-place-holder" style=" height: 100%; width:100%;">
             <img
-              src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631671006/misc/Maliview_cswlog.png"
+              src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631742128/aviator/mobile/miniLogo_h1qtki.png"
               alt=""
             />
           </div>
@@ -148,14 +158,17 @@
   .square-place-holder {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
     img {
       width: 100%;
-      height: 100%;
+
       object-fit: cover;
     }
   }
   h5 {
-    font-family: Orator;
+    font-size: 2em;
+    font-family: Capsuula;
   }
   .font-white {
     color: white;
@@ -195,22 +208,29 @@
   }
   .page-arrow-container {
     width: 30px;
-    border-radius: 50%;
+    height: 30px;
     position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: rgba(0 0 0 / 0.5);
     border: none;
     overflow: hidden;
-    height: 30px;
-    bottom: 0;
 
-    img {
-      width: 100%;
+    .page-arrow-relative {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+
+      right: 0;
+      padding: 5px;
+      margin: auto;
     }
   }
   .arrow-left {
     right: 40px;
   }
   .arrow-right {
-    transform: rotate(180deg);
     right: 0;
   }
   .carousel-image {

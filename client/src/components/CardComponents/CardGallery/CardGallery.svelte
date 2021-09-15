@@ -1,6 +1,6 @@
 ﻿<script>
-	import { highResBts } from '../../pageContent';
-	import { modal } from '../../stores';
+	import { highResBts } from '../../../pageContent';
+	import { modal } from '../../../stores';
 
 	const images = [
 		'https://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/2021.05.29_roof_2_ontfwx.jpg',

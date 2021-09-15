@@ -1,6 +1,4 @@
 ﻿<script>
-  let name = "world";
-  import Logo from "../../images/svgs/Logo/index.js";
   import Hamburger from "../Hamburger/Hamburger.svelte";
 </script>
 
@@ -78,10 +76,12 @@
       line-height: 18px;
       cursor: pointer;
       line-height: 20px;
-      margin-top: -2px;
-      margin-bottom: -10px;
+      margin-top: -4px;
+      font-family: Capsuula;
+      font-weight: 600;
+      margin-bottom: -8px;
       text-transform: uppercase;
-      font-family: Orator;
+
       height: fit-content;
     }
   }

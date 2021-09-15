@@ -1,13 +1,13 @@
 ﻿<script>
   import Logo from "../../images/svgs/Logo/Logo.svelte";
-  import { navButtons, navToLink } from "../../pageContent";
+  import { navButtons, navToLink, pageLength } from "../../pageContent";
   import { pagePositions } from "../../stores";
 
   let mainInput;
   function triggerScroll(i) {
     $pagePositions.inital = true;
     $pagePositions.left = i * -100;
-    $pagePositions.right = 100 * (i - 9);
+    $pagePositions.right = 100 * (i - 5);
     $pagePositions.page = i;
     mainInput.checked = false;
   }
@@ -62,7 +62,7 @@
   @mixin side-menu-container($leftValue) {
     background-color: white;
     height: 100vh;
-
+    font-family: Capsuula;
     bottom: 0;
     top: 0;
     display: flex;
@@ -200,7 +200,6 @@
     img {
       width: 100%;
       object-fit: cover;
-	  
     }
   }
 </style>

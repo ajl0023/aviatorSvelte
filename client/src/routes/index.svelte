@@ -7,7 +7,7 @@
 
 	import '../bulma.prefixed.css';
 	import ScrollContainer from '../components/ScrollContainer/ScrollContainer.svelte';
-	import CardContainer from '../components/CardContainer/CardContainer.svelte';
+	import CardContainer from '../components/CardComponents/CardContainer/CardContainer.svelte';
 
 	let windowThreshHold = false;
 

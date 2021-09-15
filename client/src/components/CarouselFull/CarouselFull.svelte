@@ -1,28 +1,21 @@
 ﻿<script>
   import Glide from "@glidejs/glide";
   import { onMount } from "svelte";
-  import Arrow from "../Card/Arrow.svelte";
+  import Arrow from "../CardComponents/Card/Arrow.svelte";
 
   let glider;
   export let name;
-  const images = [
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/2ND_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_xhlvzr.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631328567/FloorPlans/1ST_FLOOR_20-0001_33340_Mullholland_Hwy_20200810_ouauck.jpg",
-  ];
-  const outsideRenders = [
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656387/discoverCarousel/9_uzo4x8.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656387/discoverCarousel/8_hfpqwt.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656383/discoverCarousel/7_hsa2ug.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656388/discoverCarousel/6_irwxo2.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656384/discoverCarousel/5_uxqh1e.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656383/discoverCarousel/4_gbfofj.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656383/discoverCarousel/3_dhtxik.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656383/discoverCarousel/2_glhk3x.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656383/discoverCarousel/1_dcchec.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656385/discoverCarousel/12_ymbo5d.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656385/discoverCarousel/11_jrxcsr.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631656386/discoverCarousel/10_cvnxds.jpg",
-  ];
+
+  const images = {
+    concept: [
+      "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Waypoint_Sketch_xsevlg.jpg",
+      "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Telescope_Sketch_l4agfq.jpg",
+      "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Take_Off_Sketch_sx4qda.jpg",
+      "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Sketch_Carousel_Pics_1_o8wncj.jpg",
+      "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Geometry_Sketch_inkt7s.jpg",
+      "http://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Depth_Sketch_gz4wzm.jpg",
+    ],
+  };
 
   onMount(() => {
     const glide = new Glide(glider);
@@ -34,10 +27,20 @@
   <div bind:this={glider} class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
-        {#each name === "discover" ? outsideRenders : images as img, i}
+        {#each images[name] as img, i}
           <li class="glide__slide">
-            <div class="image-container">
-              <img loading="lazy" class="carousel-image" src={img} alt="" />
+            <div class="dual-image-container">
+              <div class="image-container">
+                <img loading="lazy" class="carousel-image" src={img} alt="" />
+              </div>
+              <div class="image-container">
+                <img
+                  loading="lazy"
+                  class="carousel-image"
+                  src={images[name][i + 1]}
+                  alt=""
+                />
+              </div>
             </div>
           </li>
         {/each}
@@ -124,13 +127,18 @@
     height: 100%;
     .glide__track {
       height: 100%;
-      .image-container {
+      .dual-image-container {
         width: 100%;
-        img {
+        height: 100%;
+        .image-container {
           width: 100%;
-          object-fit: cover;
-          height: 100%;
-		  object-position: center center;
+          height: 50%;
+          img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            object-position: center center;
+          }
         }
       }
     }

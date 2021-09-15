@@ -8,9 +8,9 @@ cloudinary.config({
 });
 
 cloudinary.v2.search.expression(
-  'folder:discoverCarousel/*' // add your folder
+  'folder=aviator/bgphotos/theConcept' // add your folder
 ).sort_by('public_id', 'desc').max_results(30).execute().then((result) => {
- 
+ console.log(result)
   const urls = result.resources.map((item) => {
     return item.url
   })

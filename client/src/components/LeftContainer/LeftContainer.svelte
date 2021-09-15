@@ -3,59 +3,52 @@
   import Credits from "../Credits/Credits.svelte";
   import GalleryPreview from "../GalleryPreview/GalleryPreview.svelte";
   import ImagePage from "../ImagePage/ImagePage.svelte";
+  import Quotes from "../Quotes/Quotes.svelte";
   import TextPage from "../TextPage/TextPage.svelte";
-
-
-
+  import CarouselFull from "../CarouselFull/CarouselFull.svelte";
   let name = "world";
   export let leftPage;
-  export let carouselPage;
 </script>
 
 <div bind:this={leftPage} class="container">
   <div class="bg-image-container">
-    <img class="bg-image" src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631649512/homebg/HorseLeft_eilqmu.jpg" alt="">
+    <img
+      class="bg-image"
+      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674254/aviator/home/Home_Left_1_ys6vek.jpg"
+      alt=""
+    />
   </div>
   <div id="home" class="logo-wrapper">
     <div class="logo-container">
       <img
         class="image-logo"
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/Maliview_Left_Logo_amrxlk.png"
+        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674478/aviator/home/Aviator_Home_Left_thr0gm.png"
         alt=""
       />
     </div>
   </div>
-
-  <ImagePage name="malibu" index={0} />
-  <TextPage name="discover" bgColor="#a4632e" index={1} />
-  <CarouselLeft name="renders" {carouselPage} page="left" />
-  <TextPage name="floorplans" bgColor="#a4632e" index={3} />
-  <ImagePage name="equestrian" index={2} />
-  <TextPage name="video render" bgColor="#a4632e" index={5} />
-  <GalleryPreview name="behind the scenes" />
-
-  <TextPage index={7} name="drone footage" />
-  <Credits page="left" />
+  <Quotes page="left" />
+  <ImagePage page="left" index={0} />
+  <TextPage page="left" bgColor="#860116" index={1} />
+  <ImagePage page='left' index={1}  />
+  <TextPage page="left" bgColor="#860116" index={3} />
 </div>
 
 <style lang="scss">
-  .bg-image-container{
+  .bg-image-container {
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 1
-      ;
-    .bg-image{
+    z-index: 1;
+    .bg-image {
       width: 100%;
       height: 100%;
-   
-      
-     
     }
   }
   .container {
     position: relative;
     align-items: center;
+  
 
     transition: all 1s ease-out;
     height: 100vh;
@@ -107,5 +100,4 @@
       justify-content: center;
     }
   }
-
 </style>

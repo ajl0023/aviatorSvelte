@@ -2,8 +2,8 @@
   import { onDestroy, onMount } from "svelte";
   import { browser } from "$app/env";
 
-  import { navToLink, textPages } from "../../pageContent";
-  import { modal } from "../../stores";
+  import { navToLink, textPages } from "../../../pageContent";
+  import { modal } from "../../../stores";
   import Arrow from "./Arrow.svelte";
 
   export let index;
@@ -15,7 +15,7 @@
     {
       type: "image",
       url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790318/misc/bgPhotos/bg1_lcs2gw.jpg",
+        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631676187/aviator/bgphotos/The_Background_Fire_Photo_z81p7d.jpg",
     },
     {
       type: "image",
@@ -24,33 +24,9 @@
     },
 
     {
-      type: "carousel",
-    },
-    {
-      type: "carousel",
-    },
-    {
       type: "image",
       url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790318/misc/bgPhotos/bg3_mi7jx9.jpg",
-    },
-    {
-      type: "video",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790318/misc/bgPhotos/bg4_ma0d9j.jpg",
-      videoUrl: "https://www.youtube.com/embed/nTS10ZQM5Ms",
-    },
-    {
-      type: "gallery",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790318/misc/bgPhotos/bg3_mi7jx9.jpg",
-    },
-
-    {
-      type: "video",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790322/misc/bgPhotos/drone_s8lkqw.png",
-      videoUrl: "https://www.youtube.com/embed/l7h2P07cSbc",
+        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631732958/aviator/bgphotos/theImpact/The_Impact_Pic_r8p3r2.jpg",
     },
   ];
   function checkOverFlow() {
@@ -108,12 +84,9 @@
     <div class="bu-media">
       <div class="bu-media-left">
         <figure class="bu-image bu-is-48x48">
-          <div
-            class="square-place-holder"
-            style=" height: 100%; width:100%;"
-          >
+          <div class="square-place-holder" style=" height: 100%; width:100%;">
             <img
-              src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631671006/misc/Maliview_cswlog.png"
+              src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631742128/aviator/mobile/miniLogo_h1qtki.png"
               alt=""
             />
           </div>
@@ -161,7 +134,8 @@
     object-fit: cover;
   }
   h5 {
-    font-family: Orator;
+    font-size: 2em;
+    font-family: Capsuula;
   }
   .font-white {
     color: white;
@@ -169,11 +143,12 @@
   .square-place-holder {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
     img {
       width: 100%;
-	  height: 100%;
-	  object-fit: cover;
 
+      object-fit: cover;
     }
   }
   .card-content {
