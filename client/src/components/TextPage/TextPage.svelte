@@ -104,6 +104,9 @@
     z-index: 2;
     position: relative;
     width: fit-content;
+    @media screen and (max-width: 891px) {
+      font-size: 2.3em;
+    }
   }
   .header-container {
     width: fit-content;

@@ -42,6 +42,17 @@
     position: absolute;
     z-index: 1;
     margin: auto;
+    &::before {
+      display: block;
+      background-color: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(4px);
+
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      position: absolute;
+      content: "";
+    }
     .bg-image {
       width: 100%;
       height: 100%;

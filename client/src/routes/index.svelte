@@ -1,44 +1,46 @@
 <script>
-	import { onDestroy, onMount } from 'svelte';
-	import Modal from '../components/Modal/Modal.svelte';
-	import Navbar from '../components/Navbar/Navbar.svelte';
-	import { browser } from '$app/env';
-	import '../global.scss';
+  import { onDestroy, onMount } from "svelte";
+  import Modal from "../components/Modal/Modal.svelte";
+  import Navbar from "../components/Navbar/Navbar.svelte";
 
-	import '../bulma.prefixed.css';
-	import ScrollContainer from '../components/ScrollContainer/ScrollContainer.svelte';
-	import CardContainer from '../components/CardComponents/CardContainer/CardContainer.svelte';
+  import { browser } from "$app/env";
+  import "../global.scss";
 
-	let windowThreshHold = false;
+  import "../bulma.prefixed.css";
+  import ScrollContainer from "../components/ScrollContainer/ScrollContainer.svelte";
+  import CardContainer from "../components/CardComponents/CardContainer/CardContainer.svelte";
+  import Socials from "../components/Socials/Socials.svelte";
 
-	function handleResponsiveResize() {
-		if (window.innerWidth <= 650) {
-			windowThreshHold = true;
-		} else {
-			windowThreshHold = false;
-		}
-	}
-	onMount(() => {
-	
-		handleResponsiveResize();
+  let windowThreshHold = false;
 
-		window.addEventListener('resize', handleResponsiveResize);
-	});
-	onDestroy(() => {
-		if (browser) {
-			window.removeEventListener('resize', handleResponsiveResize);
-		}
-	});
+  function handleResponsiveResize() {
+    if (window.innerWidth <= 650) {
+      windowThreshHold = true;
+    } else {
+      windowThreshHold = false;
+    }
+  }
+  onMount(() => {
+    handleResponsiveResize();
+
+    window.addEventListener("resize", handleResponsiveResize);
+  });
+  onDestroy(() => {
+    if (browser) {
+      window.removeEventListener("resize", handleResponsiveResize);
+    }
+  });
 </script>
 
 <div>
-	<Navbar />
+  <Navbar />
 
-	<ScrollContainer />
+  <ScrollContainer />
 
-	<CardContainer />
+  <CardContainer />
 
-	<Modal />
+  <Modal />
+  <Socials />
 </div>
 
 <style lang="scss">

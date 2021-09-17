@@ -3,7 +3,6 @@
 </script>
 
 <div
-
   style="justify-content: {page === 'left' ? 'flex-end' : 'flex-start'}; 
   padding: {page === 'left' ? '0 0 0 40px' : '0 40px 0 0 '};"
   class="page bu-has-background-black"
@@ -28,11 +27,18 @@
 
     .container {
       max-width: 700px;
+      height: auto;
+      display: flex;
+      align-items: center;
       .image-container {
         width: 100%;
-        height: 100%;
+        height: 80%;
         .quote-photo {
+          height: 560px;
           width: 100%;
+          @media screen and (max-width: 800px) {
+            height: 300px;
+          }
         }
       }
     }

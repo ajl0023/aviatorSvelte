@@ -19,6 +19,7 @@
       type: "video",
       url:
         "https://res.cloudinary.com/dt4xntymn/image/upload/v1631733408/aviator/bgphotos/videoRender/Copy_of_CAYMAN_AVIATOR_20210722_3_yhkqho.jpg",
+      videoUrl: "https://www.youtube.com/embed/iWGFuMg-RA0",
     },
     {
       videoUrl: "https://www.youtube.com/embed/nTS10ZQM5Ms",
