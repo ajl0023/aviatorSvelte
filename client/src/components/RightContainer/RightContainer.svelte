@@ -8,19 +8,18 @@
   import TextPage from "../TextPage/TextPage.svelte";
 
   export let rightPage;
-  export let carouselPage;
 </script>
 
 <div bind:this={rightPage} class="container">
   <ImagePage index={2} />
   <TextPage index={2} />
-  <CarouselFull name="concept" />
+  <CarouselFull orient="half" page="right" name="concept" />
   <TextPage index={0} />
   <Quotes page="right" />
   <div class="bg-image-container">
     <img
       class="bg-image"
-      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674250/aviator/home/Home_Right_1_sbkq8y.jpg"
+      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1632263453/aviator/home/Home_Right_rjgeno.jpg"
       alt=""
     />
   </div>
@@ -42,17 +41,7 @@
     position: absolute;
     z-index: 1;
     margin: auto;
-    &::before {
-      display: block;
-      background-color: rgba(10, 10, 10, 0.6);
-      backdrop-filter: blur(4px);
 
-      height: 100%;
-      width: 100%;
-      z-index: 2;
-      position: absolute;
-      content: "";
-    }
     .bg-image {
       width: 100%;
       height: 100%;

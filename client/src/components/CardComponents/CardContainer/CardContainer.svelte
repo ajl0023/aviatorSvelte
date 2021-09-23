@@ -17,7 +17,7 @@
     },
     {
       title: "the impact",
-      type: "image",
+      type: "carousel",
     },
     {
       title: "video render",

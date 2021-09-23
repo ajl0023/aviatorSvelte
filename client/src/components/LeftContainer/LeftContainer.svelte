@@ -14,7 +14,7 @@
   <div class="bg-image-container">
     <img
       class="bg-image"
-      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674254/aviator/home/Home_Left_1_ys6vek.jpg"
+      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1632263432/aviator/home/Home_Left_gilcuo.jpg"
       alt=""
     />
   </div>
@@ -30,7 +30,7 @@
   <Quotes page="left" />
   <ImagePage page="left" index={0} />
   <TextPage page="left" bgColor="#860116" index={1} />
-  <ImagePage page='left' index={1}  />
+  <CarouselFull page="left" name="impact" orient="full" index={2} />
   <TextPage page="left" bgColor="#860116" index={3} />
 </div>
 
@@ -40,17 +40,7 @@
     height: 100%;
     position: absolute;
     z-index: 1;
-    &::before {
-      display: block;
-      background-color: rgba(10, 10, 10, 0.6);
-      backdrop-filter: blur(4px);
 
-      height: 100%;
-      width: 100%;
-      z-index: 2;
-      position: absolute;
-      content: "";
-    }
     .bg-image {
       width: 100%;
       height: 100%;
@@ -59,7 +49,6 @@
   .container {
     position: relative;
     align-items: center;
-  
 
     transition: all 1s ease-out;
     height: 100vh;

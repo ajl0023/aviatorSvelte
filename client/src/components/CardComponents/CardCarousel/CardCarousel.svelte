@@ -1,47 +1,44 @@
 ﻿<script>
+  import { browser } from "$app/env";
   import Glide from "@glidejs/glide";
-
-  import { afterUpdate, onDestroy, onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { navToLink, textPages } from "../../../pageContent";
   import Arrow from "../Card/Arrow.svelte";
-  import { browser } from "$app/env";
   let carousel;
   let lazyImage;
-  let firstImage;
+  let glide;
+  let glideIndex = 0;
   let showMore = false;
 
   export let index;
   export let page;
   let overFlowing;
   let mainText;
-  const images = [
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887731/rendersHighRes/33340_MULHOLLAND_INT_IMG_12A_00-min_ciecgp.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887728/rendersHighRes/33340_MULHOLLAND_INT_IMG_14A-min_a51cfk.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887729/rendersHighRes/33340_MULHOLLAND_INT_IMG_16A_00-min_qgp2ne.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887729/rendersHighRes/33340_MULHOLLAND_INT_IMG_24A-min_hsnpta.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887729/rendersHighRes/33340_MULHOLLAND_INT_IMG_26A-min_d1dxwf.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887729/rendersHighRes/33340_MULHOLLAND_INT_IMG_26B-min_jthbj4.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887728/rendersHighRes/33340_MULHOLLAND_INT_IMG_30A-min_yvenyq.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887729/rendersHighRes/33340_MULHOLLAND_INT_IMG_31A-min_mo1cj5.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887728/rendersHighRes/33340_MULHOLLAND_INT_IMG_34A-min_z5fw2h.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887730/rendersHighRes/33340_MULHOLLAND_INT_IMG_34B-min_ggb1xk.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887730/rendersHighRes/33340_MULHOLLAND_INT_IMG_34C-min_y3bogv.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887730/rendersHighRes/33340_MULHOLLAND_INT_IMG_3A_00-min_b0yvdi.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1630887731/rendersHighRes/33340_MULHOLLAND_INT_IMG_4A-min_ihzxkw.jpg",
-  ];
-  const floorplans = [
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Waypoint_Sketch_xsevlg.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Telescope_Sketch_l4agfq.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Take_Off_Sketch_sx4qda.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Sketch_Carousel_Pics_1_o8wncj.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Geometry_Sketch_inkt7s.jpg",
-    "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Depth_Sketch_gz4wzm.jpg",
-  ];
+
+  const images = {
+    "the impact": [
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_2_v7skk3.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_4_cloxr9.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_5_scg5pj.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_6_idtqug.jpg",
+    ],
+    "the concept": [
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Waypoint_Sketch_xsevlg.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Telescope_Sketch_l4agfq.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Take_Off_Sketch_sx4qda.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Sketch_Carousel_Pics_1_o8wncj.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Geometry_Sketch_inkt7s.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Depth_Sketch_gz4wzm.jpg",
+    ],
+  };
+
   onMount(() => {
-    const glide = new Glide(carousel);
+    glide = new Glide(carousel);
 
     glide.mount();
-
+    glide.on("run", function () {
+      glideIndex = glide.index;
+    });
     if (browser) {
       window.addEventListener("resize", checkOverFlow);
     }
@@ -70,9 +67,16 @@
 >
   <div class="carousel-container">
     <div bind:this={carousel} class="glide">
+      <div class="indicator {page}">
+        {#if glide}
+          <p>
+            {glideIndex}/{images[page.title].length - 1}
+          </p>
+        {/if}
+      </div>
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          {#each page.title === "renders" ? images : floorplans as img, i}
+          {#each images[page.title] as img, i}
             <li class="glide__slide">
               <div class="glide-image-container">
                 <img loading="lazy" class="carousel-image" src={img} alt="" />
@@ -155,6 +159,25 @@
 </div>
 
 <style lang="scss">
+  .indicator {
+    top: 5px;
+
+    z-index: 4;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.2em;
+    right: 5px;
+    position: absolute;
+    padding: 5px 15px;
+    border-radius: 14px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    p {
+      margin-right: -0.2em;
+    }
+  }
   .square-place-holder {
     width: 100%;
     height: 100%;
@@ -210,7 +233,7 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     border-radius: 50%;
     background-color: rgba(0 0 0 / 0.5);
     border: none;
@@ -231,7 +254,7 @@
     right: 40px;
   }
   .arrow-right {
-    right: 0;
+    right: 5px;
   }
   .carousel-image {
     object-fit: cover;
