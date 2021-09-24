@@ -5,6 +5,7 @@ export const pageContent = [
   "the concept",
   "the impact",
   "video render",
+  "floorplans",
   "contact",
 ];
 export const navButtons = [
@@ -14,6 +15,7 @@ export const navButtons = [
   "the concept",
   "the impact",
   "video render",
+  "floorplans",
   "contact",
 ];
 export const pageLength = pageContent.length;
@@ -57,6 +59,16 @@ export const textPages = [
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631735086/aviator/bgphotos/videoRender/Video_Render_BrushHeader_vtxjwf.png",
     pgBrush:
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631735086/aviator/bgphotos/videoRender/Video_Render_Brush_PNGParagraph_k7quw4.png",
+  },
+  {
+    header: "Floorplans",
+    paragraphs: [
+      "Look through some of aviator's highly detailed floorplans to get a full layout of the design.",
+    ],
+    headerBrush:
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNG_nob5gl.png",
+    pgBrush:
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNGparag_yzuqik.png",
   },
 ];
 export const creditsContent = [

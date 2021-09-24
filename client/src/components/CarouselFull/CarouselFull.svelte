@@ -18,9 +18,9 @@
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Depth_Sketch_gz4wzm.jpg",
     ],
     floorplans: [
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632248351/aviator/floorplans/2540_Cayman_Rd_SITE_PLAN-1_neuxzy.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632248351/aviator/floorplans/2540_Cayman_Rd_1ST_LEVEL_20210629-1_tkjc8l.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632248351/aviator/floorplans/2_srneqc.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507698/aviator/floorplans/2540_Cayman_Rd_SITE_PLAN-1_rpr882.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507698/aviator/floorplans/2540_Cayman_Rd_1ST_LEVEL_20210629-1_ckq7vd.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507697/aviator/floorplans/2540_Cayman_Rd_2ND_LEVEL_20210629-1_g4bs0x.jpg",
     ],
     impact: [
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_6_e52vf4.jpg",

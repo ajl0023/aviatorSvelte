@@ -9,7 +9,8 @@
 </script>
 
 <div bind:this={rightPage} class="container">
-  <ContactUs />
+  <ImagePage page="right" index={5} />
+  <TextPage index={4} />
   <ImagePage index={2} />
   <TextPage index={2} />
   <CarouselFull orient="half" page="right" name="concept" />
@@ -49,7 +50,7 @@
   .container {
     position: relative;
     align-items: center;
-    transform: translateY(-600vh);
+    transform: translateY(-700vh);
     transition: all 1s ease-out;
     height: 100vh;
     max-width: 50vw;

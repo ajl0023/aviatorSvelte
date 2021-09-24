@@ -32,6 +32,11 @@
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Geometry_Sketch_inkt7s.jpg",
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Depth_Sketch_gz4wzm.jpg",
     ],
+    floorplans: [
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507698/aviator/floorplans/2540_Cayman_Rd_SITE_PLAN-1_rpr882.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507698/aviator/floorplans/2540_Cayman_Rd_1ST_LEVEL_20210629-1_ckq7vd.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507697/aviator/floorplans/2540_Cayman_Rd_2ND_LEVEL_20210629-1_g4bs0x.jpg",
+    ],
   };
 
   onMount(() => {
@@ -72,7 +77,7 @@
       <div class="indicator {page}">
         {#if glide}
           <p>
-            {glideIndex+1}/{images[page.title].length}
+            {glideIndex + 1}/{images[page.title].length}
           </p>
         {/if}
       </div>

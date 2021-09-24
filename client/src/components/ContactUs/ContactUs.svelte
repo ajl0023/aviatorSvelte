@@ -1,4 +1,8 @@
 <script>
+  import { textPages } from "../../pageContent";
+
+  export let bgColor;
+  export let deviceType;
   let form;
   let submitted = false;
   const handleSubmit = (e) => {
@@ -17,8 +21,16 @@
   };
 </script>
 
-<div class="container">
-  <h5 class="bu-is-size-1">contact</h5>
+<div style="background-color:{bgColor}" class="container">
+  <div class="header-container">
+    <h5 class="bu-is-size-1">contact</h5>
+    <img
+      class="header-stroke"
+      src={"https://res.cloudinary.com/dt4xntymn/image/upload/v1631738218/aviator/bgphotos/theConcept/Concept_Brush_PNG_cbpo7s.png"}
+      alt=""
+    />
+  </div>
+
   {#if !submitted}<form
       bind:this={form}
       name="emailForm"
@@ -98,6 +110,18 @@
 </div>
 
 <style lang="scss">
+  .header-stroke {
+    left: 0;
+    top: 30px;
+    height: 60%;
+
+    z-index: 1;
+    position: absolute;
+  }
+  .header-container {
+    position: relative;
+    height: fit-content;
+  }
   .success-message {
     color: white;
   }
@@ -128,6 +152,8 @@
   h5 {
     text-transform: uppercase;
     color: white;
+    z-index: 2;
+    position: relative;
     font-family: Capsuula;
   }
 </style>

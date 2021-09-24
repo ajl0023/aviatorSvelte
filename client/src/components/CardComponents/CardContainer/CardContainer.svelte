@@ -24,6 +24,10 @@
       title: "video render",
       type: "video",
     },
+    {
+      title: "floorplans",
+      type: "carousel",
+    },
   ];
   onMount(() => {
     setTimeout(() => {

@@ -6,6 +6,7 @@
   import Quotes from "../Quotes/Quotes.svelte";
   import TextPage from "../TextPage/TextPage.svelte";
   import CarouselFull from "../CarouselFull/CarouselFull.svelte";
+  import ContactUs from "../ContactUs/ContactUs.svelte";
   let name = "world";
   export let leftPage;
 </script>
@@ -32,7 +33,9 @@
   <TextPage page="left" bgColor="#860116" index={1} />
   <CarouselFull page="left" name="impact" orient="full" index={2} />
   <TextPage page="left" bgColor="#860116" index={3} />
-  <ImagePage page="left" index={5} />
+  <CarouselFull page="left" name="floorplans" orient="full" index={4} />
+
+  <ContactUs deviceType={"desktop"} bgColor="#860116" />
 </div>
 
 <style lang="scss">
