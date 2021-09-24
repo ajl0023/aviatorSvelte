@@ -24,11 +24,13 @@
 <div style="background-color:{bgColor}" class="container">
   <div class="header-container">
     <h5 class="bu-is-size-1">contact</h5>
-    <img
-      class="header-stroke"
-      src={"https://res.cloudinary.com/dt4xntymn/image/upload/v1631738218/aviator/bgphotos/theConcept/Concept_Brush_PNG_cbpo7s.png"}
-      alt=""
-    />
+    {#if deviceType}
+      <img
+        class="header-stroke"
+        src={"https://res.cloudinary.com/dt4xntymn/image/upload/v1631738218/aviator/bgphotos/theConcept/Concept_Brush_PNG_cbpo7s.png"}
+        alt=""
+      />
+    {/if}
   </div>
 
   {#if !submitted}<form
