@@ -32,7 +32,7 @@
   <TextPage page="left" bgColor="#860116" index={1} />
   <CarouselFull page="left" name="impact" orient="full" index={2} />
   <TextPage page="left" bgColor="#860116" index={3} />
-  <ImagePage page="left" index={0} />
+  <ImagePage page="left" index={5} />
 </div>
 
 <style lang="scss">

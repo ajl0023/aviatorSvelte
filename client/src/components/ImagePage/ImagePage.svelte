@@ -33,6 +33,11 @@
       url:
         "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790322/misc/bgPhotos/drone_s8lkqw.png",
     },
+    {
+      url:
+        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631751013/ContactUs/54d3f4_28add3e68eb94ebc8675416c21360ddf_mv2_n5evlp.jpg",
+      type: "image",
+    },
   ];
   onMount(() => {
     lazyLoadInstance().update();
