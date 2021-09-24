@@ -33,7 +33,7 @@ export const textPages = [
   {
     header: "The Concept",
     paragraphs: [
-      "Conceptually, Apel Design wanted to create the notion that the architecture of building continues beyond, in a sense, the forms flow throughout and never stop. The architecture forms emerge from the ground extent to the horizon and divide into two beautiful irregular volumetric elements as if the architecture was slicing the space emphasizing the gorgeous views of the Malibu mountains and the Pacific Ocean. The bird-like building program also incorporates the ideas of flow and continuation; the first level proposes an open floor plan with a glass facade that opens up the space to beautiful deck and a second floor for bedroom that are elevated from the ground to again emphasize this notion of flow and lightness.",
+      "Conceptually, Apel Design wanted to create the notion that the architecture of building continues beyond. In a sense, the forms flow throughout and never stop. The architecture forms emerge from the ground, extends to the horizon and divides into two beautiful irregular volumetric elements as if the architecture was slicing the space, emphasizing the gorgeous views of the Malibu mountains and the Pacific Ocean. The bird-like building program also incorporates the ideas of flow and continuation; the first level proposes an open floor plan with a glass facade that opens up the space to a beautiful deck and a second floor for bedrooms that are elevated from the ground to again emphasize this notion of flow and lightness.",
     ],
     headerBrush:
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631738218/aviator/bgphotos/theConcept/Concept_Brush_PNG_cbpo7s.png",
@@ -43,7 +43,7 @@ export const textPages = [
   {
     header: "The Impact",
     paragraphs: [
-      "Apel Design designed this project to have minimal environmental impact, this off-grid house will fully be powered by solar and biodiesel. The project will implement the latest technology to power the house. All the materials use will be LEED compliant to assure rigorous and implementation environmentally friendly materials.",
+      "Apel Design designed this project to have minimal environmental impact, this off-grid house will fully be powered by solar and biodiesel. The project will implement the latest technology to power the house. All the materials use will be LEED compliant to assure rigorous and environmentally friendly materials.",
     ],
     headerBrush:
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNG_nob5gl.png",

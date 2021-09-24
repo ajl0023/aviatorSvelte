@@ -1516,9 +1516,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-35b6b9de.js",
+      file: assets + "/_app/start-d325accf.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-35b6b9de.js", assets + "/_app/chunks/vendor-4598a42b.js"]
+      js: [assets + "/_app/start-d325accf.js", assets + "/_app/chunks/vendor-4598a42b.js"]
     },
     fetched: void 0,
     floc: false,
@@ -1577,7 +1577,7 @@ const module_lookup = {
     return index;
   })
 };
-const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-fc366380.js", "css": [], "js": ["layout.svelte-fc366380.js", "chunks/vendor-4598a42b.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-654921b5.js", "css": [], "js": ["error.svelte-654921b5.js", "chunks/vendor-4598a42b.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-7ba2ed98.js", "css": ["assets/pages/index.svelte-b009abe8.css"], "js": ["pages/index.svelte-7ba2ed98.js", "chunks/vendor-4598a42b.js"], "styles": [] } };
+const metadata_lookup = { ".svelte-kit/build/components/layout.svelte": { "entry": "layout.svelte-fc366380.js", "css": [], "js": ["layout.svelte-fc366380.js", "chunks/vendor-4598a42b.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-654921b5.js", "css": [], "js": ["error.svelte-654921b5.js", "chunks/vendor-4598a42b.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-4712ba04.js", "css": ["assets/pages/index.svelte-b009abe8.css"], "js": ["pages/index.svelte-4712ba04.js", "chunks/vendor-4598a42b.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -1702,7 +1702,7 @@ const textPages = [
   {
     header: "The Concept",
     paragraphs: [
-      "Conceptually, Apel Design wanted to create the notion that the architecture of building continues beyond, in a sense, the forms flow throughout and never stop. The architecture forms emerge from the ground extent to the horizon and divide into two beautiful irregular volumetric elements as if the architecture was slicing the space emphasizing the gorgeous views of the Malibu mountains and the Pacific Ocean. The bird-like building program also incorporates the ideas of flow and continuation; the first level proposes an open floor plan with a glass facade that opens up the space to beautiful deck and a second floor for bedroom that are elevated from the ground to again emphasize this notion of flow and lightness."
+      "Conceptually, Apel Design wanted to create the notion that the architecture of building continues beyond. In a sense, the forms flow throughout and never stop. The architecture forms emerge from the ground, extends to the horizon and divides into two beautiful irregular volumetric elements as if the architecture was slicing the space, emphasizing the gorgeous views of the Malibu mountains and the Pacific Ocean. The bird-like building program also incorporates the ideas of flow and continuation; the first level proposes an open floor plan with a glass facade that opens up the space to a beautiful deck and a second floor for bedrooms that are elevated from the ground to again emphasize this notion of flow and lightness."
     ],
     headerBrush: "https://res.cloudinary.com/dt4xntymn/image/upload/v1631738218/aviator/bgphotos/theConcept/Concept_Brush_PNG_cbpo7s.png",
     pgBrush: "https://res.cloudinary.com/dt4xntymn/image/upload/v1631738219/aviator/bgphotos/theConcept/Concept_Brush_PNGparagraph_uorzic.png"
@@ -1710,7 +1710,7 @@ const textPages = [
   {
     header: "The Impact",
     paragraphs: [
-      "Apel Design designed this project to have minimal environmental impact, this off-grid house will fully be powered by solar and biodiesel. The project will implement the latest technology to power the house. All the materials use will be LEED compliant to assure rigorous and implementation environmentally friendly materials."
+      "Apel Design designed this project to have minimal environmental impact, this off-grid house will fully be powered by solar and biodiesel. The project will implement the latest technology to power the house. All the materials use will be LEED compliant to assure rigorous and environmentally friendly materials."
     ],
     headerBrush: "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNG_nob5gl.png",
     pgBrush: "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNGparag_yzuqik.png"

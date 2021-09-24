@@ -1,2 +1,2 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "added floorplans" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "changed some text" && git push origin main
 
