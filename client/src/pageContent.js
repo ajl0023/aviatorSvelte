@@ -5,6 +5,7 @@ export const pageContent = [
   "the concept",
   "the impact",
   "video render",
+  "contact",
 ];
 export const navButtons = [
   "home",
@@ -13,6 +14,7 @@ export const navButtons = [
   "the concept",
   "the impact",
   "video render",
+  "contact",
 ];
 export const pageLength = pageContent.length;
 export const textPages = [

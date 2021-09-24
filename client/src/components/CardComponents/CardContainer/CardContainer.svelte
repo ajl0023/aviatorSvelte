@@ -1,5 +1,6 @@
 ﻿<script>
   import { onMount } from "svelte";
+  import ContactUs from "../../ContactUs/ContactUs.svelte";
 
   import Card from "../Card/Card.svelte";
   import CardCarousel from "../CardCarousel/CardCarousel.svelte";
@@ -70,17 +71,24 @@
         <CardCarousel page={card} index={i} />
       {/if}
     {/each}
+    <div id="contact" class="contact-us-container">
+      <ContactUs />
+    </div>
   </div>
 </div>
 
 <style lang="scss">
+  .contact-us-container {
+    width: 100%;
+    padding: 30px;
+    height: 100vh;
+  }
   .quote-container {
     width: 100%;
     height: 70vh;
     position: relative;
 
     .quote-image-container {
-    
       padding: 50px;
       width: 100%;
       clip-path: inset(0);

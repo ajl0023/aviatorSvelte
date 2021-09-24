@@ -1,13 +1,12 @@
 ﻿<script>
-  import Logo from "../../images/svgs/Logo/Logo.svelte";
-  import { navButtons, navToLink, pageLength } from "../../pageContent";
+  import { navButtons,navToLink } from "../../pageContent";
   import { pagePositions } from "../../stores";
 
   let mainInput;
   function triggerScroll(i) {
     $pagePositions.inital = true;
     $pagePositions.left = i * -100;
-    $pagePositions.right = 100 * (i - 5);
+    $pagePositions.right = 100 * (i - 6);
     $pagePositions.page = i;
     mainInput.checked = false;
   }

@@ -14,7 +14,7 @@ const pagePositionsStore = () => {
 		left: 0,
 		shouldScroll: true,
 		inital: false,
-		right: -500
+		right: -600
 	};
 	const { subscribe, set, update } = writable(state);
 

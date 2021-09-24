@@ -17,10 +17,12 @@
 
   const images = {
     "the impact": [
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_2_v7skk3.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_4_cloxr9.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_5_scg5pj.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632252098/aviator/renders/Copy_of_CAYMAN_AVIATOR_20210722_6_idtqug.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_6_e52vf4.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_5_om9us1.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_1_xebfit.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_2_sqndug.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_3_yfhhss.jpg",
+      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_4_cdgjbd.jpg",
     ],
     "the concept": [
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Waypoint_Sketch_xsevlg.jpg",
@@ -70,7 +72,7 @@
       <div class="indicator {page}">
         {#if glide}
           <p>
-            {glideIndex}/{images[page.title].length - 1}
+            {glideIndex+1}/{images[page.title].length}
           </p>
         {/if}
       </div>

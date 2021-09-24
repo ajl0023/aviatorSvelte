@@ -1,8 +1,6 @@
 ﻿<script>
   import CarouselFull from "../CarouselFull/CarouselFull.svelte";
-  import CarouselRight from "../CarouselRight/CarouselRight.svelte";
-  import Credits from "../Credits/Credits.svelte";
-  import Gallery from "../Gallery/Gallery.svelte";
+  import ContactUs from "../ContactUs/ContactUs.svelte";
   import ImagePage from "../ImagePage/ImagePage.svelte";
   import Quotes from "../Quotes/Quotes.svelte";
   import TextPage from "../TextPage/TextPage.svelte";
@@ -11,6 +9,7 @@
 </script>
 
 <div bind:this={rightPage} class="container">
+  <ContactUs />
   <ImagePage index={2} />
   <TextPage index={2} />
   <CarouselFull orient="half" page="right" name="concept" />
@@ -50,7 +49,7 @@
   .container {
     position: relative;
     align-items: center;
-    transform: translateY(-500vh);
+    transform: translateY(-600vh);
     transition: all 1s ease-out;
     height: 100vh;
     max-width: 50vw;
