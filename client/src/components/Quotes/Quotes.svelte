@@ -5,7 +5,7 @@
 <div
   style="justify-content: {page === 'left' ? 'flex-end' : 'flex-start'}; 
   padding: {page === 'left' ? '0 0 0 40px' : '0 40px 0 0 '};"
-  class="page bu-has-background-black"
+  class="page"
 >
   <div class="container">
     <div class="image-container">
