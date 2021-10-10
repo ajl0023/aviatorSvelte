@@ -1,8 +1,6 @@
-﻿<script>
+<script>
   import { highResBts } from "../../../pageContent";
   import { modal } from "../../../stores";
-
-  import { onMount } from "svelte";
 
   const images = [
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/2021.05.29_roof_2_ontfwx.jpg",
@@ -19,7 +17,6 @@
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_2_mqzixc.jpg",
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1630879411/gallery/kitchen_discussion_3_wwredc.jpg",
   ];
-
 </script>
 
 <div>
@@ -27,7 +24,7 @@
     <div class="bu-title bu-has-text-centered">behind the scenes</div>
     <div class="gallery-container">
       {#each images as image, i}
-        <div on:touch class="image-container">
+        <div class="image-container">
           <img
             src={image}
             on:click={() => {

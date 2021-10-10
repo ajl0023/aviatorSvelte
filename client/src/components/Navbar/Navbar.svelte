@@ -1,4 +1,4 @@
-﻿<script>
+<script>
   import Hamburger from "../Hamburger/Hamburger.svelte";
 </script>
 

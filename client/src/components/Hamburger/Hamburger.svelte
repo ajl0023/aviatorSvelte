@@ -39,6 +39,7 @@
     </ul>
     <div class="sidebar-logo-container">
       <a href="https://www.apeldesign.com/">
+        <!-- <Logo className="sidebar-logo" alt="" /> -->
         <img
           src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631656727/misc/By_Apel_Design_Black_z0yd9b.png"
           alt=""
@@ -77,14 +78,14 @@
       margin-top: 1.5rem;
       position: relative;
       &::before {
-        content: "";
+        content:"";
         height: 100%;
         width: 100%;
         display: block;
         opacity: 30%;
         background-size: 200px;
         z-index: 1;
-
+     
         position: absolute;
         top: 0;
         bottom: 0;
@@ -92,8 +93,10 @@
         right: 0;
         margin: auto;
         background-image: url("https://res.cloudinary.com/dt4xntymn/image/upload/v1631656727/misc/By_Apel_Design_Black_z0yd9b.png");
-
+        
+   
         background-repeat: no-repeat;
+
 
         background-position: center center;
       }
