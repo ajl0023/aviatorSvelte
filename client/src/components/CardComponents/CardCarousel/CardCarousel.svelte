@@ -1,20 +1,22 @@
 ﻿<script>
   import { browser } from "$app/env";
   import Glide from "@glidejs/glide";
-  import { onDestroy, onMount } from "svelte";
+
+  import { afterUpdate, beforeUpdate, onDestroy, onMount } from "svelte";
+  import PinchZoom from "../../../draftComponents/PinchZoom.svelte";
   import { navToLink, textPages } from "../../../pageContent";
   import Arrow from "../Card/Arrow.svelte";
   let carousel;
   let lazyImage;
   let glide;
   let glideIndex = 0;
-  let showMore = false;
+  let showMore = true;
 
   export let index;
   export let page;
   let overFlowing;
   let mainText;
-
+  let shouldDrag = true;
   const images = {
     "the impact": [
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_6_e52vf4.jpg",
@@ -40,12 +42,13 @@
   };
 
   onMount(() => {
-    glide = new Glide(carousel);
+    glide = new Glide(carousel, {});
 
-    glide.mount();
     glide.on("run", function () {
       glideIndex = glide.index;
     });
+    glide.mount();
+
     if (browser) {
       window.addEventListener("resize", checkOverFlow);
     }
@@ -65,6 +68,16 @@
       window.removeEventListener("resize", checkOverFlow);
     }
   });
+
+  $: {
+    if (glide) {
+      if (!shouldDrag) {
+        glide.disable();
+      } else {
+        glide.enable();
+      }
+    }
+  }
 </script>
 
 <div
@@ -74,7 +87,7 @@
 >
   <div class="carousel-container">
     <div bind:this={carousel} class="glide">
-      <div class="indicator {page}">
+      <div class="indicator">
         {#if glide}
           <p>
             {glideIndex + 1}/{images[page.title].length}
@@ -86,7 +99,12 @@
           {#each images[page.title] as img, i}
             <li class="glide__slide">
               <div class="glide-image-container">
-                <img loading="lazy" class="carousel-image" src={img} alt="" />
+                <PinchZoom
+                  on:pinch={(e) => {
+                    shouldDrag = !e.detail;
+                  }}
+                  {img}
+                />
               </div>
             </li>
           {/each}
@@ -184,6 +202,8 @@
     p {
       margin-right: -0.2em;
     }
+  }
+  .glide__slides {
   }
   .square-place-holder {
     width: 100%;

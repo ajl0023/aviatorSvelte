@@ -10,7 +10,7 @@
   import ScrollContainer from "../components/ScrollContainer/ScrollContainer.svelte";
   import CardContainer from "../components/CardComponents/CardContainer/CardContainer.svelte";
   import Socials from "../components/Socials/Socials.svelte";
-
+  import PinchZoom from "../draftComponents/PinchZoom.svelte";
   let windowThreshHold = false;
 
   function handleResponsiveResize() {
