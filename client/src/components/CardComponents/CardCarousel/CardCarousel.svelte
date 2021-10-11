@@ -1,11 +1,14 @@
 ﻿<script>
   import { browser } from "$app/env";
   import Glide from "@glidejs/glide";
+  import { DragGesture } from "@use-gesture/vanilla";
 
   import { afterUpdate, beforeUpdate, onDestroy, onMount } from "svelte";
   import PinchZoom from "../../../draftComponents/PinchZoom.svelte";
   import { navToLink, textPages } from "../../../pageContent";
   import Arrow from "../Card/Arrow.svelte";
+  import { spring, tweened } from "svelte/motion";
+
   let carousel;
   let lazyImage;
   let glide;
@@ -16,7 +19,10 @@
   export let page;
   let overFlowing;
   let mainText;
+  let currInd = 0;
   let shouldDrag = true;
+  let slider;
+  let sliderThresh = 80;
   const images = {
     "the impact": [
       "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_6_e52vf4.jpg",
@@ -41,12 +47,58 @@
     ],
   };
 
+  const xVal = spring(0, { stiffness: 0.1, damping: 0.89 });
   onMount(() => {
-    glide = new Glide(carousel, {});
+    new DragGesture(
+      slider,
+      ({ direction, movement, down }) => {
+        if (shouldDrag) {
+          xVal.set((carousel.offsetWidth + 10) * currInd * -1 + movement[0]);
 
-    glide.on("run", function () {
-      glideIndex = glide.index;
+          if (!down) {
+            if (
+              Math.abs(movement[0]) > sliderThresh &&
+              currInd === images[page.title].length - 1 &&
+              movement[0] < 0
+            ) {
+              xVal.set(-currInd * (carousel.offsetWidth + 10));
+
+              return;
+            }
+            if (
+              Math.abs(movement[0]) > sliderThresh &&
+              currInd === 0 &&
+              movement[0] > 0
+            ) {
+              xVal.set(-currInd * (carousel.offsetWidth + 10));
+
+              return;
+            }
+            if (Math.abs(movement[0]) > sliderThresh) {
+              if (movement[0] < -1) {
+                currInd += 1;
+              } else {
+                currInd -= 1;
+              }
+
+              xVal.set(-currInd * (carousel.offsetWidth + 10));
+            } else {
+              xVal.set(-currInd * (carousel.offsetWidth + 10));
+            }
+          }
+        }
+      },
+      {
+        pointer: {
+          touch: true,
+        },
+      }
+    );
+    glide = new Glide(carousel, {
+      swipeThreshold: false,
+      dragThreshold: false,
     });
+
     glide.mount();
 
     if (browser) {
@@ -54,6 +106,9 @@
     }
 
     checkOverFlow();
+    xVal.subscribe((v) => {
+      slider.style.transform = `translate(${v}px,0px)`;
+    });
   });
   function checkOverFlow() {
     if (mainText.scrollHeight > mainText.clientHeight) {
@@ -78,6 +133,16 @@
       }
     }
   }
+  const handleCarousel = (val) => {
+    if (currInd === 0 && val === -1) {
+      return;
+    } else if (currInd === images[page.title].length - 1 && val === 1) {
+      return;
+    } else {
+      currInd += val;
+      xVal.set(-currInd * (carousel.offsetWidth + 10));
+    }
+  };
 </script>
 
 <div
@@ -90,12 +155,12 @@
       <div class="indicator">
         {#if glide}
           <p>
-            {glideIndex + 1}/{images[page.title].length}
+            {currInd + 1}/{images[page.title].length}
           </p>
         {/if}
       </div>
       <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
+        <ul bind:this={slider} class="glide__slides">
           {#each images[page.title] as img, i}
             <li class="glide__slide">
               <div class="glide-image-container">
@@ -113,7 +178,9 @@
       <div class="glide__arrows" data-glide-el="controls">
         <button
           class="glide__arrow page-arrow-container glide__arrow--left arrow-left"
-          data-glide-dir="<"
+          on:click={() => {
+            handleCarousel(-1);
+          }}
         >
           <div class="page-arrow-relative">
             <Arrow
@@ -122,8 +189,10 @@
           </div></button
         >
         <button
+          on:click={() => {
+            handleCarousel(1);
+          }}
           class="glide__arrow  page-arrow-container glide__arrow--right arrow-right"
-          data-glide-dir=">"
         >
           <div class="page-arrow-relative">
             <Arrow

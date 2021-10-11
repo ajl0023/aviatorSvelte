@@ -94,7 +94,7 @@
         } else if (last) {
           timeout = setTimeout(() => {
             dispatch("pinch", false);
-          }, 500);
+          }, 200);
         }
 
         dx = movement[0];
@@ -151,7 +151,7 @@
 
     height: 100%;
     position: absolute;
-    touch-action: none;
+
     object-fit: cover;
   }
 </style>
