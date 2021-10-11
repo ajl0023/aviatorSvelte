@@ -124,6 +124,7 @@
   class="carousel-img"
   loading="lazy"
   src={img}
+  draggable="false"
   alt=""
 />
 
