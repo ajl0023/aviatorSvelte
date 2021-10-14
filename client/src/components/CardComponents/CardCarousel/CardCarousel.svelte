@@ -2,26 +2,25 @@
   import { browser } from "$app/env";
   import Glide from "@glidejs/glide";
   import { DragGesture } from "@use-gesture/vanilla";
-
-  import { afterUpdate, beforeUpdate, onDestroy, onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
+  import { spring } from "svelte/motion";
   import PinchZoom from "../../../draftComponents/PinchZoom.svelte";
   import { navToLink, textPages } from "../../../pageContent";
   import Arrow from "../Card/Arrow.svelte";
-  import { spring, tweened } from "svelte/motion";
-
+  export let index;
+  export let page;
   let carousel;
   let lazyImage;
   let glide;
-  let glideIndex = 0;
+  let glideContainer;
   let showMore = true;
 
-  export let index;
-  export let page;
   let overFlowing;
   let mainText;
   let currInd = 0;
   let shouldDrag = true;
   let slider;
+  let carouselWidth;
   let sliderThresh = 80;
   const images = {
     "the impact": [
@@ -48,7 +47,9 @@
   };
 
   const xVal = spring(0, { stiffness: 0.1, damping: 0.89 });
+
   onMount(() => {
+    carouselWidth = carousel.offsetWidth * images[page.title].length;
     new DragGesture(
       slider,
       ({ direction, movement, down }) => {
@@ -98,19 +99,24 @@
       swipeThreshold: false,
       dragThreshold: false,
     });
-
-    glide.mount();
-
+    glide.mount({
+      Resize: function (Glide, Components, Events) {
+        return {};
+      },
+    });
     if (browser) {
-      window.addEventListener("resize", checkOverFlow);
+      window.addEventListener("resize", resize);
     }
 
-    checkOverFlow();
+    resize();
     xVal.subscribe((v) => {
       slider.style.transform = `translate(${v}px,0px)`;
     });
   });
-  function checkOverFlow() {
+  function resize() {
+    carouselWidth = carousel.offsetWidth;
+
+    carousel.style.width = xVal.set(-currInd * (carousel.offsetWidth + 10));
     if (mainText.scrollHeight > mainText.clientHeight) {
       overFlowing = true;
     } else {
@@ -120,7 +126,7 @@
 
   onDestroy(() => {
     if (browser) {
-      window.removeEventListener("resize", checkOverFlow);
+      window.removeEventListener("resize", resize);
     }
   });
 
@@ -162,7 +168,11 @@
       <div class="glide__track" data-glide-el="track">
         <ul bind:this={slider} class="glide__slides">
           {#each images[page.title] as img, i}
-            <li class="glide__slide">
+            <li
+              style="width:{glideContainer ? carouselWidth : ''}px"
+              bind:this={glideContainer}
+              class="glide__slide"
+            >
               <div class="glide-image-container">
                 <PinchZoom
                   on:pinch={(e) => {

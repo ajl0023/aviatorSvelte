@@ -1,2 +1,2 @@
- cd client && npm run build && cd ..&& git add . && git commit -m "completely redid pinch to zoom" && git push origin main
+ cd client && npm run build && cd ..&& git add . && git commit -m "small error on card carousel" && git push origin main
 
