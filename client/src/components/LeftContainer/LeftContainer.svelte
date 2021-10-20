@@ -1,13 +1,10 @@
 ﻿<script>
-  import CarouselLeft from "../CarouselLeft/CarouselLeft.svelte";
-  import Credits from "../Credits/Credits.svelte";
-  import GalleryPreview from "../GalleryPreview/GalleryPreview.svelte";
+  import CarouselFull from "../CarouselFull/CarouselFull.svelte";
+  import ContactUs from "../ContactUs/ContactUs.svelte";
   import ImagePage from "../ImagePage/ImagePage.svelte";
   import Quotes from "../Quotes/Quotes.svelte";
   import TextPage from "../TextPage/TextPage.svelte";
-  import CarouselFull from "../CarouselFull/CarouselFull.svelte";
-  import ContactUs from "../ContactUs/ContactUs.svelte";
-  let name = "world";
+
   export let leftPage;
 </script>
 
