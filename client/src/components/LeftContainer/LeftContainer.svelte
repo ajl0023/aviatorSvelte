@@ -20,7 +20,7 @@
     <div class="logo-container">
       <img
         class="image-logo"
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674478/aviator/home/Aviator_Home_Left_thr0gm.png"
+        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1634757207/aviator/home/Aviator_Home_Left_svkmpp.png"
         alt=""
       />
     </div>

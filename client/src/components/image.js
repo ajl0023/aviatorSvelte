@@ -36,3 +36,30 @@ export const images = [
   "https://res.cloudinary.com/dt4xntymn/image/upload/v1630804585/renders/right32_ajeqik.jpg",
   "https://res.cloudinary.com/dt4xntymn/image/upload/v1630804585/renders/right33_o4z4s1.jpg",
 ];
+export const carouselImages = {
+  concept: [
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757426/aviator/concept/Take_Off_Color_c7rrhn.png",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757426/aviator/concept/CAYMAN_CONCEPT_SKETCH_5_fflsci.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757427/aviator/concept/CAYMAN_CONCEPT_SKETCH_4_kbmuog.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757427/aviator/concept/CAYMAN_CONCEPT_SKETCH_3_wrgbob.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757426/aviator/concept/CAYMAN_CONCEPT_SKETCH_2_jgjntm.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757426/aviator/concept/CAYMAN_CONCEPT_SKETCH_1_wssvpo.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757426/aviator/concept/CAYMAN_AVIATOR_SKETCH_04_ccjocr.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757426/aviator/concept/CAYMAN_AVIATOR_SKETCH_03_zhsess.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757426/aviator/concept/CAYMAN_AVIATOR_SKETCH_02_vh1tcl.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1634757682/aviator/concept/CAYMAN_AVIATOR_SKETCH_01_oz5gen.jpg",
+  ],
+  floorplans: [
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1634756204/aviator/floorplans/2540_Cayman_Rd_1ST_FLOOR_20211008_1_lqpore.jpg",
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1634756204/aviator/floorplans/2540_Cayman_Rd_SITE_PLAN_20211008_1_vfdnep.jpg",
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1634756204/aviator/floorplans/2540_Cayman_Rd_2ND_FLOOR_20211008_1_pyeoak.jpg",
+  ],
+  impact: [
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_6_e52vf4.jpg",
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_5_om9us1.jpg",
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_1_xebfit.jpg",
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_2_sqndug.jpg",
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_3_yfhhss.jpg",
+    "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_4_cdgjbd.jpg",
+  ],
+};

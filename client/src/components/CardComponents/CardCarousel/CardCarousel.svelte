@@ -1,4 +1,5 @@
 ﻿<script>
+  import { carouselImages } from "./../../image.js";
   import { browser } from "$app/env";
   import Glide from "@glidejs/glide";
   import { DragGesture } from "@use-gesture/vanilla";
@@ -9,6 +10,7 @@
   import Arrow from "../Card/Arrow.svelte";
   export let index;
   export let page;
+  export let carouselName;
   let carousel;
   let lazyImage;
   let glide;
@@ -22,34 +24,12 @@
   let slider;
   let carouselWidth;
   let sliderThresh = 80;
-  const images = {
-    "the impact": [
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_6_e52vf4.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_5_om9us1.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444185/aviator/renders/CAYMAN_AVIATOR_20210722_1_xebfit.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_2_sqndug.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_3_yfhhss.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_4_cdgjbd.jpg",
-    ],
-    "the concept": [
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Waypoint_Sketch_xsevlg.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Telescope_Sketch_l4agfq.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Take_Off_Sketch_sx4qda.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Sketch_Carousel_Pics_1_o8wncj.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Geometry_Sketch_inkt7s.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631731354/aviator/bgphotos/theConcept/Depth_Sketch_gz4wzm.jpg",
-    ],
-    floorplans: [
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1633906044/aviator/floorplans/shrunkOrig_yanybu.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507698/aviator/floorplans/2540_Cayman_Rd_1ST_LEVEL_20210629-1_ckq7vd.jpg",
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1632507697/aviator/floorplans/2540_Cayman_Rd_2ND_LEVEL_20210629-1_g4bs0x.jpg",
-    ],
-  };
+  const images = carouselImages;
 
   const xVal = spring(0, { stiffness: 0.1, damping: 0.89 });
 
   onMount(() => {
-    carouselWidth = carousel.offsetWidth * images[page.title].length;
+    carouselWidth = carousel.offsetWidth * images[carouselName].length;
     new DragGesture(
       slider,
       ({ direction, movement, down }) => {
@@ -59,7 +39,7 @@
           if (!down) {
             if (
               Math.abs(movement[0]) > sliderThresh &&
-              currInd === images[page.title].length - 1 &&
+              currInd === images[carouselName].length - 1 &&
               movement[0] < 0
             ) {
               xVal.set(-currInd * (carousel.offsetWidth + 10));
@@ -116,7 +96,7 @@
   function resize() {
     carouselWidth = carousel.offsetWidth;
     slider.style.width =
-      carousel.offsetWidth * (images[page.title].length + 1) * 5 + "px";
+      carousel.offsetWidth * (images[carouselName].length + 1) * 5 + "px";
     carousel.style.width = xVal.set(-currInd * (carousel.offsetWidth + 10));
     if (mainText.scrollHeight > mainText.clientHeight) {
       overFlowing = true;
@@ -143,7 +123,7 @@
   const handleCarousel = (val) => {
     if (currInd === 0 && val === -1) {
       return;
-    } else if (currInd === images[page.title].length - 1 && val === 1) {
+    } else if (currInd === images[carouselName].length - 1 && val === 1) {
       return;
     } else {
       currInd += val;
@@ -162,13 +142,13 @@
       <div class="indicator">
         {#if glide}
           <p>
-            {currInd + 1}/{images[page.title].length}
+            {currInd + 1}/{images[carouselName].length}
           </p>
         {/if}
       </div>
       <div class="glide__track" data-glide-el="track">
         <ul bind:this={slider} class="glide__slides">
-          {#each images[page.title] as img, i}
+          {#each images[carouselName] as img, i}
             <li
               style="width:{glideContainer ? carouselWidth : ''}px"
               bind:this={glideContainer}
@@ -331,6 +311,7 @@
       img {
         width: 100%;
         height: 100%;
+        object-position: center center;
         position: absolute;
         object-fit: cover;
       }

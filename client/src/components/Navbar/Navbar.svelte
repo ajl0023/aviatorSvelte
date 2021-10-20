@@ -48,7 +48,7 @@
       align-items: center;
     }
     .logo-container {
-      max-width: 10em;
+      max-width: 12em;
       height: 66px;
       img {
         width: 100%;

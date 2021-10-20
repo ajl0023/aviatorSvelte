@@ -27,7 +27,7 @@
     <div class="logo-container">
       <img
         class="image-logo"
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631674485/aviator/home/Aviator_Home_Right_cfdw58.png"
+        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1634757207/aviator/home/Aviator_Home_Right_ztlnsu.png"
         alt=""
       />
     </div>

@@ -13,10 +13,12 @@
       type: "image",
     },
     {
+      carousel: "concept",
       title: "the concept",
       type: "carousel",
     },
     {
+      carousel: "impact",
       title: "the impact",
       type: "carousel",
     },
@@ -25,6 +27,7 @@
       type: "video",
     },
     {
+      carousel: "floorplans",
       title: "floorplans",
       type: "carousel",
     },
@@ -72,7 +75,7 @@
       {:else if cardLayout[i].type === "gallery"}
         <CardGallery />
       {:else}
-        <CardCarousel page={card} index={i} />
+        <CardCarousel carouselName={cardLayout[i].carousel} page={card} index={i} />
       {/if}
     {/each}
     <div id="contact" class="contact-us-container">
