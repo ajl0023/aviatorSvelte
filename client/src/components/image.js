@@ -61,5 +61,12 @@ export const carouselImages = {
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_2_sqndug.jpg",
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_3_yfhhss.jpg",
     "https://res.cloudinary.com/dt4xntymn/image/upload/v1632444184/aviator/renders/CAYMAN_AVIATOR_20210722_4_cdgjbd.jpg",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1635274655/aviator/renders/2540_CAYMAN_IMG_9A_BATHROOM_B_20210928_xchy1c.webp",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1635274656/aviator/renders/2540_CAYMAN_IMG_6A_BEDROOM_B_20210928_i5hgbw.webp",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1635274656/aviator/renders/2540_CAYMAN_IMG_3A_BATHROOM_A_20210928_uroi3p.webp",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1635274656/aviator/renders/2540_CAYMAN_IMG_1A_BEDROOM_A_20210928_ctzlrb.webp",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1635274656/aviator/renders/2540_CAYMAN_IMG_15A_LIVING_20210928_zny5mo.webp",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1635274656/aviator/renders/2540_CAYMAN_IMG_13A_ENTRY_LIVING_20210928_tzxs8w.webp",
+    "http://res.cloudinary.com/dt4xntymn/image/upload/v1635274656/aviator/renders/2540_CAYMAN_IMG_10A_KITCHEN_20210928_r8yhxy.webp",
   ],
 };
