@@ -11,7 +11,7 @@
   export let page;
   export let itemInd;
   const data = pageLayout["page-carousels"];
-  console.log(data)
+
   const images = {
     "the concept": data[itemInd].images,
     floorplans: data[itemInd].images,

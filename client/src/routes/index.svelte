@@ -4,14 +4,14 @@
   export const prerender = true;
 
   export async function load({ params, fetch, session, stuff }) {
-    const imagePages = await fetch("http://localhost:3000/api/bg-pages");
+    const imagePages = await fetch("http://localhost:3005/api/bg-pages");
     const carouselRenders = await fetch(
-      "http://localhost:3000/api/carousel-renders"
+      "http://localhost:3005/api/carousel-renders"
     );
     const pageCarousels = await fetch(
-      "http://localhost:3000/api/page-carousels"
+      "http://localhost:3005/api/page-carousels"
     );
-    const bts = await fetch("http://localhost:3000/api/behind-the-scenes");
+    const bts = await fetch("http://localhost:3005/api/behind-the-scenes");
     pageLayout["image-pages"] = await imagePages.json();
 
     pageLayout["carousel-renders"] = await carouselRenders.json();
@@ -56,7 +56,7 @@
 
 		function changeAllUrls(urls) {
 			urls.map((item) => {
-				item.url = item.url.replace('http://localhost:3000/mock-bb-storage/', 'main-images/');
+				item.url = item.url.replace('http://localhost:3005/mock-bb-storage/', 'main-images/');
 			});
 		}
 
