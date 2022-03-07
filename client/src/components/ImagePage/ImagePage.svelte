@@ -2,70 +2,38 @@
   import { modal } from "../../stores";
   import { afterUpdate, beforeUpdate, onMount } from "svelte";
   import { lazy, lazyLoadInstance } from "../../lazy.js";
+  import { pageLayout } from "../../pageContent";
   export let index;
-  const images = [
-    {
-      type: "image",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631676187/aviator/bgphotos/The_Background_Fire_Photo_z81p7d.jpg",
-    },
-    {
-      type: "image",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631732958/aviator/bgphotos/theImpact/The_Impact_Pic_r8p3r2.jpg",
-    },
+  export let imgInd;
+  const images = [...pageLayout["image-pages"], {}];
 
-    {
-      type: "video",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631733408/aviator/bgphotos/videoRender/Copy_of_CAYMAN_AVIATOR_20210722_3_yhkqho.jpg",
-      videoUrl: "https://www.youtube.com/embed/iWGFuMg-RA0",
-    },
-    {
-      videoUrl: "https://www.youtube.com/embed/nTS10ZQM5Ms",
-      type: "video",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790318/misc/bgPhotos/bg4_ma0d9j.jpg",
-    },
-    {
-      videoUrl: "https://www.youtube.com/embed/l7h2P07cSbc",
-      type: "video",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790322/misc/bgPhotos/drone_s8lkqw.png",
-    },
-    {
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631751013/ContactUs/54d3f4_28add3e68eb94ebc8675416c21360ddf_mv2_n5evlp.jpg",
-      type: "image",
-    },
-  ];
   onMount(() => {
     lazyLoadInstance().update();
   });
 </script>
 
-<div
-  on:click={() => {
-    if (images[index].type === "video") {
-      $modal.visibility = true;
-      $modal.content = images[index].videoUrl;
-      $modal.type = "video";
-    }
-  }}
-  class="page"
->
-  <div class="image-container {images[index].type === 'video' ? 'blur' : ''} ">
-    {#if images[index].type === "video"}
-      <img
-        alt=""
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/playButton_rbgj1t.png"
-        class="play-button"
-      />
-    {/if}
+{#if imgInd >= 0}
+  <div
+    on:click={() => {
+      if (images[imgInd].type === "video") {
+        $modal.visibility = true;
+        $modal.content = images[imgInd].video_url;
+        $modal.type = "video";
+      }
+    }}
+    class="page"
+  >
+    <div
+      class="image-container {images[imgInd].type === 'video' ? 'blur' : ''} "
+    >
+      {#if images[imgInd].type === "video"}
+        <img alt="" src="playButton.png" class="play-button" />
+      {/if}
 
-    <img data-src={images[index].url} alt="" class="main-image lazy" />
+      <img data-src={images[imgInd].image.url} alt="" class="main-image lazy" />
+    </div>
   </div>
-</div>
+{/if}
 
 <style lang="scss">
   .blur {

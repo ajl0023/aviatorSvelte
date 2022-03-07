@@ -16,11 +16,7 @@
     <div class="logo-container">
       <a href="https://www.apeldesign.com/">
         <!-- <Logo fill="white" /> -->
-        <img
-          class="logo"
-          src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631656727/misc/By_Apel_Design_White_hkfvc4.png"
-          alt=""
-        />
+        <img class="logo" src="By Apel Design White.png" alt="" />
       </a>
     </div>
   </div>

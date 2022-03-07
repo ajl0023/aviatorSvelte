@@ -7,75 +7,41 @@
 
   import CardGallery from "../CardGallery/CardGallery.svelte";
 
-  const cardLayout = [
-    {
-      title: "the background",
-      type: "image",
-    },
-    {
-      carousel: "concept",
-      title: "the concept",
-      type: "carousel",
-    },
-    {
-      carousel: "impact",
-      title: "the impact",
-      type: "carousel",
-    },
-    {
-      title: "video render",
-      type: "video",
-    },
-    {
-      carousel: "floorplans",
-      title: "floorplans",
-      type: "carousel",
-    },
-  ];
-  onMount(() => {
-    setTimeout(() => {
-      const images = document.querySelectorAll("img");
-      images.forEach((img) => {
-        // img.src = "";
-      });
-    }, 2000);
+  let cardLayout = [];
+  onMount(async () => {
+    const res = await fetch("http://localhost:3000/api/mobile/pages");
+    const data = await res.json();
+
+    cardLayout = data;
   });
 </script>
 
 <div class="card-wrapper">
   <div class="bg-image-container">
-    <img
-      class="bg-image"
-      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631741196/aviator/mobile/Copy_of_CAYMAN_AVIATOR_20210722_1_ceklf1.jpg"
-      alt=""
-    />
+    <img class="bg-image" src="mobile/bg.jpg" alt="" />
   </div>
   <div id="home" class="logo-wrapper">
     <div class="logo-container">
-      <img
-        class="image-logo"
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631742004/aviator/mobile/AVIATOR_LOGO_V01_bsji89.png"
-        alt=""
-      />
+      <img class="image-logo" src="mobile/mobile-logo.png" alt="" />
     </div>
   </div>
   <div id="quote" class="quote-container">
     <div class="quote-image-container">
-      <img
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631744012/aviator/mobile/Phoenix_Quote_tpsonx.png"
-        alt=""
-        class="quote-image"
-      />
+      <img src="mobile/quotes.png" alt="" class="quote-image" />
     </div>
   </div>
   <div class="card-container">
     {#each cardLayout as card, i}
-      {#if cardLayout[i].type === "image" || cardLayout[i].type === "video"}
+      {#if cardLayout[i].type === "bg-image" || cardLayout[i].type === "video"}
         <Card page={card} index={i} />
       {:else if cardLayout[i].type === "gallery"}
         <CardGallery />
       {:else}
-        <CardCarousel carouselName={cardLayout[i].carousel} page={card} index={i} />
+        <CardCarousel
+          carouselName={cardLayout[i].carousel}
+          page={card}
+          index={i}
+        />
       {/if}
     {/each}
     <div id="contact" class="contact-us-container">

@@ -123,7 +123,7 @@
   bind:this={imageElement}
   class="carousel-img"
   loading="lazy"
-  src={img}
+  src={img.url}
   draggable="false"
   alt=""
 />

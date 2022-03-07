@@ -27,7 +27,7 @@
     {#if deviceType}
       <img
         class="header-stroke"
-        src={"https://res.cloudinary.com/dt4xntymn/image/upload/v1631738218/aviator/bgphotos/theConcept/Concept_Brush_PNG_cbpo7s.png"}
+        src={"concept/concept-title-brush.png"}
         alt=""
       />
     {/if}

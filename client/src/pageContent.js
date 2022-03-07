@@ -1,3 +1,5 @@
+export const pageLayout = {};
+
 export const pageContent = [
   "home",
   "quote",
@@ -25,50 +27,40 @@ export const textPages = [
     paragraphs: [
       "The 2019 Woolsey Malibu fire wiped out many structures, one of which was a dome-like building (like an observatory). What was left was a secluded property with a breathtaking 360-degree view of the Pacific Ocean and the Malibu mountains.   Apel Design accepted the challenge of creating a piece of architecture that would have a minimal environment impact and yet evoke and complete the site conditions. The site dictated three major criteria, first that it was a fire-rebuilt home, second the challenges of accessibility to the site and finally, it must be an “off the grid” home.",
     ],
-    headerBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631738493/aviator/bgphotos/theBackground/header_urzkse.png",
-    pgBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631738493/aviator/bgphotos/theBackground/para_quz0qc.png",
+    headerBrush: "background/Background Brush PNG.png",
+    pgBrush: "background/bg-content.png",
   },
   {
     header: "The Concept",
     paragraphs: [
       "Conceptually, Apel Design wanted to create the notion that the architecture of building continues beyond. In a sense, the forms flow throughout and never stop. The architecture forms emerge from the ground, extends to the horizon and divides into two beautiful irregular volumetric elements as if the architecture was slicing the space, emphasizing the gorgeous views of the Malibu mountains and the Pacific Ocean. The bird-like building program also incorporates the ideas of flow and continuation; the first level proposes an open floor plan with a glass facade that opens up the space to a beautiful deck and a second floor for bedrooms that are elevated from the ground to again emphasize this notion of flow and lightness.",
     ],
-    headerBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631738218/aviator/bgphotos/theConcept/Concept_Brush_PNG_cbpo7s.png",
-    pgBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631738219/aviator/bgphotos/theConcept/Concept_Brush_PNGparagraph_uorzic.png",
+    headerBrush: "/concept/concept-title-brush.png",
+    pgBrush: "/concept/concept-text-brush.png",
   },
   {
     header: "The Impact",
     paragraphs: [
       "Apel Design designed this project to have minimal environmental impact, this off-grid house will fully be powered by solar and biodiesel. The project will implement the latest technology to power the house. All the materials use will be LEED compliant to assure rigorous and environmentally friendly materials.",
     ],
-    headerBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNG_nob5gl.png",
-    pgBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNGparag_yzuqik.png",
+    headerBrush: "/impact/impact-title-brush.png",
+    pgBrush: "/impact/impact-pg-brush.png",
   },
   {
     header: "Video Render",
     paragraphs: [
       "Take a dive into The Aviator with our 3D rendering. To get a feeling of the completed project and vision, please click on the video to the right.",
     ],
-    headerBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631735086/aviator/bgphotos/videoRender/Video_Render_BrushHeader_vtxjwf.png",
-    pgBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631735086/aviator/bgphotos/videoRender/Video_Render_Brush_PNGParagraph_k7quw4.png",
+    headerBrush: "/video render/video-render-title-brush.png",
+    pgBrush: "/video render/video-render-text-brush.png",
   },
   {
     header: "Floorplans",
     paragraphs: [
       "Look through some of aviator's highly detailed floorplans to get a full layout of the design.",
     ],
-    headerBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNG_nob5gl.png",
-    pgBrush:
-      "https://res.cloudinary.com/dt4xntymn/image/upload/v1631737758/aviator/bgphotos/theImpact/Impact_Brush_PNGparag_yzuqik.png",
+    headerBrush: "/floorplans/floorplans-title-brush.png",
+    pgBrush: "/floorplans/floorplans-text-brush.png",
   },
 ];
 export const creditsContent = [
@@ -124,18 +116,4 @@ export const creditsContent = [
 export const navToLink = navButtons.map((item) => {
   return item.replace(/\s/g, "-");
 });
-export const highResBts = [
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/2021.05.29_roof_2_cm4ouk.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880380/galleryHighRes/Amit_and_Russel_asulsg.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/Bike_d1id7e.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880380/galleryHighRes/Framing_hqxw7y.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/Humming_Bird_vwjffp.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/circle_window_with_pendant_light_mbvjwj.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/dining_room_discussion_wxmdwj.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/electrical_2_xv2vdj.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/electrical_discussion_qpavea.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880379/galleryHighRes/framing_discussion_tmw90t.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880377/galleryHighRes/kitchen_discussion_2_mzb1yv.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/kitchen_discussion_3_jniqgh.jpg",
-  "https://res.cloudinary.com/dt4xntymn/image/upload/v1630880378/galleryHighRes/kitchen_discussion_ipeyz4.jpg",
-];
+export const highResBts = [];

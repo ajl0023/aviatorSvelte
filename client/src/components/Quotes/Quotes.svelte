@@ -11,9 +11,7 @@
     <div class="image-container">
       <img
         class="quote-photo"
-        src={page === "left"
-          ? "https://res.cloudinary.com/dt4xntymn/image/upload/v1631675421/aviator/quotes/Quote_Left_zvlxso.png"
-          : "https://res.cloudinary.com/dt4xntymn/image/upload/v1631675424/aviator/quotes/Quote_Right_rhvyuw.png"}
+        src={page === "left" ? "Quote Left.png" : "Quote Right.png"}
         alt=""
       />
     </div>

@@ -7,33 +7,11 @@
   import Arrow from "./Arrow.svelte";
 
   export let index;
+  export let page;
   let showMore = false;
   let mainText;
   let overFlowing;
 
-  const images = [
-    {
-      type: "image",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631676187/aviator/bgphotos/The_Background_Fire_Photo_z81p7d.jpg",
-    },
-    {
-      type: "image",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1630790318/misc/bgPhotos/bg2_oyi2w7.jpg",
-    },
-
-    {
-      type: "image",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631732958/aviator/bgphotos/theImpact/The_Impact_Pic_r8p3r2.jpg",
-    },
-    {
-      type: "video",
-      url:
-        "https://res.cloudinary.com/dt4xntymn/image/upload/v1631733408/aviator/bgphotos/videoRender/Copy_of_CAYMAN_AVIATOR_20210722_3_yhkqho.jpg",
-    },
-  ];
   function checkOverFlow() {
     if (mainText.scrollHeight > mainText.clientHeight) {
       overFlowing = true;
@@ -59,28 +37,25 @@
   <div class="bu-card-image">
     <figure
       on:click={() => {
-        if (images[index].type === "video") {
+        if (page.type === "video") {
           $modal.visibility = true;
-          $modal.content = images[index].videoUrl;
+          $modal.content = page.videoUrl;
           $modal.type = "video";
         }
       }}
-      class="bu-image bu-is-4by3 {images[index].type === 'video' ? 'blur' : ''}"
+      class="bu-image bu-is-4by3 {page.type === 'video' ? 'blur' : ''}"
     >
-      {#if images[index].type === "video"}
+      {#if page.type === "video"}
         <div class="play-button-container">
           <figure class="bu-image bu-is-square ">
-            <img
-              src="https://res.cloudinary.com/dt4xntymn/image/upload/v1630788553/misc/playButton_rbgj1t.png"
-              alt=""
-            />
+            <img src="playButton.png" alt="" />
           </figure>
         </div>
       {/if}
       <img
         loading="lazy"
         class="main-image"
-        src={images[index] && images[index].url}
+        src={page && page.images[0].url}
         alt=""
       />
     </figure>
@@ -90,10 +65,7 @@
       <div class="bu-media-left">
         <figure class="bu-image bu-is-48x48">
           <div class="square-place-holder" style=" height: 100%; width:100%;">
-            <img
-              src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631742128/aviator/mobile/miniLogo_h1qtki.png"
-              alt=""
-            />
+            <img src="mobile/mobile-logo.png" alt="" />
           </div>
         </figure>
       </div>

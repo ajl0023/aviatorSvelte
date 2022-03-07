@@ -10,27 +10,31 @@
 
 <div bind:this={leftPage} class="container">
   <div class="bg-image-container">
-    <img
-      class="bg-image"
-      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1632263432/aviator/home/Home_Left_gilcuo.jpg"
-      alt=""
-    />
+    <img class="bg-image" src="Home Left.jpg" alt="" />
   </div>
   <div id="home" class="logo-wrapper">
     <div class="logo-container">
-      <img
-        class="image-logo"
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1634757207/aviator/home/Aviator_Home_Left_svkmpp.png"
-        alt=""
-      />
+      <img class="image-logo" src="Aviator Home Left.png" alt="" />
     </div>
   </div>
   <Quotes page="left" />
-  <ImagePage page="left" index={0} />
+  <ImagePage imgInd={0} page="left" index={0} />
   <TextPage page="left" bgColor="#860116" index={1} />
-  <CarouselFull page="left" name="impact" orient="full" index={2} />
+  <CarouselFull
+    itemInd={2}
+    page="left"
+    name="the impact"
+    orient="full"
+    index={2}
+  />
   <TextPage page="left" bgColor="#860116" index={3} />
-  <CarouselFull page="left" name="floorplans" orient="full" index={4} />
+  <CarouselFull
+    itemInd={1}
+    page="left"
+    name="floorplans"
+    orient="full"
+    index={4}
+  />
 
   <ContactUs deviceType={"desktop"} bgColor="#860116" />
 </div>

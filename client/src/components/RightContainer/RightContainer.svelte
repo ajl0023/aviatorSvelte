@@ -9,27 +9,19 @@
 </script>
 
 <div bind:this={rightPage} class="container">
-  <ImagePage page="right" index={5} />
+  <ImagePage imgInd={2} page="right" index={5} />
   <TextPage index={4} />
-  <ImagePage index={2} />
+  <ImagePage imgInd={1} index={2} />
   <TextPage index={2} />
-  <CarouselFull orient="half" page="right" name="concept" />
+  <CarouselFull itemInd={0} orient="half" page="right" name="the concept" />
   <TextPage index={0} />
   <Quotes page="right" />
   <div class="bg-image-container">
-    <img
-      class="bg-image"
-      src="https://res.cloudinary.com/dt4xntymn/image/upload/v1632263453/aviator/home/Home_Right_rjgeno.jpg"
-      alt=""
-    />
+    <img class="bg-image" src="Home Right.jpg" alt="" />
   </div>
   <div class="logo-wrapper">
     <div class="logo-container">
-      <img
-        class="image-logo"
-        src="https://res.cloudinary.com/dt4xntymn/image/upload/v1634757207/aviator/home/Aviator_Home_Right_ztlnsu.png"
-        alt=""
-      />
+      <img class="image-logo" src="Aviator Home Right.png" alt="" />
     </div>
   </div>
 </div>

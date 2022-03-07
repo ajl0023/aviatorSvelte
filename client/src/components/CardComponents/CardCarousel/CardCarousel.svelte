@@ -10,6 +10,7 @@
   import Arrow from "../Card/Arrow.svelte";
   export let index;
   export let page;
+
   export let carouselName;
   let carousel;
   let lazyImage;
@@ -29,7 +30,7 @@
   const xVal = spring(0, { stiffness: 0.1, damping: 0.89 });
 
   onMount(() => {
-    carouselWidth = carousel.offsetWidth * images[carouselName].length;
+    carouselWidth = carousel.offsetWidth * page.images.length;
     new DragGesture(
       slider,
       ({ direction, movement, down }) => {
@@ -39,7 +40,7 @@
           if (!down) {
             if (
               Math.abs(movement[0]) > sliderThresh &&
-              currInd === images[carouselName].length - 1 &&
+              currInd === page.images.length - 1 &&
               movement[0] < 0
             ) {
               xVal.set(-currInd * (carousel.offsetWidth + 10));
@@ -96,7 +97,7 @@
   function resize() {
     carouselWidth = carousel.offsetWidth;
     slider.style.width =
-      carousel.offsetWidth * (images[carouselName].length + 1) * 5 + "px";
+      carousel.offsetWidth * (page.images.length + 1) * 5 + "px";
     carousel.style.width = xVal.set(-currInd * (carousel.offsetWidth + 10));
     if (mainText.scrollHeight > mainText.clientHeight) {
       overFlowing = true;
@@ -123,7 +124,7 @@
   const handleCarousel = (val) => {
     if (currInd === 0 && val === -1) {
       return;
-    } else if (currInd === images[carouselName].length - 1 && val === 1) {
+    } else if (currInd === page.images.length - 1 && val === 1) {
       return;
     } else {
       currInd += val;
@@ -142,13 +143,13 @@
       <div class="indicator">
         {#if glide}
           <p>
-            {currInd + 1}/{images[carouselName].length}
+            {currInd + 1}/{page.images.length}
           </p>
         {/if}
       </div>
       <div class="glide__track" data-glide-el="track">
         <ul bind:this={slider} class="glide__slides">
-          {#each images[carouselName] as img, i}
+          {#each page.images as img, i}
             <li
               style="width:{glideContainer ? carouselWidth : ''}px"
               bind:this={glideContainer}
@@ -199,10 +200,7 @@
       <div class="bu-media-left">
         <figure class="bu-image bu-is-48x48">
           <div class="square-place-holder" style=" height: 100%; width:100%;">
-            <img
-              src="https://res.cloudinary.com/dt4xntymn/image/upload/v1631742128/aviator/mobile/miniLogo_h1qtki.png"
-              alt=""
-            />
+            <img src="mobile/mobile-logo.png" alt="" />
           </div>
         </figure>
       </div>

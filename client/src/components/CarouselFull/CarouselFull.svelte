@@ -3,16 +3,23 @@
   import Glide from "@glidejs/glide";
   import { onMount } from "svelte";
   import Arrow from "../CardComponents/Card/Arrow.svelte";
+  import { pageLayout } from "../../pageContent.js";
 
   let glider;
   export let name;
   export let orient;
   export let page;
-
-  const images = carouselImages;
+  export let itemInd;
+  const data = pageLayout["page-carousels"];
+  console.log(data)
+  const images = {
+    "the concept": data[itemInd].images,
+    floorplans: data[itemInd].images,
+    "the impact": data[itemInd].images,
+  };
 
   const halfCarousel = {
-    concept: Array.from("x".repeat(images.concept.length / 2)),
+    "the concept": Array.from("x".repeat(images["the concept"].length / 2)),
   };
 
   let glide;
@@ -47,7 +54,7 @@
   <div bind:this={glider} class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
-        {#each orient === "half" ? halfCarousel[name] : images[name] as img, i}
+        {#each orient === "half" ? halfCarousel["the concept"] : images[name] as img, i}
           <li class="glide__slide">
             <div class="dual-image-container">
               <div
@@ -57,7 +64,7 @@
                 <img
                   loading="lazy"
                   class="carousel-image"
-                  src={images[name][i]}
+                  src={images[name][i].url}
                   alt=""
                 />
               </div>
@@ -66,7 +73,7 @@
                   <img
                     loading="lazy"
                     class="carousel-image"
-                    src={images[name][i + 1]}
+                    src={images[name][i + 1].url}
                     alt=""
                   />
                 </div>
