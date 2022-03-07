@@ -1,6 +1,6 @@
 <script context="module">
   import { pageLayout } from "./../pageContent";
-  import _ from 'lodash'
+  import _ from "lodash";
   export const prerender = true;
 
   export async function load({ params, fetch, session, stuff }) {
@@ -12,55 +12,60 @@
       "http://localhost:3005/api/page-carousels"
     );
     const bts = await fetch("http://localhost:3005/api/behind-the-scenes");
+    const mobile = await fetch("http://localhost:3005/api/mobile/pages");
     pageLayout["image-pages"] = await imagePages.json();
 
     pageLayout["carousel-renders"] = await carouselRenders.json();
     pageLayout["page-carousels"] = await pageCarousels.json();
 
     pageLayout["bts"] = await bts.json();
+    pageLayout["mobile"] = await mobile.json();
     function isObjectOrArray(item) {
-			return _.isPlainObject(item) || Array.isArray(item);
-		}
-		const arr2 = [];
-		let shouldExit = false;
-		function changeUrls(obj) {
-			if (Array.isArray(obj)) {
-				for (const item of obj) {
-					changeUrls(item);
-				}
-				return;
-			}
-			if (!isObjectOrArray(obj)) {
-				return;
-			} //iterate through object
-			else {
-				if (obj.url) {
-					shouldExit = true;
-					arr2.push(obj);
-					return;
-				} else {
-					for (const key in obj) {
-						if (isObjectOrArray(obj[key])) {
-							if (shouldExit) {
-								continue;
-							} else {
-								changeUrls(obj[key]);
-								shouldExit = false;
-							}
-						}
-					}
-				}
-			}
-			return arr2;
-		}
+      return _.isPlainObject(item) || Array.isArray(item);
+    }
+    const arr2 = [];
+    let shouldExit = false;
+    function changeUrls(obj) {
+      if (Array.isArray(obj)) {
+        for (const item of obj) {
+          changeUrls(item);
+        }
+        return;
+      }
+      if (!isObjectOrArray(obj)) {
+        return;
+      } //iterate through object
+      else {
+        if (obj.url) {
+          shouldExit = true;
+          arr2.push(obj);
+          return;
+        } else {
+          for (const key in obj) {
+            if (isObjectOrArray(obj[key])) {
+              if (shouldExit) {
+                continue;
+              } else {
+                changeUrls(obj[key]);
+                shouldExit = false;
+              }
+            }
+          }
+        }
+      }
+      return arr2;
+    }
 
-		function changeAllUrls(urls) {
-			urls.map((item) => {
-				item.url = item.url.replace('http://localhost:3005/mock-bb-storage/', 'main-images/');
-			});
-		}
+    function changeAllUrls(urls) {
+      urls.map((item) => {
+        item.url = item.url
+          .replace("http://localhost:3000/mock-bb-storage/", "main-images/")
+          .replace("http://147.182.193.194/mock-bb-storage/", "main-images/");
+      });
+    }
 
-		changeAllUrls(changeUrls(pageLayout, false));
+    changeAllUrls(changeUrls(pageLayout, false));
+
     return {
       status: 200,
       props: {
@@ -111,7 +116,7 @@
 
   <ScrollContainer />
 
-  <CardContainer />
+  <CardContainer data={pageLayout["mobile"]} />
 
   <Modal />
   <Socials />
