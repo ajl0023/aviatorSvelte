@@ -39,7 +39,7 @@
       on:click={() => {
         if (page.type === "video") {
           $modal.visibility = true;
-          $modal.content = page.videoUrl;
+          $modal.content = page.video_url;
           $modal.type = "video";
         }
       }}

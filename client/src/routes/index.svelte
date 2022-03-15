@@ -2,24 +2,25 @@
   import { pageLayout } from "./../pageContent";
   import _ from "lodash";
   export const prerender = true;
+  export async function load({ fetch }) {
+    const categories = (
+      await (await fetch("/api2/api/categories")).json()
+    ).reduce((acc, item) => {
+      acc[item._id] = item;
+      return acc;
+    }, {});
 
-  export async function load({ params, fetch, session, stuff }) {
-    const imagePages = await fetch("http://localhost:3005/api/bg-pages");
-    const carouselRenders = await fetch(
-      "http://localhost:3005/api/carousel-renders"
-    );
-    const pageCarousels = await fetch(
-      "http://localhost:3005/api/page-carousels"
-    );
-    const bts = await fetch("http://localhost:3005/api/behind-the-scenes");
-    const mobile = await fetch("http://localhost:3005/api/mobile/pages");
+    const imagePages = await fetch("/api2/api/bg-pages");
+    const pageCarousels = await fetch("/api2/api/page-carousels");
+    const mobile = await fetch("/api2/api/mobile");
     pageLayout["image-pages"] = await imagePages.json();
-
-    pageLayout["carousel-renders"] = await carouselRenders.json();
     pageLayout["page-carousels"] = await pageCarousels.json();
-
-    pageLayout["bts"] = await bts.json();
     pageLayout["mobile"] = await mobile.json();
+    pageLayout["mobile"] = pageLayout["mobile"].map((item) => {
+      item["type"] = categories[item.category].category;
+      return item;
+    });
+
     function isObjectOrArray(item) {
       return _.isPlainObject(item) || Array.isArray(item);
     }
@@ -34,8 +35,7 @@
       }
       if (!isObjectOrArray(obj)) {
         return;
-      } //iterate through object
-      else {
+      } else {
         if (obj.url) {
           shouldExit = true;
           arr2.push(obj);
@@ -43,6 +43,11 @@
         } else {
           for (const key in obj) {
             if (isObjectOrArray(obj[key])) {
+              if (Array.isArray(obj[key])) {
+                obj[key] = obj[key].sort((a, b) => {
+                  return a.order - b.order;
+                });
+              }
               if (shouldExit) {
                 continue;
               } else {
@@ -55,25 +60,21 @@
       }
       return arr2;
     }
-
     function changeAllUrls(urls) {
       urls.map((item) => {
-        item.url = item.url
-          .replace("http://localhost:3000/mock-bb-storage/", "main-images/")
-          .replace("http://147.182.193.194/mock-bb-storage/", "main-images/");
+        if (dev) {
+          item.url = item.url.replace(
+            "http://test12312312356415616.store",
+            hostName
+          );
+        } else {
+          return item;
+        }
       });
     }
 
     changeAllUrls(changeUrls(pageLayout, false));
-
-    return {
-      status: 200,
-      props: {
-        pageLayout: {
-          imagePages,
-        },
-      },
-    };
+    return {};
   }
 </script>
 
@@ -82,8 +83,9 @@
   import Modal from "../components/Modal/Modal.svelte";
   import Navbar from "../components/Navbar/Navbar.svelte";
 
-  import { browser } from "$app/env";
+  import { browser, dev } from "$app/env";
   import "../global.scss";
+  import { hostName } from "src/host";
 
   import "../bulma.prefixed.css";
   import ScrollContainer from "../components/ScrollContainer/ScrollContainer.svelte";

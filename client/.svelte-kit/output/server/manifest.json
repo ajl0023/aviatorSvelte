@@ -1,0 +1,59 @@
+{
+  ".svelte-kit/build/index.js": {
+    "file": "index.js",
+    "src": ".svelte-kit/build/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index-272d5b4a.js",
+      "_host-b5b4a144.js"
+    ],
+    "dynamicImports": [
+      "src/hooks.js"
+    ]
+  },
+  ".svelte-kit/runtime/components/layout.svelte": {
+    "file": "entries/fallbacks/layout.svelte.js",
+    "src": ".svelte-kit/runtime/components/layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-272d5b4a.js"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-272d5b4a.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "entries/pages/index.svelte.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-272d5b4a.js",
+      "_host-b5b4a144.js"
+    ],
+    "css": [
+      "assets/entries/pages/index.svelte-cb3ac541.css"
+    ],
+    "assets": [
+      "assets/Capsuula-b76fd88c.ttf"
+    ]
+  },
+  "_host-b5b4a144.js": {
+    "file": "chunks/host-b5b4a144.js"
+  },
+  "_index-272d5b4a.js": {
+    "file": "chunks/index-272d5b4a.js"
+  },
+  "src/hooks.js": {
+    "file": "chunks/hooks-0326c55a.js",
+    "src": "src/hooks.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_host-b5b4a144.js"
+    ]
+  }
+}

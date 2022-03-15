@@ -30,7 +30,7 @@
   </div>
   <div class="card-container">
     {#each cardLayout as card, i}
-      {#if cardLayout[i].type === "bg-image" || cardLayout[i].type === "video"}
+      {#if cardLayout[i].type === "bg-pages" || cardLayout[i].type === "video"}
         <Card page={card} index={i} />
       {:else if cardLayout[i].type === "gallery"}
         <CardGallery />
