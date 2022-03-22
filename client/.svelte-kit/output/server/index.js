@@ -18,7 +18,7 @@ var __privateSet = (obj, member, value, setter) => {
 };
 var _use_hashes, _dev, _script_needs_csp, _style_needs_csp, _directives, _script_src, _style_src;
 import { c as create_ssr_component, s as setContext, v as validate_component, m as missing_component } from "./chunks/index-272d5b4a.js";
-import "./chunks/host-b5b4a144.js";
+import "./chunks/host-7dfe731f.js";
 import "path";
 import "cookie";
 function afterUpdate() {
@@ -1992,7 +1992,7 @@ class Server {
       throw new Error("The first argument to server.respond must be a Request object. See https://github.com/sveltejs/kit/pull/3384 for details");
     }
     if (!this.options.hooks) {
-      const module = await import("./chunks/hooks-0326c55a.js");
+      const module = await import("./chunks/hooks-250a8d94.js");
       this.options.hooks = {
         getSession: module.getSession || (() => ({})),
         handle: module.handle || (({ event, resolve: resolve2 }) => resolve2(event)),

@@ -1,4 +1,4 @@
-import { hostName } from "./host";
+import { hostName, mock_dev } from "./host";
 import path from "path";
 import cookie from "cookie";
 
@@ -7,17 +7,27 @@ export const handle = async ({ event, resolve }) => {
   const base = event.url.origin;
 
   if (event.request.url.startsWith(`${base}/api2`)) {
-    const has_cookie = event.request.headers.get("cookie");
-    const new_cookie = cookie.serialize("collection", "aviator", {
-      path: "/",
-    });
-    if (!has_cookie || !cookie.parse(has_cookie).collection) {
-      event.request.headers.append("cookie", new_cookie);
+    if (!mock_dev || !dev) {
+      event.request.headers.set("host", "test12312312356415616.store");
     }
+    const headers = new Headers(event.request.headers);
+    const has_cookie = event.request.headers.get("cookie");
+    const new_cookie = cookie.serialize("collection", "aviator");
+
+    const auth_cookie = cookie.serialize(
+      "client_token",
+      import.meta.env.VITE_CLIENT_TOKEN
+    );
+    const res_cookies = auth_cookie + "; " + new_cookie;
+
+    headers.set("cookie", res_cookies);
+    const serialized_headers = Object.fromEntries(headers.entries());
 
     const new_request = new Request(
       event.request.url.replace(`${base}/api2`, hostName),
-      event.request
+      {
+        headers: serialized_headers,
+      }
     );
 
     const response = await fetch(new_request);

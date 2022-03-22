@@ -1,6 +1,6 @@
 import { n as noop, a as safe_not_equal, c as create_ssr_component, b as subscribe, e as escape, d as add_attribute, f as each, v as validate_component, o as onDestroy, g as now, l as loop, h as createEventDispatcher, i as compute_rest_props, j as spread, k as escape_object } from "../../chunks/index-272d5b4a.js";
 import _ from "lodash";
-import "../../chunks/host-b5b4a144.js";
+import "../../chunks/host-7dfe731f.js";
 import "@glidejs/glide";
 import "vanilla-lazyload";
 import "@use-gesture/vanilla";

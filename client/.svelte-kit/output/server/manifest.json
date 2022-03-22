@@ -5,7 +5,7 @@
     "isEntry": true,
     "imports": [
       "_index-272d5b4a.js",
-      "_host-b5b4a144.js"
+      "_host-7dfe731f.js"
     ],
     "dynamicImports": [
       "src/hooks.js"
@@ -33,27 +33,27 @@
     "isEntry": true,
     "imports": [
       "_index-272d5b4a.js",
-      "_host-b5b4a144.js"
+      "_host-7dfe731f.js"
     ],
     "css": [
-      "assets/entries/pages/index.svelte-cb3ac541.css"
+      "assets/entries/pages/index.svelte-1694c265.css"
     ],
     "assets": [
       "assets/Capsuula-b76fd88c.ttf"
     ]
   },
-  "_host-b5b4a144.js": {
-    "file": "chunks/host-b5b4a144.js"
+  "_host-7dfe731f.js": {
+    "file": "chunks/host-7dfe731f.js"
   },
   "_index-272d5b4a.js": {
     "file": "chunks/index-272d5b4a.js"
   },
   "src/hooks.js": {
-    "file": "chunks/hooks-0326c55a.js",
+    "file": "chunks/hooks-250a8d94.js",
     "src": "src/hooks.js",
     "isDynamicEntry": true,
     "imports": [
-      "_host-b5b4a144.js"
+      "_host-7dfe731f.js"
     ]
   }
 }

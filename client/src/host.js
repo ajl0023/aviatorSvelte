@@ -1,8 +1,10 @@
-import { dev } from '$app/env';
+import { dev } from "$app/env";
 let host;
-if (dev) {
-	host = 'http://localhost:8080';
+let is_host = false;
+if (is_host) {
+  host = "http://localhost:8080";
 } else {
-	host = 'http://test12312312356415616.store';
+  host = "https://test12312312356415616.store";
 }
 export const hostName = host;
+export const mock_dev = false;
