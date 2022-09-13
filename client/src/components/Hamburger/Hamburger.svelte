@@ -36,7 +36,18 @@
           {label}
         </li>
       {/each}
-    </ul>
+    </ul><div class="meet-text-container">
+			<a class="meet-text" on:click="{(e) => {
+				e.preventDefault();
+				window.open('https://www.apeldesign.com/');
+			}}"
+			href="https://www.apeldesign.com/">
+				Meet the architect
+			</a>
+			<div class="arrow-svg-container">
+				<img class="arrow-svg" src="right-arrow.svg" alt="">
+			</div>
+		</div>
     <div class="sidebar-logo-container">
       <a href="https://www.apeldesign.com/">
         <!-- <Logo className="sidebar-logo" alt="" /> -->
@@ -54,7 +65,30 @@
   />
 </div>
 
-<style lang="scss">
+<style lang="scss">.arrow-svg-container{
+  width: 15px;
+  margin-left: 2px;
+  margin-top: 2px;
+  .arrow-svg{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+.meet-text-container{
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  
+  .meet-text{
+  
+  color: black;
+  margin-left: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+}
   @mixin side-menu-container($leftValue) {
     background-color: white;
     height: 100vh;
