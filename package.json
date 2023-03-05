@@ -1,36 +1,38 @@
 {
-  "name": "template1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "~TODO~",
+  "version": "0.0.1",
   "scripts": {
-    "build": "netlify-lambda build api",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ajl0023/Maliview-1-sveltekit.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ajl0023/Maliview-1-sveltekit/issues"
-  },
-  "homepage": "https://github.com/ajl0023/Maliview-1-sveltekit#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cloudinary": "^1.27.0",
-    "express": "^4.17.1",
-    "lodash": "^4.17.21",
-    "netlify-lambda": "^2.0.14",
-    "nodemailer": "^6.6.3",
-    "nodemon": "^2.0.12",
-    "serverless-http": "^2.7.0",
-    "sharp": "^0.29.2"
+    "dev": "svelte-kit --port=3030 dev --host=0.0.0.0",
+    "build": "svelte-kit build && purgecss --css build/_app/assets/pages/*.css --content build/index.html  build/_app/**/*.js --output build/_app/assets/pages",
+    "preview": "svelte-kit preview",
+    "lint": "prettier --ignore-path .gitignore  --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@sveltejs/adapter-netlify": "^1.0.0-next.51",
     "@fullhuman/postcss-purgecss": "^4.0.3",
-    "postcss": "^8.3.6"
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-netlify": "^1.0.0-next.51",
+    "@sveltejs/adapter-static": "^1.0.0-next.18",
+    "@sveltejs/kit": "next",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-svelte3": "^3.4.1",
+    "postcss": "^8.3.6",
+    "prettier": "~2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
+    "purify-css": "^1.2.5",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "svelte": "^3.46.4"
+  },
+  "type": "module",
+  "dependencies": {
+    "@glidejs/glide": "^3.5.2",
+    "@use-gesture/vanilla": "^10.2.10",
+    "node-sass": "^7.0.1",
+    "svelte-hammer": "^0.1.7",
+    "cookie": "^0.4.2",
+    "svelte-preprocess": "^4.10.4",
+    "vanilla-lazyload": "^17.6.1"
   }
 }
