@@ -1,1 +1,0 @@
-cd client && git add . && git commit -m "purge css" && git push origin main
